@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I18n Assistant</title>
+  </head>
+  <body>
+    <main>
+      <h1>Tech-Term Finder</h1>
+
+      <input
+        id="term"
+        type="text"
+        placeholder="اكتب المصطلح الإنجليزي..."
+        dir="ltr"
+        aria-label="المصطلح" />
+
+      <p id="results"></p>
+    </main>
+
+    <footer dir="ltr">
+      This project is open source at
+      <a href="https://github.com/hAbuMustafa/i18n-finder">Github</a>.<br />
+      This project leverages the use of the i18n dictionary by
+      <a
+        href="https://github.com/softvenue/i18n"
+        target="_blank"
+        rel="noopener noreferrer"
+        >softvenue</a
+      >.
+    </footer>
+    <script>
+      const terms = [];
+      const term = document.querySelector('#term');
+      const results = document.querySelector('#results');
+
+      async function getTerms() {
+        return await fetch(
+          'https://raw.githubusercontent.com/softvenue/i18n/master/i18n.json'
+        )
+          .then((response) => response.json())
+          .then((data) => terms.push(...data));
+      }
+
+      getTerms();
+
+      term.addEventListener('input', (e) => {
+        if (e.target.value === '' || e.target.value.length < 3) {
+          results.innerHTML = '';
+          return;
+        }
+        const filteredResults = terms.filter((item) =>
+          item.term.toLowerCase().includes(e.target.value.toLowerCase())
+        );
+        //.map((item) => (Array.isArray(item.wAR) ? {...item,wAR:item.wAR.join('\n')} : {...item}))
+        results.innerHTML = filteredResults.length
+          ? filteredResults
+              .map(
+                (item) => `
+            <div class="result">
+              <h4 dir="ltr">🔤 ${item.term}</h4>
+              <ul>
+                  ${
+                    Array.isArray(item.wAR)
+                      ? item.wAR.map((meaning) => `<li>${meaning}</li>`).join('')
+                      : `<li>${item.wAR}</li>`
+                  }
+              </ul>
+            </div>
+          `
+              )
+              .join('')
+          : `
+          <div class="no-results">
+            لا توجد نتيجة للبحث المطلوب: ${e.target.value}
+          </div>
+          `;
+      });
+
+      term.focus();
+      document.addEventListener('click', () => term.focus());
+    </script>
+
+    <style>
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #term {
+        font-size: 2rem;
+      }
+
+      #results {
+        width: 60%;
+        direction: ltr;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+      }
+
+      #results ul {
+        direction: rtl;
+      }
+
+      .result h4 {
+        width: 100%;
+        margin-top: 1px;
+        border-bottom: solid 1px black;
+      }
+
+      /* .result {
+        border-top: dashed black 1px;
+      }
+
+      .result:first-of-type {
+        border-top: none;
+      } */
+
+      .result:nth-of-type(even) {
+        background-color: rgba(188, 252, 230, 0.3);
+      }
+
+      .result:nth-of-type(odd) {
+        background-color: rgba(188, 252, 230, 0.8);
+      }
+
+      .no-results {
+        direction: rtl;
+        text-align: center;
+      }
+
+      footer {
+        overflow: visible;
+        background: linear-gradient(to top, #ffffffff 0%, #ffffff00 150%);
+        color: grey;
+        position: fixed;
+        width: 100%;
+        text-align: center;
+        border-top: dashed grey 1px;
+        margin: auto 0px;
+        bottom: 0px;
+      }
+
+      footer a {
+        color: rgba(0, 0, 0, 0.8);
+      }
+
+      footer a:visited {
+        color: rgba(100, 100, 100, 0.4);
+      }
+    </style>
+  </body>
+</html>
