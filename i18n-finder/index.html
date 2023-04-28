@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://fav.farm/🔤" />
     <title>I18n Assistant</title>
   </head>
   <body>
     <main>
-      <h1>Tech-Term Finder</h1>
+      <h1><abbr title="Internationalization">I18n</abbr> Assistant</h1>
 
       <input
         id="term"
         type="text"
         placeholder="اكتب المصطلح الإنجليزي..."
-        dir="ltr"
         aria-label="المصطلح" />
 
       <p id="results"></p>
@@ -36,17 +36,16 @@
       const term = document.querySelector('#term');
       const results = document.querySelector('#results');
 
-      async function getTerms() {
+      (async function getTerms() {
         return await fetch(
           'https://raw.githubusercontent.com/softvenue/i18n/master/i18n.json'
         )
           .then((response) => response.json())
           .then((data) => terms.push(...data));
-      }
-
-      getTerms();
+      })();
 
       term.addEventListener('input', (e) => {
+        term.style.direction = e.target.value === '' ? 'rtl' : 'ltr';
         if (e.target.value === '' || e.target.value.length < 3) {
           results.innerHTML = '';
           return;
@@ -54,7 +53,6 @@
         const filteredResults = terms.filter((item) =>
           item.term.toLowerCase().includes(e.target.value.toLowerCase())
         );
-        //.map((item) => (Array.isArray(item.wAR) ? {...item,wAR:item.wAR.join('\n')} : {...item}))
         results.innerHTML = filteredResults.length
           ? filteredResults
               .map(
@@ -79,8 +77,20 @@
           `;
       });
 
-      term.focus();
-      document.addEventListener('click', () => term.focus());
+      function lockFocus() {
+        term.focus();
+        term.select();
+      }
+
+      lockFocus();
+
+      document.addEventListener('click', () => {
+        lockFocus();
+      });
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') lockFocus();
+      });
     </script>
 
     <style>
@@ -112,14 +122,6 @@
         margin-top: 1px;
         border-bottom: solid 1px black;
       }
-
-      /* .result {
-        border-top: dashed black 1px;
-      }
-
-      .result:first-of-type {
-        border-top: none;
-      } */
 
       .result:nth-of-type(even) {
         background-color: rgba(188, 252, 230, 0.3);
