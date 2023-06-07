@@ -17,12 +17,41 @@
         align-items: center;
         height: 100dvh;
       }
+
+      #hosam-avatar {
+        width: 20vw;
+        height: 20vw;
+        object-fit: cover;
+        object-position: 100% 0;
+        border-radius: 50%;
+        outline: 4px dashed teal;
+        outline-offset: 4px;
+        animation: smoothen-outline 2s infinite alternate-reverse;
+      }
+
+      @keyframes smoothen-outline {
+        0% {
+          outline: 4px dotted teal;
+        }
+        50% {
+          outline: 4px dashed teal;
+        }
+        100% {
+          outline: 4px solid teal;
+        }
+      }
     </style>
   </head>
 
   <body>
     <div class="wrapper">
-      <h1>Work in progress...</h1>
+      <img
+        id="hosam-avatar"
+        src="./assets/hosam_profile.jpg"
+        alt="Hosam Hamdy Vertical Half Profile"
+        width="1080"
+        height="1080" />
+      <h1>Work in progress<span id="dots">...</span></h1>
       <p>
         This website is currently a work on progress. You can suddenly find changes
         popping everywhere.
@@ -33,5 +62,13 @@
         <a href="https://www.twitter.com/HosamHSultan" target="_blank">Twitter</a>
       </p>
     </div>
+    <script defer>
+      const dotsSpan = document.getElementById('dots');
+
+      setInterval(() => {
+        dotsSpan.textContent =
+          dotsSpan.textContent.length === 3 ? '' : dotsSpan.textContent + '.';
+      }, 1000);
+    </script>
   </body>
 </html>
