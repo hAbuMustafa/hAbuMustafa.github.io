@@ -23,6 +23,16 @@ body {
 
 p {
   text-align: center;
+  line-height: 1.25rem;
+}
+
+a {
+  text-decoration: none;
+  border-radius: 0.25rem;
+  border: 1px solid gray;
+  background-color: #eee;
+  padding-inline: 0.25rem;
+  padding-block: 1px;
 }
 
 @keyframes smoothen-outline {
