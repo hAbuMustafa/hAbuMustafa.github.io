@@ -21,6 +21,10 @@ body {
   animation: smoothen-outline 2s infinite alternate-reverse;
 }
 
+p {
+  text-align: center;
+}
+
 @keyframes smoothen-outline {
   0% {
     outline: 4px dotted teal;
