@@ -34,6 +34,7 @@
   }
 
   #hosam-avatar {
+    margin: 0.25rem 0 0 1rem;
     object-fit: cover;
     object-position: 100% 0;
     border-radius: 50%;
@@ -48,7 +49,6 @@
   nav > ul {
     padding: 0.5rem;
     margin-block-start: 0;
-    border-block-end: 1px double var(--main-color);
     box-shadow: 0px -0.5rem 4rem var(--main-color);
 
     display: grid;
