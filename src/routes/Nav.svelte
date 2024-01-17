@@ -27,7 +27,7 @@
 
 <style>
   nav {
-    background-color: white;
+    background-color: var(--main-color);
     position: sticky;
     top: 0;
     padding: 0;
@@ -48,8 +48,8 @@
   nav > ul {
     padding: 0.5rem;
     margin-top: 0;
-    border-bottom: 1px double teal;
-    box-shadow: 0px -0.5rem 20px teal;
+    border-bottom: 1px double var(--main-color);
+    box-shadow: 0px -0.5rem 4rem var(--main-color);
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -63,9 +63,11 @@
       display: inline;
       position: relative;
       font-weight: bold;
+      color: var(--text-color);
 
       & a {
         text-decoration: none;
+        color: var(--text-color);
       }
     }
   }
@@ -76,10 +78,10 @@
     position: absolute;
     top: 100%;
     left: 0;
-    border: 1px solid gray;
+    border: 1px solid var(--lighter-main-color);
     border-radius: 0.25rem;
 
-    background-color: beige;
+    background-color: var(--darker-main-color);
   }
 
   li:not(:hover) > ul {
@@ -87,19 +89,19 @@
   }
 
   a:not(:has(#hosam-avatar)):hover {
-    background-color: teal;
-    color: beige;
+    background-color: var(--accent-color);
+    color: var(--text-color);
   }
 
   @keyframes vanish-outline {
     0% {
-      outline: 2px dotted teal;
+      outline: 2px dotted var(--text-color);
     }
     50% {
-      outline: 2px dashed teal;
+      outline: 2px dashed var(--text-color);
     }
     100% {
-      outline: 2px solid teal;
+      outline: 2px solid var(--text-color);
     }
   }
 </style>
