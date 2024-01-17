@@ -1,8 +1,8 @@
 :root {
   --main-color: teal;
-  --darker-main-color: rgb(0, 96, 96);
-  --lighter-main-color: rgb(128, 255, 255);
-  --lightest-main-color: rgb(192, 255, 255);
+  --darker-main-color: hsl(180, 100%, 19%);
+  --lighter-main-color: hsl(180, 100%, 75%);
+  --lightest-main-color: hsl(180, 100%, 88%);
 
   --text-color: beige;
   --accent-color: gray;
