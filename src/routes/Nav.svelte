@@ -39,7 +39,18 @@
     object-position: 100% 0;
     border-radius: 50%;
     outline-offset: 4px;
-    animation: vanish-outline 1s infinite alternate-reverse;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    #hosam-avatar {
+      animation: vanish-outline 1s infinite alternate-reverse;
+    }
+  }
+
+  @media (prefers-reduced-motion) {
+    #hosam-avatar {
+      outline: 2px solid var(--text-color);
+    }
   }
 
   ul {
