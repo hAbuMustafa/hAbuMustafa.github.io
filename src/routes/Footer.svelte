@@ -24,6 +24,8 @@
     padding-block-end: 1rem;
     border-block-start: 1px double var(--main-color);
     box-shadow: 0px 0.5rem 20px var(--main-color);
+    color: var(--text-color);
+    background: var(--main-color);
 
     line-height: 1.35rem;
     text-align: center;
