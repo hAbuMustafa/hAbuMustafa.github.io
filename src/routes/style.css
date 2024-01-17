@@ -2,6 +2,7 @@
   --main-color: teal;
   --darker-main-color: rgb(0, 96, 96);
   --text-color: beige;
+  --accent-color: gray;
 
   color: var(--darker-main-color);
 }
