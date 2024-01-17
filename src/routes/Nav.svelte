@@ -29,7 +29,7 @@
   nav {
     background-color: var(--main-color);
     position: sticky;
-    top: 0;
+    inset-block-start: 0;
     padding: 0;
   }
 
@@ -47,8 +47,8 @@
 
   nav > ul {
     padding: 0.5rem;
-    margin-top: 0;
-    border-bottom: 1px double var(--main-color);
+    margin-block-start: 0;
+    border-block-end: 1px double var(--main-color);
     box-shadow: 0px -0.5rem 4rem var(--main-color);
 
     display: grid;
@@ -76,8 +76,8 @@
     padding: 0.5rem;
 
     position: absolute;
-    top: 100%;
-    left: 0;
+    inset-block-start: 100%;
+    inset-inline-start: 0;
     border: 1px solid var(--lighter-main-color);
     border-radius: 0.25rem;
 

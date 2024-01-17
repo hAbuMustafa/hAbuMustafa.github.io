@@ -21,8 +21,8 @@
 
 <style>
   footer {
-    padding-bottom: 1rem;
-    border-top: 1px double teal;
+    padding-block-end: 1rem;
+    border-block-start: 1px double teal;
     box-shadow: 0px 0.5rem 20px teal;
 
     line-height: 1.35rem;

@@ -22,7 +22,7 @@ main {
   direction: ltr;
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: flex-start;
 }
 
 #results ul {
@@ -31,8 +31,10 @@ main {
 
 .result h4 {
   width: 100%;
-  margin-top: 1px;
-  border-bottom: solid 1px black;
+  -webkit-margin-before: 1px;
+  margin-block-start: 1px;
+  -webkit-border-after: solid 1px black;
+  border-block-end: solid 1px black;
 }
 
 .result:nth-of-type(even) {
@@ -55,9 +57,10 @@ footer {
   position: fixed;
   width: 100%;
   text-align: center;
-  border-top: dashed grey 1px;
+  -webkit-border-before: dashed grey 1px;
+  border-block-start: dashed grey 1px;
   margin: auto 0px;
-  bottom: 0px;
+  inset-block-end: 0px;
 }
 
 footer a {
