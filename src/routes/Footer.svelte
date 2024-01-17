@@ -25,19 +25,17 @@
     padding-bottom: 1rem;
     border-top: 1px double teal;
     box-shadow: 0px 0.5rem 20px teal;
-  }
 
-  p {
     line-height: 1.35rem;
     text-align: center;
   }
 
   a {
     text-decoration: none;
-    border-radius: 0.25rem;
-    border: 1px solid gray;
     background-color: #eee;
     padding-inline: 0.25rem;
-    padding-block: 1px;
+
+    display: inline-block;
+    transform: skewX(-6deg);
   }
 </style>
