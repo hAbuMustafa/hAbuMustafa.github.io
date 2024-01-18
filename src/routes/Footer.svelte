@@ -36,12 +36,4 @@
     }
   }
 
-  a {
-    text-decoration: none;
-    background-color: var(--lighter-main-color);
-    padding-inline: 0.25rem;
-
-    display: inline-block;
-    transform: skewX(-6deg);
-  }
 </style>
