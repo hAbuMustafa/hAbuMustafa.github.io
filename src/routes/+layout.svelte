@@ -2,7 +2,7 @@
   import { page } from "$app/stores";
   import "./style.css";
   import Nav from "./Nav.svelte";
-  import Footer from "./Footer.svelte"
+  import Footer from "./Footer.svelte";
 </script>
 
 <svelte:head>
@@ -15,6 +15,14 @@
 
 <Nav />
 
-<slot />
+<main>
+  <slot />
+</main>
 
 <Footer />
+
+<style>
+  main{
+    min-height: 66.5dvh;
+  }
+</style>
