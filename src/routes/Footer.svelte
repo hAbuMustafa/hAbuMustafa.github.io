@@ -11,7 +11,7 @@
     <a
       href="https://twitter.com/intent/user?user_id=96835066"
       target="_blank"
-      title="X or Twitter, whatever you like to call it">X</a
+      title="X or Twitter, whatever you like to call it">twitter</a
     >,
     <a href="https://bsky.app/profile/hosam.website" target="_blank">blue sky</a>, or hit
     me on
