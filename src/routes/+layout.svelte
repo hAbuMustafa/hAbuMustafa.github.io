@@ -23,6 +23,6 @@
 
 <style>
   main{
-    min-height: 66.5dvh;
+    min-height: 75dvh;
   }
 </style>
