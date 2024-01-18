@@ -15,7 +15,7 @@
     >,
     <a href="https://bsky.app/profile/hosam.website" target="_blank">blue sky</a>, or hit
     me on
-    <a rel="me" href="https://onvo.me/Hos" target="_blank">Onvo</a>.
+    <a rel="me" href="https://onvo.me/Hos" target="_blank">onvo</a>.
   </p>
 </footer>
 
