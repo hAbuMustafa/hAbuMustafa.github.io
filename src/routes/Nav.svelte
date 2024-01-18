@@ -59,7 +59,7 @@
 
   nav > ul {
     padding: 0.5rem;
-    margin-block-start: 0;
+    margin-block: 0;
     box-shadow: 0px -0.5rem 4rem var(--main-color);
 
     display: grid;
