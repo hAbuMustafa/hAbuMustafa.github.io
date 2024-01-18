@@ -22,7 +22,7 @@
 
 <style>
   footer {
-    padding-block-end: 1rem;
+    padding-block-end: 2rem;
     border-block-start: 1px double var(--main-color);
     box-shadow: 0px 0.5rem 20px var(--main-color);
     color: var(--text-color);
@@ -30,6 +30,10 @@
 
     line-height: 1.35rem;
     text-align: center;
+
+    & p:first-of-type {
+      margin-block-start: 0;
+    }
   }
 
   a {
