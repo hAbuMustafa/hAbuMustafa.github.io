@@ -2,6 +2,7 @@
   --main-color: teal;
   --darker-main-color: hsl(180, 100%, 19%);
   --lighter-main-color: hsl(180, 40%, 70%);
+  --lighter-main-color-bg: hsl(180, 40%, 80%);
   --lightest-main-color: hsl(180, 100%, 88%);
 
   --text-color: beige;
