@@ -10,7 +10,6 @@
 
   color: var(--darker-main-color);
   background-color: var(--lightest-main-color);
-  text-wrap: pretty;
 }
 
 body {
@@ -98,7 +97,7 @@ code {
   &::after {
     content: "📝";
     position: absolute;
-    inset-inline-end: -1.2rem;
+    margin-inline-start: 0.2rem;
   }
 
   &:hover::after {
@@ -106,9 +105,9 @@ code {
     background-color: inherit;
     border-radius: inherit;
     border: inherit;
-    padding:inherit;
+    padding: inherit;
     font-family: initial;
     text-align: center;
-    color: var(--main-color)
+    color: var(--main-color);
   }
 }
