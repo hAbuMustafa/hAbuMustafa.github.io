@@ -10,6 +10,7 @@
 
   color: var(--darker-main-color);
   background-color: var(--lightest-main-color);
+  text-wrap: pretty;
 }
 
 body {
