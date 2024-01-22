@@ -1,7 +1,7 @@
 <script lang="ts">
   export let data;
 
-  let text = "pro";
+  let text = "";
 
   $: filteredResults = data.terms.filter((item) =>
     item.term.toLowerCase().includes(text.toLowerCase())
@@ -14,10 +14,6 @@
     termInput.select();
   }
 </script>
-
-<svelte:head>
-  <link rel="icon" href="https://fav.farm/🔤" />
-</svelte:head>
 
 <svelte:document
   on:visibilitychange={() => {
