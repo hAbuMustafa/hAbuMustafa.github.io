@@ -120,6 +120,11 @@ ${code}\n
         cursor: pointer;
 
         color: inherit;
+
+        &:hover {
+          filter: brightness(115%);
+          color: var(--lightest-main-color);
+        }
       }
     }
   }
