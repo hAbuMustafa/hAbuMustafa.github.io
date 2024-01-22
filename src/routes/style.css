@@ -90,3 +90,25 @@ code {
   border: #bbb 1px solid;
   border-radius: 0.25rem;
 }
+
+[contenteditable] {
+  position: relative;
+  margin-inline-end: 1rem;
+
+  &::after {
+    content: "📝";
+    position: absolute;
+    inset-inline-end: -1.2rem;
+  }
+
+  &:hover::after {
+    content: "edit this snippet";
+    background-color: inherit;
+    border-radius: inherit;
+    border: inherit;
+    padding:inherit;
+    font-family: initial;
+    text-align: center;
+    color: var(--main-color)
+  }
+}
