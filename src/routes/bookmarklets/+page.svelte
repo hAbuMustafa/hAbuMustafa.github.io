@@ -1,10 +1,11 @@
 <script lang="ts">
   import CodeSnippet from "$lib/components/CodeSnippet.svelte";
+
+  let censorStyles =
+    "display: inline-block; background-color: currentColor; transform: skewX(-6deg);";
 </script>
 
 <div class="wrapper">
-
-
   <main>
     <h1>Bookmarklets</h1>
 
@@ -22,45 +23,37 @@
     <p>
       You can customize the censoring style by changing the value of the
       <code>styles</code> parameter, which, by default, are;
-      <code
-        >"display: inline-block; background-color: currentColor; transform:
-        skewX(-6deg);"</code
-      >, and it looks like
-      <span
-        style="
-            display: inline-block;
-            background-color: currentColor;
-            transform: skewX(-6deg);
-          "
-      >
-        this</span
-      >.
+      <code contenteditable bind:innerText={censorStyles} />, and it looks like
+      <span style={censorStyles}> this</span>.
     </p>
-    <CodeSnippet
-      code={`javascript: (function(styles) {
-      const censoredWrapper = document.createElement('span');
-      censoredWrapper.style = styles;
-      
-      const selection = document.getSelection();
-      if (selection.rangeCount === 0 || selection.isCollapsed) {
-        alert('Please, select some text first.');
-        return;
-      }
-      
-      const range = selection.getRangeAt(0);
-      
-      try {
-        range.cloneRange().surroundContents(censoredWrapper);
-      } catch (err) {
-        alert(
-          'Error Occured. Perhaps you are trying to censor a node that is not a text node, or maybe its spanning a few consecutive nodes. Only text nodes or parts of text nodes are supported.'
-        );
-      }
-      document.getSelection().empty();
-      })(
-      'display: inline-block; background-color: currentColor; transform: skewX(-6deg);'
-      );`}
-    />
+    <details>
+      <summary>View Code</summary>
+      <CodeSnippet
+        code={`javascript: (function(styles) {
+        const censoredWrapper = document.createElement('span');
+        censoredWrapper.style = styles;
+        
+        const selection = document.getSelection();
+        if (selection.rangeCount === 0 || selection.isCollapsed) {
+          alert('Please, select some text first.');
+          return;
+        }
+        
+        const range = selection.getRangeAt(0);
+        
+        try {
+          range.cloneRange().surroundContents(censoredWrapper);
+        } catch (err) {
+          alert(
+            'Error Occured. Perhaps you are trying to censor a node that is not a text node, or maybe its spanning a few consecutive nodes. Only text nodes or parts of text nodes are supported.'
+          );
+        }
+        document.getSelection().empty();
+        })(
+        '${censorStyles}'
+        );`}
+      />
+    </details>
   </main>
 
   <div id="index">
