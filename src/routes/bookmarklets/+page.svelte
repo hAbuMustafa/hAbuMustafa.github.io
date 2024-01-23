@@ -128,6 +128,11 @@
     }
   }
 
+  [contenteditable] {
+    border-style: dashed;
+    border-color: currentColor;
+  }
+
   details {
     &[open] > summary::marker {
       content: "📖 ";
