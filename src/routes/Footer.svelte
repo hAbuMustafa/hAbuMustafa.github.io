@@ -21,7 +21,7 @@
     </p>
 </footer>
 
-<style>
+<style lang="scss">
   footer {
     min-height: 8rem;
     border-block-start: 1px double var(--main-color);
@@ -34,7 +34,9 @@
     line-height: 1.35rem;
     text-align: center;
 
-    & p:first-of-type {
+    padding-inline: 0.5rem;
+    
+    p:first-of-type {
       margin-block-start: 0;
     }
   }
