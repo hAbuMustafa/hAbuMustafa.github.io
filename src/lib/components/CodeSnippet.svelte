@@ -121,7 +121,9 @@ ${code}\n
 
         color: inherit;
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
           filter: brightness(115%);
           color: var(--lightest-main-color);
         }
