@@ -26,7 +26,7 @@
       <code contenteditable bind:innerText={censorStyles} />, and it looks like
       <span style={censorStyles}> this</span>.
     </p>
-    <details>
+    <details open>
       <summary>View Code</summary>
       <CodeSnippet
         code={`javascript: (function(styles) {
@@ -66,7 +66,7 @@
   </div>
 </div>
 
-<style>
+<style lang="scss">
   .wrapper {
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -79,7 +79,7 @@
   }
 
   main {
-    margin: 1rem;
+    margin-inline: 1rem;
   }
 
   #index {
@@ -114,4 +114,6 @@
       display: none;
     }
   }
+
+
 </style>
