@@ -113,3 +113,8 @@ code {
     color: var(--main-color);
   }
 }
+
+[id] {
+  /* Since the sticky nav height is causing a negative shift in the "go-to" behavior, we need an offset for every item that have an "id" property (since this is how you navigate to it "href=#id") */
+  scroll-margin-block-start: 4rem;
+}
