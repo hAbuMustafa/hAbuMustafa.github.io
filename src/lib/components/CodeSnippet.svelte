@@ -127,6 +127,19 @@ ${code}\n
           filter: brightness(115%);
           color: var(--lightest-main-color);
         }
+
+        &:active::after {
+          content: "Copied to the clipboard!";
+          display: block;
+          position: absolute;
+          inset-inline-start: calc(-50% - 0.5rem);
+          background-color: var(--main-color);
+          padding: 0.5rem;
+          border: 1px solid var(--lighter-main-color-bg);
+          border-radius: 0.25rem;
+          box-shadow: 0px 10px 1rem gray;
+          animation: hover 1s infinite alternate;
+        }
       }
     }
   }
