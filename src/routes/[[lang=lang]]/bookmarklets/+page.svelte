@@ -5,7 +5,7 @@
     "display: inline-block; background-color: currentColor; transform: skewX(-6deg);";
 </script>
 
-<div class="wrapper" id="top">
+<div class="wrapper">
   <main>
     <h1>Bookmarklets</h1>
 
