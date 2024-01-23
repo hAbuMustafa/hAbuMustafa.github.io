@@ -115,5 +115,13 @@
     }
   }
 
+  details {
+    &[open] > summary::marker {
+      content: "📖";
+    }
 
+    &:not([open]) > summary::marker {
+      content: "📘";
+    }
+  }
 </style>
