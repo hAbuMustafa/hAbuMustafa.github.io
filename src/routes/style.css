@@ -10,6 +10,8 @@
 
   color: var(--darker-main-color);
   background-color: var(--lightest-main-color);
+
+  scroll-behavior: smooth;
 }
 
 body {
