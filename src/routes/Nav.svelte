@@ -104,16 +104,4 @@
     background-color: var(--accent-color);
     color: var(--text-color);
   }
-
-  @keyframes vanish-outline {
-    0% {
-      outline: 2px dotted var(--text-color);
-    }
-    50% {
-      outline: 2px dashed var(--text-color);
-    }
-    100% {
-      outline: 2px solid var(--text-color);
-    }
-  }
 </style>

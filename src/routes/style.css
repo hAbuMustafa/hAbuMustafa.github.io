@@ -119,12 +119,23 @@ code {
   scroll-margin-block-start: 4rem;
 }
 
-
 @keyframes hover {
   0% {
     transform: translateY(0rem);
   }
   100% {
     transform: translateY(0.5rem);
+  }
+}
+
+@keyframes vanish-outline {
+  0% {
+    outline: 2px dotted var(--text-color);
+  }
+  50% {
+    outline: 2px dashed var(--text-color);
+  }
+  100% {
+    outline: 2px solid var(--text-color);
   }
 }
