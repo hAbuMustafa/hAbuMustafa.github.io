@@ -5,7 +5,7 @@
     "display: inline-block; background-color: currentColor; transform: skewX(-6deg);";
 </script>
 
-<div class="wrapper">
+<div class="wrapper" id="top">
   <main>
     <h1>Bookmarklets</h1>
 
@@ -63,6 +63,7 @@
         <a href="#censor-selection">Censor Selection</a>
       </li>
     </ol>
+    <a href="#top">↑ Top</a>
   </div>
 </div>
 
@@ -94,6 +95,8 @@
     background-color: var(--lightest-main-color);
     box-shadow: 0.25rem 0.5rem 0.5rem 0.125rem rgba(0, 0, 0, 0.25);
     max-height: 40vh;
+    display: grid;
+    grid-template-rows: 1fr 4fr 1fr;
 
     & > h4 {
       margin-block-start: 0.75rem;
@@ -113,6 +116,16 @@
     @media (max-width: 550px) {
       display: none;
     }
+
+    & > a[href="#top"] {
+      text-decoration: none;
+      text-align: end;
+      margin-inline-end: -1rem;
+      margin-block-end: 1rem;
+      padding-block-start: 0.25rem;
+      align-self: end;
+      border-block-start: 1px solid currentColor;
+    }
   }
 
   details {
@@ -127,10 +140,9 @@
     summary::before {
       content: "{ ";
     }
-    
+
     summary::after {
       content: " }";
-      
     }
   }
 </style>
