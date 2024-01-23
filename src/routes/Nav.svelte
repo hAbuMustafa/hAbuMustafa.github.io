@@ -13,7 +13,7 @@
       </a>
     </li>
     <li><a href="/blog">Blog</a></li>
-    <li>
+    <li tabindex="0">
       Projects <ul>
         <li><a href="/i18n-finder">Internationalization Map</a></li>
         <li>
@@ -96,7 +96,7 @@
     background-color: var(--darker-main-color);
   }
 
-  li:not(:hover) > ul {
+  li:not(:is(:hover,:focus,:active)) > ul {
     display: none;
   }
 
