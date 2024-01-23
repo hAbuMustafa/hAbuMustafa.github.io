@@ -117,11 +117,20 @@
 
   details {
     &[open] > summary::marker {
-      content: "📖";
+      content: "📖 ";
     }
 
     &:not([open]) > summary::marker {
-      content: "📘";
+      content: "📘 ";
+    }
+
+    summary::before {
+      content: "{ ";
+    }
+    
+    summary::after {
+      content: " }";
+      
     }
   }
 </style>
