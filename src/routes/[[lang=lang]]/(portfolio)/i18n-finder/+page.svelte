@@ -1,7 +1,7 @@
 <script lang="ts">
   export let data;
 
-  let text = "";
+  let text = "debugg";
 
   $: filteredResults = data.terms.filter((item) =>
     item.term.toLowerCase().includes(text.toLowerCase())
@@ -113,6 +113,7 @@
     direction: ltr;
     margin-block-end: 2rem;
     display: grid;
+    align-self: flex-start;
   }
 
   #results ul {
