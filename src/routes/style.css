@@ -102,15 +102,25 @@ code {
     margin-inline-start: 0.2rem;
   }
 
-  &:hover::after {
-    content: "edit this snippet";
-    background-color: inherit;
-    border-radius: inherit;
-    border: inherit;
-    padding: inherit;
-    font-family: initial;
-    text-align: center;
-    color: var(--main-color);
+  &:hover {
+    outline-color: var(--darker-main-color);
+    outline-style: solid;
+    outline-width: 2px;
+    outline-offset: 2px;
+
+    &::after {
+      content: "edit this snippet";
+      background-color: #eee;
+      border-radius: inherit;
+      border: inherit;
+      padding: inherit;
+      font-family: initial;
+      text-align: center;
+      text-wrap: nowrap;
+      inset-inline-end: -50%;
+      color: var(--main-color);
+      animation: hover-over 1s infinite alternate ease-in-out;
+    }
   }
 }
 
@@ -122,6 +132,15 @@ code {
 @keyframes hover {
   0% {
     transform: translateY(0rem);
+  }
+  100% {
+    transform: translateY(0.5rem);
+  }
+}
+
+@keyframes hover-over {
+  0% {
+    transform: translateY(-0.5rem);
   }
   100% {
     transform: translateY(0.5rem);
