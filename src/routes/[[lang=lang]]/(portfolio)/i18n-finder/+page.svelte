@@ -90,6 +90,7 @@
 
   #term {
     font-size: 2rem;
+    border-radius: 3px;
   }
 
   #term:placeholder-shown {
@@ -102,10 +103,11 @@
 
   #term:invalid {
     color: red;
-    font-family: cursive;
     text-decoration: line-through underline;
-    border: red dashed 1px;
-    outline: none;
+    outline: red dashed 1px;
+    outline-offset: .25rem;
+    animation: vanish-outline 2s infinite;
+    background-color: salmon;
   }
 
   #results {
