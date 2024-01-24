@@ -1,7 +1,7 @@
 <script lang="ts">
   export let data;
 
-  let text = "debugg";
+  let text = "";
 
   $: filteredResults = data.terms.filter((item) =>
     item.term.toLowerCase().includes(text.toLowerCase())
@@ -36,7 +36,7 @@
     bind:value={text}
   />
 
-  <p id="results">
+  <div id="results">
     {#if text.length >= 3 && filteredResults.length}
       {#each filteredResults as item}
         <div class="result">
@@ -62,25 +62,25 @@
         لا توجد نتيجة للبحث المطلوب: {text}
       </div>
     {/if}
-  </p>
-
-  <footer>
-    This project is open source on
-    <a href="https://github.com/hAbuMustafa/i18n-finder">Github</a>.<br />
-    This project leverages the use of the i18n dictionary by
-    <a
-      href="https://github.com/softvenue/i18n"
-      target="_blank"
-      rel="noopener noreferrer">softvenue</a
-    >.
-    <hr />
-  </footer>
+  </div>
 </div>
+
+<footer>
+  This project is open source on
+  <a href="https://github.com/hAbuMustafa/i18n-finder">Github</a>.<br />
+  This project leverages the use of the i18n dictionary by
+  <a
+    href="https://github.com/softvenue/i18n"
+    target="_blank"
+    rel="noopener noreferrer">softvenue</a
+  >.
+  <hr />
+</footer>
 
 <style>
   .wrapper {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 98vw;
     grid-template-rows: 4rem 4rem 1fr 3rem;
     justify-items: center;
     align-items: center;
@@ -89,8 +89,11 @@
   }
 
   #term {
-    font-size: 2rem;
+    font-size: 1.5rem;
     border-radius: 3px;
+    justify-self: stretch;
+    margin-inline: 20%;
+    text-align: center;
   }
 
   #term:placeholder-shown {
@@ -105,17 +108,20 @@
     color: red;
     text-decoration: line-through underline;
     outline: red dashed 1px;
-    outline-offset: .25rem;
+    outline-offset: 0.25rem;
     animation: vanish-outline 2s infinite;
     background-color: salmon;
   }
 
   #results {
-    width: 60%;
     direction: ltr;
     margin-block-end: 2rem;
+
     display: grid;
+    grid-template-columns: 1fr;
     align-self: flex-start;
+    justify-self: stretch;
+    margin-inline: auto;
   }
 
   #results ul {
