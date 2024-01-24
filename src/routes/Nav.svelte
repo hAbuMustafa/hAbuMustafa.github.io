@@ -101,9 +101,12 @@
         background-color: var(--darker-main-color);
 
         li {
-          margin-block-start: 0.5rem;
           padding-inline-start: 0.5rem;
           border-inline-start: 3px solid currentColor;
+
+          &:not(:first-of-type) {
+            margin-block-start: 0.5rem;
+          }
         }
       }
     }
