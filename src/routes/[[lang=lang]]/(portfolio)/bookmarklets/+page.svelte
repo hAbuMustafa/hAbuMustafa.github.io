@@ -1,5 +1,6 @@
 <script lang="ts">
   import CodeSnippet from "$lib/components/CodeSnippet.svelte";
+  import CodeWrapper from "$lib/components/CodeSnippet_Wrapper.svelte";
   import { Abbr } from "@vividus/svelte";
 
   let censorStyles =
@@ -31,11 +32,11 @@
       value of the
       <code>styles</code> parameter upon function invocation. The styles by
       default, are;
-      <code contenteditable spellcheck="false" bind:innerText={censorStyles} />, and it looks like
+      <code contenteditable spellcheck="false" bind:innerText={censorStyles} />,
+      and it looks like
       <span style={censorStyles}> this</span>.
     </p>
-    <details open>
-      <summary>View Code</summary>
+    <CodeWrapper open>
       <CodeSnippet
         code={`javascript: (function(styles) {
         const censoredWrapper = document.createElement('span');
@@ -61,7 +62,7 @@
         '${censorStyles}'
         );`}
       />
-    </details>
+    </CodeWrapper>
   </main>
 
   <div id="index">
@@ -139,23 +140,5 @@
   [contenteditable] {
     border-style: dashed;
     border-color: currentColor;
-  }
-
-  details {
-    &[open] > summary::marker {
-      content: "📖 ";
-    }
-
-    &:not([open]) > summary::marker {
-      content: "📘 ";
-    }
-
-    summary::before {
-      content: "{ ";
-    }
-
-    summary::after {
-      content: " }";
-    }
   }
 </style>
