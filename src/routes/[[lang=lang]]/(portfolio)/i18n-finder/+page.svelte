@@ -32,6 +32,8 @@
     title="أحرف إنجليزية وأرقام ورموز فقط"
     placeholder="اكتب المصطلح الإنجليزي..."
     aria-label="المصطلح"
+    spellcheck="false"
+    autocomplete="off"
     bind:this={termInput}
     bind:value={text}
   />
