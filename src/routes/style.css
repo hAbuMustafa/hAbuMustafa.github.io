@@ -120,6 +120,8 @@ code {
       inset-inline-end: -50%;
       color: var(--main-color);
       animation: hover-over 1s infinite alternate ease-in-out;
+
+      z-index: 1;
     }
   }
 }
