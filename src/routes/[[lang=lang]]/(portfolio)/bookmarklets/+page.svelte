@@ -1,5 +1,6 @@
 <script lang="ts">
   import CodeSnippet from "$lib/components/CodeSnippet.svelte";
+  import { Abbr } from "@vividus/svelte";
 
   let censorStyles =
     "display: inline-block; background-color: currentColor; transform: skewX(-6deg);";
@@ -21,8 +22,15 @@
       open pages easily without the hussle of editing the captured image.
     </p>
     <p>
-      You can customize the censoring style by changing the value of the
-      <code>styles</code> parameter, which, by default, are;
+      It is an <code
+        ><Abbr
+          styles="--duration:1.5s; font-size: .8rem;"
+          title="[I]mmediately [I]nvoked [F]uncion [E]xpression"
+        /></code
+      >, which means, you can customize the "censoring style" by changing the
+      value of the
+      <code>styles</code> parameter upon function invocation. The styles by
+      default, are;
       <code contenteditable bind:innerText={censorStyles} />, and it looks like
       <span style={censorStyles}> this</span>.
     </p>
