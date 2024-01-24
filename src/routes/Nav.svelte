@@ -1,29 +1,27 @@
 <nav>
-  <ul>
-    <li>
-      <a href="/">
-        <img
-          id="hosam-avatar"
-          src="/hosam_profile.jpg"
-          alt="Hosam Hamdy Vertical Half Profile"
-          title="Home"
-          width="32"
-          height="32"
-        />
-      </a>
-    </li>
-    <li><a href="/blog">Blog</a></li>
-    <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-    <li tabindex="0">
-      Projects <ul>
-        <li><a href="/i18n-finder">Internationalization Map</a></li>
-        <li>
-          <a href="/bookmarklets">Bookmarklets</a>
-        </li>
-      </ul>
-    </li>
-    <li><a href="/voice-over">Voice Over</a></li>
-  </ul>
+  <li>
+    <a href="/">
+      <img
+        id="hosam-avatar"
+        src="/hosam_profile.jpg"
+        alt="Hosam Hamdy Vertical Half Profile"
+        title="Home"
+        width="32"
+        height="32"
+      />
+    </a>
+  </li>
+  <li><a href="/blog">Blog</a></li>
+  <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+  <li tabindex="0">
+    Projects <ul>
+      <li><a href="/i18n-finder">Internationalization Map</a></li>
+      <li>
+        <a href="/bookmarklets">Bookmarklets</a>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/voice-over">Voice Over</a></li>
 </nav>
 
 <style>
@@ -56,11 +54,7 @@
     }
   }
 
-  ul {
-    list-style: none;
-  }
-
-  nav > ul {
+  nav {
     padding: 0.5rem 2rem;
     margin-block: 0;
     box-shadow: 0px -0.5rem 4rem var(--main-color);
@@ -88,6 +82,7 @@
 
   li > ul {
     padding: 0.5rem;
+    list-style: none;
 
     position: absolute;
     inset-block-start: 100%;
