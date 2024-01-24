@@ -22,7 +22,8 @@
 <Footer />
 
 <style>
-  main{
+  main {
     min-height: 75dvh;
+    position: relative;
   }
 </style>
