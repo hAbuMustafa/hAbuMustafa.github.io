@@ -1,3 +1,33 @@
+<script lang="ts">
+  interface SitemapT {
+    text: string;
+    href: string;
+  }
+
+  interface SitemapSublistT {
+    label: string;
+    list: SitemapT[];
+  }
+
+  const sitemap: (SitemapT | SitemapSublistT)[] = [
+    { text: "Blog", href: "/blog" },
+    {
+      label: "Projects",
+      list: [
+        { text: "Voice-Over", href: "/voice-over" },
+        { text: "Internationalization Map", href: "/i18n-finder" },
+        { text: "Bookmarklets", href: "/bookmarklets" },
+        { text: "Vividus", href: "/vividus" },
+        { text: "Extend Arabic Query", href: "/extend-arabic-query" },
+      ],
+    },
+  ];
+
+  function isSitemapItem(item: SitemapT | SitemapSublistT): item is SitemapT {
+    return item.hasOwnProperty("href");
+  }
+</script>
+
 <nav>
   <li>
     <a href="/">
@@ -11,17 +41,21 @@
       />
     </a>
   </li>
-  <li><a href="/blog">Blog</a></li>
-  <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-  <li tabindex="0">
-    Projects <ul>
-      <li><a href="/i18n-finder">Internationalization Map</a></li>
+  {#each sitemap as item}
+    {#if isSitemapItem(item)}
+      <li><a href={item.href}>{item.text}</a></li>
+    {:else}
       <li>
-        <a href="/bookmarklets">Bookmarklets</a>
+        <!-- svelte-ignore a11y-invalid-attribute -->
+        <a href="">{item.label}</a>
+        <ul>
+          {#each item.list as subItem}
+            <li><a href={subItem.href}>{subItem.text}</a></li>
+          {/each}
+        </ul>
       </li>
-    </ul>
-  </li>
-  <li><a href="/voice-over">Voice Over</a></li>
+    {/if}
+  {/each}
 </nav>
 
 <style lang="scss">
@@ -31,31 +65,65 @@
     inset-block-start: 0;
     z-index: 1;
 
-    padding: 0.5rem 2rem;
+    padding-inline: 2rem;
     box-shadow: 0px -0.5rem 4rem var(--main-color);
 
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    align-items: center;
-
-    & > li:has(> a > img) {
-      justify-self: start;
-    }
+    display: flex;
+    justify-content: space-around;
 
     & > li {
       display: inline;
       position: relative;
       font-weight: bold;
       color: var(--text-color);
+      padding-block: 0.5rem;
 
       & a {
         text-decoration: none;
         color: var(--text-color);
+
+        &:not(:has(#hosam-avatar)):hover {
+          background-color: var(--accent-color);
+          color: var(--text-color);
+        }
       }
     }
 
+    li:not(:is(:hover, :focus, :active)) > ul {
+      display: none;
+    }
+
+    li > ul {
+      padding: 0.5rem;
+      list-style: none;
+
+      position: absolute;
+      inset-block-start: 40%;
+      inset-inline-start: -80%;
+      border: 1px solid var(--lighter-main-color);
+      border-radius: 0.25rem;
+
+      background-color: var(--darker-main-color);
+
+      li {
+        margin-block-start: 0.5rem;
+        padding-inline-start: 0.5rem;
+        border-inline-start: 3px solid currentColor;
+      }
+    }
+
+    & > li:has(#hosam-avatar) {
+      position: absolute;
+      inset-block-start: -20%;
+      background-color: var(--main-color);
+      padding: 1rem;
+      border-radius: 50%;
+
+      width: 2rem;
+      height: 2rem;
+    }
+
     #hosam-avatar {
-      margin-block-start: 0.25rem;
       object-fit: cover;
       object-position: 100% 0;
       border-radius: 50%;
@@ -73,28 +141,6 @@
       #hosam-avatar {
         outline: 2px solid var(--text-color);
       }
-    }
-
-    li > ul {
-      padding: 0.5rem;
-      list-style: none;
-
-      position: absolute;
-      inset-block-start: 100%;
-      inset-inline-start: 0;
-      border: 1px solid var(--lighter-main-color);
-      border-radius: 0.25rem;
-
-      background-color: var(--darker-main-color);
-    }
-
-    li:not(:is(:hover, :focus, :active)) > ul {
-      display: none;
-    }
-
-    a:not(:has(#hosam-avatar)):hover {
-      background-color: var(--accent-color);
-      color: var(--text-color);
     }
   }
 </style>
