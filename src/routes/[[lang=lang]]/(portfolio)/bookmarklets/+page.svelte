@@ -31,7 +31,7 @@
       value of the
       <code>styles</code> parameter upon function invocation. The styles by
       default, are;
-      <code contenteditable bind:innerText={censorStyles} />, and it looks like
+      <code contenteditable spellcheck="false" bind:innerText={censorStyles} />, and it looks like
       <span style={censorStyles}> this</span>.
     </p>
     <details open>
