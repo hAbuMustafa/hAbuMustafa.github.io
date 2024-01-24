@@ -29,34 +29,9 @@
     background-color: var(--main-color);
     position: sticky;
     inset-block-start: 0;
-    padding: 0;
     z-index: 1;
-  }
 
-  #hosam-avatar {
-    margin-block-start: 0.25rem;
-    object-fit: cover;
-    object-position: 100% 0;
-    border-radius: 50%;
-    outline-width: 2px;
-    outline-offset: 4px;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    #hosam-avatar {
-      animation: vanish-outline 1s infinite alternate-reverse;
-    }
-  }
-
-  @media (prefers-reduced-motion) {
-    #hosam-avatar {
-      outline: 2px solid var(--text-color);
-    }
-  }
-
-  nav {
     padding: 0.5rem 2rem;
-    margin-block: 0;
     box-shadow: 0px -0.5rem 4rem var(--main-color);
 
     display: grid;
@@ -77,6 +52,27 @@
         text-decoration: none;
         color: var(--text-color);
       }
+    }
+  }
+
+  #hosam-avatar {
+    margin-block-start: 0.25rem;
+    object-fit: cover;
+    object-position: 100% 0;
+    border-radius: 50%;
+    outline-width: 2px;
+    outline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    #hosam-avatar {
+      animation: vanish-outline 1s infinite alternate-reverse;
+    }
+  }
+
+  @media (prefers-reduced-motion) {
+    #hosam-avatar {
+      outline: 2px solid var(--text-color);
     }
   }
 
