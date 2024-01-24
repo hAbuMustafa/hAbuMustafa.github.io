@@ -24,7 +24,7 @@
   <li><a href="/voice-over">Voice Over</a></li>
 </nav>
 
-<style>
+<style lang="scss">
   nav {
     background-color: var(--main-color);
     position: sticky;
@@ -53,48 +53,48 @@
         color: var(--text-color);
       }
     }
-  }
 
-  #hosam-avatar {
-    margin-block-start: 0.25rem;
-    object-fit: cover;
-    object-position: 100% 0;
-    border-radius: 50%;
-    outline-width: 2px;
-    outline-offset: 4px;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
     #hosam-avatar {
-      animation: vanish-outline 1s infinite alternate-reverse;
+      margin-block-start: 0.25rem;
+      object-fit: cover;
+      object-position: 100% 0;
+      border-radius: 50%;
+      outline-width: 2px;
+      outline-offset: 4px;
     }
-  }
 
-  @media (prefers-reduced-motion) {
-    #hosam-avatar {
-      outline: 2px solid var(--text-color);
+    @media (prefers-reduced-motion: no-preference) {
+      #hosam-avatar {
+        animation: vanish-outline 1s infinite alternate-reverse;
+      }
     }
-  }
 
-  li > ul {
-    padding: 0.5rem;
-    list-style: none;
+    @media (prefers-reduced-motion) {
+      #hosam-avatar {
+        outline: 2px solid var(--text-color);
+      }
+    }
 
-    position: absolute;
-    inset-block-start: 100%;
-    inset-inline-start: 0;
-    border: 1px solid var(--lighter-main-color);
-    border-radius: 0.25rem;
+    li > ul {
+      padding: 0.5rem;
+      list-style: none;
 
-    background-color: var(--darker-main-color);
-  }
+      position: absolute;
+      inset-block-start: 100%;
+      inset-inline-start: 0;
+      border: 1px solid var(--lighter-main-color);
+      border-radius: 0.25rem;
 
-  li:not(:is(:hover, :focus, :active)) > ul {
-    display: none;
-  }
+      background-color: var(--darker-main-color);
+    }
 
-  a:not(:has(#hosam-avatar)):hover {
-    background-color: var(--accent-color);
-    color: var(--text-color);
+    li:not(:is(:hover, :focus, :active)) > ul {
+      display: none;
+    }
+
+    a:not(:has(#hosam-avatar)):hover {
+      background-color: var(--accent-color);
+      color: var(--text-color);
+    }
   }
 </style>
