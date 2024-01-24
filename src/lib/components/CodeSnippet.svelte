@@ -58,6 +58,7 @@ ${code}\n
       padding: 1rem;
       max-width: 100%;
       text-wrap: wrap;
+      overflow-x: auto;
       line-height: initial;
 
       & :global(.hljs-attr) {
