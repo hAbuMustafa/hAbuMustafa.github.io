@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let open=false;
+  export let open = false;
 </script>
 
 <details {open}>
@@ -11,6 +11,11 @@
 
 <style lang="scss">
   details {
+    summary {
+      margin-block-start: -0.5rem;
+      line-height: 2rem;
+    }
+
     &[open] > summary::marker {
       content: "📖 ";
     }
@@ -25,6 +30,10 @@
 
     summary::after {
       content: " }";
+    }
+
+    summary:hover {
+      backdrop-filter: brightness(90%);
     }
   }
 </style>
