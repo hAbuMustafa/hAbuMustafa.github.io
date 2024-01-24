@@ -78,7 +78,7 @@
       color: var(--text-color);
       padding-block: 0.5rem;
 
-      & a {
+      a {
         text-decoration: none;
         color: var(--text-color);
 
@@ -87,29 +87,29 @@
           color: var(--text-color);
         }
       }
-    }
 
-    li:not(:is(:hover, :focus, :active)) > ul {
-      display: none;
-    }
+      ul {
+        padding: 0.5rem;
+        list-style: none;
 
-    li > ul {
-      padding: 0.5rem;
-      list-style: none;
+        position: absolute;
+        inset-block-start: 40%;
+        inset-inline-start: -80%;
+        border: 1px solid var(--lighter-main-color);
+        border-radius: 0.25rem;
 
-      position: absolute;
-      inset-block-start: 40%;
-      inset-inline-start: -80%;
-      border: 1px solid var(--lighter-main-color);
-      border-radius: 0.25rem;
+        background-color: var(--darker-main-color);
 
-      background-color: var(--darker-main-color);
-
-      li {
-        margin-block-start: 0.5rem;
-        padding-inline-start: 0.5rem;
-        border-inline-start: 3px solid currentColor;
+        li {
+          margin-block-start: 0.5rem;
+          padding-inline-start: 0.5rem;
+          border-inline-start: 3px solid currentColor;
+        }
       }
+    }
+
+    li:not(:is(:hover, :focus, :active, :focus-within)) > ul {
+      display: none;
     }
 
     & > li:has(#hosam-avatar) {
