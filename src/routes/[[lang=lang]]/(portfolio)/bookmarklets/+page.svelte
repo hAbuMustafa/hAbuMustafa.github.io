@@ -11,8 +11,8 @@
     <h1>Bookmarklets</h1>
 
     <p>
-      All code snippets listed below, are bookmarklets, i.e. you can copy paste
-      them as the "address" (or "URL") of your bookmark, and give it a name so
+      All code snippets listed below, are bookmarklets, i.e. you can copy-paste
+      them to the "address" (or "URL") of your bookmark, and give it a name so
       it serves as button in your bookmarks bar, and ready to execute.
     </p>
 
