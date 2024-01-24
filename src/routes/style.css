@@ -130,12 +130,12 @@ code {
 
 @keyframes vanish-outline {
   0% {
-    outline: 2px dotted var(--text-color);
+    outline-style: dotted;
   }
   50% {
-    outline: 2px dashed var(--text-color);
+    outline-style: dashed;
   }
   100% {
-    outline: 2px solid var(--text-color);
+    outline-style: solid;
   }
 }
