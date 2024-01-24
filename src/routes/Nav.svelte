@@ -13,6 +13,7 @@
       </a>
     </li>
     <li><a href="/blog">Blog</a></li>
+    <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
     <li tabindex="0">
       Projects <ul>
         <li><a href="/i18n-finder">Internationalization Map</a></li>
@@ -35,7 +36,7 @@
   }
 
   #hosam-avatar {
-    margin: 0.25rem 0 0 1rem;
+    margin-block-start: 0.25rem;
     object-fit: cover;
     object-position: 100% 0;
     border-radius: 50%;
@@ -60,7 +61,7 @@
   }
 
   nav > ul {
-    padding: 0.5rem;
+    padding: 0.5rem 2rem;
     margin-block: 0;
     box-shadow: 0px -0.5rem 4rem var(--main-color);
 
