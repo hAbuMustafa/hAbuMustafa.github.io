@@ -23,12 +23,10 @@
       open pages easily without the hussle of editing the captured image.
     </p>
     <p>
-      It is an <code
-        ><Abbr
+      It is an <Abbr
           styles="--duration:1.5s; font-family: monospace;"
-          title="[I]mmediately [I]nvoked [F]uncion [E]xpression"
-        /></code
-      >, which means, you can customize the "censoring style" by changing the
+          title="[I]mmediately [I]nvoked [F]unction [E]xpression"
+        />, which means, you can customize the "censoring style" by changing the
       value of the
       <code>styles</code> parameter upon function invocation. The styles by
       default, are;
