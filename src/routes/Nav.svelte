@@ -31,7 +31,7 @@
     position: sticky;
     inset-block-start: 0;
     padding: 0;
-    z-index:1;
+    z-index: 1;
   }
 
   #hosam-avatar {
@@ -39,6 +39,7 @@
     object-fit: cover;
     object-position: 100% 0;
     border-radius: 50%;
+    outline-width: 2px;
     outline-offset: 4px;
   }
 
@@ -96,7 +97,7 @@
     background-color: var(--darker-main-color);
   }
 
-  li:not(:is(:hover,:focus,:active)) > ul {
+  li:not(:is(:hover, :focus, :active)) > ul {
     display: none;
   }
 
