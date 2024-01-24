@@ -25,7 +25,7 @@
     <p>
       It is an <code
         ><Abbr
-          styles="--duration:1.5s; font-size: .8rem;"
+          styles="--duration:1.5s; font-family: monospace;"
           title="[I]mmediately [I]nvoked [F]uncion [E]xpression"
         /></code
       >, which means, you can customize the "censoring style" by changing the
