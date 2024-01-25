@@ -79,7 +79,6 @@
 <style lang="scss">
   .wrapper {
     display: grid;
-    grid-template-columns: 98vw;
     grid-template-rows: 4rem 4rem 1fr 3rem;
     justify-items: center;
     align-items: center;
