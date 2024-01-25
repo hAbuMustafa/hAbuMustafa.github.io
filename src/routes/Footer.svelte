@@ -27,6 +27,7 @@
     background: var(--main-color);
     display: grid;
     place-content: center;
+    margin-block-start: 1rem;
 
     line-height: 1.35rem;
     text-align: center;

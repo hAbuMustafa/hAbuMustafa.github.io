@@ -152,7 +152,7 @@
   footer {
     position: absolute;
     inset-inline: 0;
-    inset-block-end: 0;
+    inset-block-end: -1rem;
 
     text-align: center;
     padding-block-start: 0.5rem;
