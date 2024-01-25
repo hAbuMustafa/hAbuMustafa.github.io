@@ -119,10 +119,12 @@ code {
       font-family: initial;
       text-align: center;
       text-wrap: nowrap;
-      inset-inline-end: -50%;
+      inset-inline-start: 100%;
+      inset-block-start: 0;
       color: var(--main-color);
       -webkit-animation: hover-over 1s infinite alternate ease-in-out;
       animation: hover-over 1s infinite alternate ease-in-out;
+      cursor: text;
 
       z-index: 1;
     }
