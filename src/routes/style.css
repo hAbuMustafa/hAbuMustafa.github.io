@@ -119,8 +119,8 @@ code {
       font-family: initial;
       text-align: center;
       text-wrap: nowrap;
-      inset-inline-start: 100%;
-      inset-block-start: 0;
+      inset-inline-start: 50%;
+      inset-block-start: 50%;
       color: var(--main-color);
       -webkit-animation: hover-over 1s infinite alternate ease-in-out;
       animation: hover-over 1s infinite alternate ease-in-out;
