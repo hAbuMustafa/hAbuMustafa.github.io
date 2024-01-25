@@ -23,8 +23,6 @@
 <style lang="scss">
   footer {
     min-height: 8rem;
-    border-block-start: 1px double var(--main-color);
-    box-shadow: 0px 0.5rem 20px var(--main-color);
     color: var(--text-color);
     background: var(--main-color);
     display: grid;

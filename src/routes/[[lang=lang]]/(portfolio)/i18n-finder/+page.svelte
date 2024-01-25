@@ -65,17 +65,16 @@
       </div>
     {/if}
   </div>
+  <footer>
+    This project is open source on
+    <a href="https://github.com/hAbuMustafa/i18n-finder">Github</a>.<br />
+    This project leverages the use of the i18n dictionary by
+    <a href="https://github.com/softvenue/i18n" target="_blank" rel="noopener noreferrer"
+      >softvenue</a
+    >.
+    <hr />
+  </footer>
 </div>
-
-<footer>
-  This project is open source on
-  <a href="https://github.com/hAbuMustafa/i18n-finder">Github</a>.<br />
-  This project leverages the use of the i18n dictionary by
-  <a href="https://github.com/softvenue/i18n" target="_blank" rel="noopener noreferrer"
-    >softvenue</a
-  >.
-  <hr />
-</footer>
 
 <style lang="scss">
   .wrapper {

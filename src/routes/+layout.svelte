@@ -23,7 +23,7 @@
 
 <style>
   main {
-    min-height: 85lvh;
     position: relative;
+    min-height: 85lvh;
   }
 </style>
