@@ -150,9 +150,6 @@
   }
 
   footer {
-    align-self: end;
-    justify-self: stretch;
-
     position: absolute;
     inset-inline: 0;
     inset-block-end: 0;
