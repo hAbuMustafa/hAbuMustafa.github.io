@@ -12,10 +12,10 @@
   const sitemap: (SitemapT | SitemapSublistT)[] = [
     { text: 'Blog', href: '/blog' },
     {
-      label: 'Projects',
+      label: 'Portfolio',
       list: [
         { text: 'Voice-Over', href: '/voice-over' },
-        { text: 'Internationalization Map', href: '/i18n-finder' },
+        { text: 'I18n Assistant', href: '/i18n-finder' },
         { text: 'Bookmarklets', href: '/bookmarklets' },
         { text: 'Vividus', href: '/vividus' },
         { text: 'Extend Arabic Query', href: '/extend-arabic-query' },
@@ -95,23 +95,32 @@
       }
 
       ul {
-        padding: 0.5rem;
+        padding: 0.8rem;
         list-style: none;
+        width: max-content;
 
         position: absolute;
         inset-block-start: 40%;
-        inset-inline-start: -80%;
+        inset-inline-end: 0;
         border: 1px solid var(--lighter-main-color);
         border-radius: 0.25rem;
 
         background-color: var(--darker-main-color);
 
         li {
-          padding-inline-start: 0.5rem;
-          border-inline-start: 3px solid currentColor;
+          padding-inline-start: 0;
+          border-inline-start: 0 solid currentColor;
 
           &:not(:first-of-type) {
             margin-block-start: 0.5rem;
+          }
+
+          &:hover {
+            transition:
+              border-inline-start 0s linear,
+              padding-inline-start 0.5s ease;
+            border-inline-start: 3px solid currentColor;
+            padding-inline-start: 0.5rem;
           }
         }
       }
