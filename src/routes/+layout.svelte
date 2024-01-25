@@ -26,5 +26,9 @@
     position: relative;
     min-height: 85lvh;
     padding-inline: 1rem;
+
+    @media (min-width: 768px) {
+      padding-inline: 15vw;
+    }
   }
 </style>
