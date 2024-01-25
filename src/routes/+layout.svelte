@@ -21,7 +21,7 @@
 
 <Footer />
 
-<style>
+<style lang="scss">
   main {
     position: relative;
     min-height: 85lvh;
