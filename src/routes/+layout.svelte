@@ -25,5 +25,6 @@
   main {
     position: relative;
     min-height: 85lvh;
+    padding-inline: 1rem;
   }
 </style>

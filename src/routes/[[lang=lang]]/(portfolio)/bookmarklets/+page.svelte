@@ -82,10 +82,6 @@
     }
   }
 
-  main {
-    margin-inline: 1rem;
-  }
-
   #index {
     position: sticky;
     inset-block-start: 4rem;
