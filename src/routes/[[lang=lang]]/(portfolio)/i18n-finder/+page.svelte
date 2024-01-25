@@ -153,6 +153,10 @@
     align-self: end;
     justify-self: stretch;
 
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: 0;
+
     text-align: center;
     padding-block-start: 0.5rem;
     background-color: var(--main-color);
