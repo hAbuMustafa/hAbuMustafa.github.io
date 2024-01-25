@@ -1,20 +1,20 @@
 <script lang="ts">
-  import { Marked } from "marked";
-  import { markedHighlight } from "marked-highlight";
-  import hljs from "highlight.js";
-  import CopyIcon from "svelte-material-icons/ContentCopy.svelte";
+  import { Marked } from 'marked';
+  import { markedHighlight } from 'marked-highlight';
+  import hljs from 'highlight.js';
+  import CopyIcon from 'svelte-material-icons/ContentCopy.svelte';
 
   const marked = new Marked(
     markedHighlight({
-      langPrefix: "",
+      langPrefix: '',
       highlight(code, lang, info) {
-        const language = hljs.getLanguage(lang) ? lang : "plaintext";
+        const language = hljs.getLanguage(lang) ? lang : 'plaintext';
         return hljs.highlight(code, { language }).value;
       },
     })
   );
 
-  export let language = "javascript";
+  export let language = 'javascript';
   export let code: string;
 
   function copySnippetToClipboard(e: MouseEvent) {
@@ -40,7 +40,7 @@ ${code}\n
 <style lang="scss">
   .wrapper {
     position: relative;
-    max-width: 95vw;
+    max-width: 85vw;
 
     &:hover {
       & :global(code.javascript) {
@@ -130,7 +130,7 @@ ${code}\n
         }
 
         &:active::after {
-          content: "Copied to the clipboard!";
+          content: 'Copied to the clipboard!';
           display: block;
           position: absolute;
           inset-inline-start: calc(-50% - 0.5rem);
