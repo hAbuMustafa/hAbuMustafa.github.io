@@ -1,10 +1,10 @@
 <script lang="ts">
-  import CodeSnippet from "$lib/components/CodeSnippet.svelte";
-  import CodeWrapper from "$lib/components/CodeSnippet_Wrapper.svelte";
-  import { Abbr } from "@vividus/svelte";
+  import CodeSnippet from '$lib/components/CodeSnippet.svelte';
+  import CodeWrapper from '$lib/components/CodeSnippet_Wrapper.svelte';
+  import { Abbr } from '@vividus/svelte';
 
   let censorStyles =
-    "display: inline-block; background-color: currentColor; transform: skewX(-6deg);";
+    'display: inline-block; background-color: currentColor; transform: skewX(-6deg);';
 </script>
 
 <div class="wrapper">
@@ -12,26 +12,22 @@
     <h1>Bookmarklets</h1>
 
     <p>
-      All code snippets listed below, are bookmarklets, i.e. you can copy-paste
-      them to the "address" (or "URL") of your bookmark, and give it a name so
-      it serves as button in your bookmarks bar, and ready to execute.
+      All code snippets listed below, are bookmarklets, i.e. you can copy-paste them to
+      the "address" (or "URL") of your bookmark, and give it a name so it serves as button
+      in your bookmarks bar, and ready to execute.
     </p>
 
     <h2 id="censor-selection">Censor Selection</h2>
     <p>
-      This bookmarklet censors the selected text so you can take screenshots of
-      open pages easily without the hussle of editing the captured image.
+      This bookmarklet censors the selected text so you can take screenshots of open pages
+      easily without the hussle of editing the captured image.
     </p>
     <p>
-      It is an <Abbr
-          styles="--duration:1.5s; font-family: monospace;"
-          title="[I]mmediately [I]nvoked [F]unction [E]xpression"
-        />, which means, you can customize the "censoring style" by changing the
-      value of the
-      <code>styles</code> parameter upon function invocation. The styles by
-      default, are;
-      <code contenteditable spellcheck="false" bind:innerText={censorStyles} />,
-      and it looks like
+      It is an <Abbr title="[I]mmediately [I]nvoked [F]unction [E]xpression" />, which
+      means, you can customize the "censoring style" by changing the value of the
+      <code>styles</code> parameter upon function invocation. The styles by default, are;
+      <code contenteditable spellcheck="false" bind:innerText={censorStyles} />, and it
+      looks like
       <span style={censorStyles}> this</span>.
     </p>
     <CodeWrapper open>
@@ -124,7 +120,7 @@
       display: none;
     }
 
-    & > a[href="#top"] {
+    & > a[href='#top'] {
       text-decoration: none;
       text-align: end;
       margin-inline-end: -1rem;
