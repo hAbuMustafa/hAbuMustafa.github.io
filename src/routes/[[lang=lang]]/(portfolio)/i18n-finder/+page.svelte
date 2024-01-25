@@ -77,7 +77,7 @@
   <hr />
 </footer>
 
-<style>
+<style lang="scss">
   .wrapper {
     display: grid;
     grid-template-columns: 98vw;
