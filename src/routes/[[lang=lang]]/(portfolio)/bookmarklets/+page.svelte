@@ -76,6 +76,7 @@
     grid-template-columns: 3fr 1fr;
     position: relative;
     max-width: 99%;
+    gap: 2rem;
 
     @media (max-width: 550px) {
       grid-template-columns: 1fr;
