@@ -2,8 +2,8 @@
   <p>
     <b>Looking for inspiration?</b> Check out my
     <a href="https://github.com/hAbuMustafa">github</a>,
-    <a href="https://www.npmjs.com/~eyecode?activeTab=packages">npm</a>. Or, for
-    live projects, browse my <a href="/bookmarklets">bookmarklets</a>
+    <a href="https://www.npmjs.com/~eyecode?activeTab=packages">npm</a>. Or, for live
+    projects, browse my <a href="/bookmarklets">bookmarklets</a>
     list, or check my
     <a href="/i18n-finder">internationalization index</a>.
   </p>
@@ -14,8 +14,8 @@
       target="_blank"
       title="X or Twitter, whatever you like to call it">twitter</a
     >,
-    <a href="https://bsky.app/profile/hosam.website" target="_blank">blue sky</a
-    >, or hit me on
+    <a href="https://bsky.app/profile/hosam.website" target="_blank">blue sky</a>, or hit
+    me on
     <a rel="me" href="https://onvo.me/Hos" target="_blank">onvo</a>.
   </p>
 </footer>
