@@ -65,7 +65,12 @@
     inset-block-start: 0;
     z-index: 1;
 
-    padding-inline: 2rem;
+    padding-inline: 5vw;
+
+    @media (max-width: 450px) {
+      padding-inline: 10vw 0;
+    }
+
     box-shadow: 0px -0.5rem 4rem var(--main-color);
 
     display: flex;
@@ -118,21 +123,21 @@
 
     & > li:has(#hosam-avatar) {
       position: absolute;
-      inset-block-start: -20%;
+      inset-inline-start: 1rem;
       background-color: var(--main-color);
       padding: 1rem;
       border-radius: 50%;
 
       width: 2rem;
       height: 2rem;
-    }
 
-    #hosam-avatar {
-      object-fit: cover;
-      object-position: 100% 0;
-      border-radius: 50%;
-      outline-width: 2px;
-      outline-offset: 4px;
+      #hosam-avatar {
+        object-fit: cover;
+        object-position: 100% 0;
+        border-radius: 50%;
+        outline-width: 2px;
+        outline-offset: 4px;
+      }
     }
 
     @media (prefers-reduced-motion: no-preference) {
