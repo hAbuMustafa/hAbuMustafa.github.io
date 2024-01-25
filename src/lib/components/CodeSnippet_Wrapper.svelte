@@ -11,29 +11,37 @@
 
 <style lang="scss">
   details {
+    margin-block-start: -1rem;
+    padding: 1rem;
+    border-radius: 0.25rem;
+
     summary {
-      margin-block-start: -0.5rem;
       line-height: 2rem;
+      border-radius: 0.25rem;
     }
 
     &[open] > summary::marker {
-      content: "📖 ";
+      content: '📖 ';
     }
 
     &:not([open]) > summary::marker {
-      content: "📘 ";
+      content: '📘 ';
     }
 
     summary::before {
-      content: "{ ";
+      content: '{ ';
     }
 
     summary::after {
-      content: " }";
+      content: ' }';
     }
 
-    summary:hover {
+    &:has(summary:hover) {
       backdrop-filter: brightness(90%);
+
+      summary {
+        background-color: var(--lighter-main-color);
+      }
     }
   }
 </style>
