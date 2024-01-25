@@ -10,21 +10,21 @@
   }
 
   const sitemap: (SitemapT | SitemapSublistT)[] = [
-    { text: "Blog", href: "/blog" },
+    { text: 'Blog', href: '/blog' },
     {
-      label: "Projects",
+      label: 'Projects',
       list: [
-        { text: "Voice-Over", href: "/voice-over" },
-        { text: "Internationalization Map", href: "/i18n-finder" },
-        { text: "Bookmarklets", href: "/bookmarklets" },
-        { text: "Vividus", href: "/vividus" },
-        { text: "Extend Arabic Query", href: "/extend-arabic-query" },
+        { text: 'Voice-Over', href: '/voice-over' },
+        { text: 'Internationalization Map', href: '/i18n-finder' },
+        { text: 'Bookmarklets', href: '/bookmarklets' },
+        { text: 'Vividus', href: '/vividus' },
+        { text: 'Extend Arabic Query', href: '/extend-arabic-query' },
       ],
     },
   ];
 
   function isSitemapItem(item: SitemapT | SitemapSublistT): item is SitemapT {
-    return item.hasOwnProperty("href");
+    return item.hasOwnProperty('href');
   }
 </script>
 
@@ -75,6 +75,7 @@
       display: inline;
       position: relative;
       font-weight: bold;
+      font-size: 1.5rem;
       color: var(--text-color);
       padding-block: 0.5rem;
 
