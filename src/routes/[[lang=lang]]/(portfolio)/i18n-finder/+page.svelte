@@ -1,7 +1,7 @@
 <script lang="ts">
   export let data;
 
-  let text = "";
+  let text = '';
 
   $: filteredResults = data.terms.filter((item) =>
     item.term.toLowerCase().includes(text.toLowerCase())
@@ -17,7 +17,7 @@
 
 <svelte:document
   on:visibilitychange={() => {
-    if (document.visibilityState === "visible") lockFocus();
+    if (document.visibilityState === 'visible') lockFocus();
   }}
   on:click={lockFocus}
 />
@@ -44,7 +44,7 @@
         <div class="result">
           <h4 dir="ltr">
             🔤 {@html item.term.replace(
-              new RegExp(text, "gi"),
+              new RegExp(text, 'gi'),
               `<mark>${text.toUpperCase()}</mark>`
             )}
           </h4>
@@ -71,10 +71,8 @@
   This project is open source on
   <a href="https://github.com/hAbuMustafa/i18n-finder">Github</a>.<br />
   This project leverages the use of the i18n dictionary by
-  <a
-    href="https://github.com/softvenue/i18n"
-    target="_blank"
-    rel="noopener noreferrer">softvenue</a
+  <a href="https://github.com/softvenue/i18n" target="_blank" rel="noopener noreferrer"
+    >softvenue</a
   >.
   <hr />
 </footer>
@@ -87,7 +85,7 @@
     justify-items: center;
     align-items: center;
 
-    min-height: 75dvh;
+    min-height: 75lvh;
   }
 
   #term {

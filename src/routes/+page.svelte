@@ -32,7 +32,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 66.5dvh;
+    height: 66.5lvh;
 
     & p {
       text-align: center;

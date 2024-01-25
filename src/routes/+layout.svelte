@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { page } from "$app/stores";
-  import "./style.css";
-  import Nav from "./Nav.svelte";
-  import Footer from "./Footer.svelte";
+  import { page } from '$app/stores';
+  import './style.css';
+  import Nav from './Nav.svelte';
+  import Footer from './Footer.svelte';
 </script>
 
 <svelte:head>
@@ -23,7 +23,7 @@
 
 <style>
   main {
-    min-height: 75dvh;
+    min-height: 85lvh;
     position: relative;
   }
 </style>
