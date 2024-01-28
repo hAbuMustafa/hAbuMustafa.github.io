@@ -110,15 +110,15 @@
         li {
           padding-inline-start: 0;
           border-inline-start: 0 solid currentColor;
+          transition:
+            border-inline-start 0s linear,
+            padding-inline-start 0.5s ease;
 
           &:not(:first-of-type) {
             margin-block-start: 0.5rem;
           }
 
           &:hover {
-            transition:
-              border-inline-start 0s linear,
-              padding-inline-start 0.5s ease;
             border-inline-start: 3px solid currentColor;
             padding-inline-start: 0.5rem;
           }
