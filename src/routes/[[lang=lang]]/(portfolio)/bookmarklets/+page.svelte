@@ -127,9 +127,4 @@
       border-block-start: 1px solid currentColor;
     }
   }
-
-  [contenteditable] {
-    border-style: dashed;
-    border-color: currentColor;
-  }
 </style>
