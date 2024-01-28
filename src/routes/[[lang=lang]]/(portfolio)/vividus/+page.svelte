@@ -71,7 +71,8 @@
   <em>reactive</em> <code>table</code> elements.
 
   <h3>RadialFlickMenu</h3>
-  An advanced<code>select</code> element that allows you to navigate through a radial
+  An advanced 
+  <code>select</code> element that allows you to navigate through a radial
   (circular) list. It should look pretty much like Counter-Strike's in-game
   <a href="https://imgur.com/y7X9mvR">action menu</a>, where you select the item by moving
   your pointer/cursor away from the center of the tap/click [also, the center of the
