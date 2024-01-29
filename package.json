@@ -15,6 +15,7 @@
     "@sveltejs/kit": "^2.4.3",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
     "@vividus/svelte": "^1.0.4",
+    "extend-arabic-query": "^0.2.3",
     "highlight.js": "^11.9.0",
     "marked": "^11.1.1",
     "marked-highlight": "^2.1.0",
