@@ -82,19 +82,19 @@
         <td>ئ</td>
         <td><small class="pal">hamza on yaa</small> group</td>
         <td
-          >same as for <small class="pal">alef</small>, plus all other form of
-          <small class="pal">yaa</small>
-          ({separateWithHyphens("يى")})</td
-        >
+          >same as for <small class="pal alef">alef</small>, plus all other
+          forms of
+          <small class="pal yaa">yaa</small>
+        </td>
       </tr>
       <tr id="hamza-on-waw">
         <td>ؤ</td>
         <td><small class="pal">hamza on waw</small> group</td>
         <td
-          >same as for <small class="pal">alef</small>, plus all other form of
-          <small class="pal">yaa</small>
-          ({separateWithHyphens("يى")})</td
-        >
+          >same as for <small class="pal alef">alef</small>, plus all other
+          forms of
+          <small class="pal yaa">yaa</small>
+        </td>
       </tr>
       <tr id="waw">
         <td>و</td>
@@ -264,6 +264,26 @@ const result = regex.test(text_to_compare)
 
       &:hover {
         text-decoration: underline;
+      }
+    }
+
+    :has(.alef:hover) {
+      small:hover {
+        animation: var(--highlight-animation);
+      }
+
+      #alef td:first-of-type {
+        animation: var(--highlight-animation);
+      }
+    }
+
+    :has(.yaa:hover) {
+      small:hover {
+        animation: var(--highlight-animation);
+      }
+
+      #yaa td:first-of-type {
+        animation: var(--highlight-animation);
       }
     }
   }
