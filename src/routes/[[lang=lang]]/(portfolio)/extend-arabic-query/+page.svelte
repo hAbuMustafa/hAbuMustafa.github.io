@@ -2,8 +2,8 @@
   import { Abbr } from "@vividus/svelte";
   import { extendQuery } from "extend-arabic-query";
 
-  let testText = "عبدالرحمن";
-  let againstText = "عبد الرحمن";
+  let testText = "عبد الجيد أحمد حماده ابو ذكري";
+  let againstText = "عبدالجيد احمد حمادة أبوذكرى";
   let allowedPattern = "^[ء-ي ]+$";
 
   function separateWithHyphens(letters: string) {
