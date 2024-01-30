@@ -22,7 +22,7 @@
       This bookmarklet censors the selected text so you can take screenshots of open pages
       easily without the hussle of editing the captured image.
     </p>
-    <p>
+    <p style:margin-block-end=0>
       It is an <Abbr title="[I]mmediately [I]nvoked [F]unction [E]xpression" />, which
       means, you can customize the "censoring style" by changing the value of the
       <code>styles</code> parameter upon function invocation. The styles by default, are;
