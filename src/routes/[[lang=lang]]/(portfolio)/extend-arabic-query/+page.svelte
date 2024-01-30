@@ -1,6 +1,8 @@
 <script lang="ts">
   import { Abbr } from "@vividus/svelte";
   import { extendQuery } from "extend-arabic-query";
+  import CodeSnippet from '$lib/components/CodeSnippet.svelte'
+  import Wrapper from '$lib/components/CodeSnippet_Wrapper.svelte'
 
   let testText = "عبد الجيد أحمد حماده ابو ذكري";
   let againstText = "عبدالجيد احمد حمادة أبوذكرى";
@@ -190,14 +192,27 @@
     <span style="text-decoration: underline; text-transform: uppercase;"
       >{new RegExp(extendQuery(testText), "g").test(againstText)}</span
     ></span
-  ><br />
-  <span
-    >The Underlying RegEx String: <p dir="rtl">
+  >
+
+  <details>
+    <summary>The Underlying RegEx String: </summary>
+    <p dir="rtl">
       {#if testText && RegExp(allowedPattern, "g").test(testText)}
         {extendQuery(testText)}
       {/if}
     </p>
-  </span>
+  </details>
+
+  <Wrapper>
+    <svelte:fragment slot="title">Clearer Syntax</svelte:fragment>
+    <CodeSnippet code={`const text = "${testText}";
+const text_to_compare = "${againstText}";
+
+const regex = new RegExp(extendQuery(text), 'g');
+
+const result = regex.test(text_to_compare)
+    `}/>
+  </Wrapper>
 </div>
 
 <style lang="scss">
