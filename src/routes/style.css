@@ -31,7 +31,7 @@ body {
 }
 
 :target {
-  animation: var(--highlight-animation);
+  animation: breath alternate 0.5s 4;
 }
 
 a,
