@@ -108,19 +108,22 @@
         background-color: var(--darker-main-color);
 
         li {
+          padding-inline-end: 0.75rem;
           padding-inline-start: 0;
-          border-inline-start: 0 solid currentColor;
+          border-inline-start: none;
           transition:
-            border-inline-start 0s linear,
-            padding-inline-start 0.5s ease;
+            border-inline-start 0s ease-out,
+            padding-inline-end 0.5s ease-out,
+            padding-inline-start 0.5s ease-out;
 
           &:not(:first-of-type) {
             margin-block-start: 0.5rem;
           }
 
           &:hover {
-            border-inline-start: 3px solid currentColor;
+            border-inline-start: 0.25rem solid currentColor;
             padding-inline-start: 0.5rem;
+            padding-inline-end: 0;
           }
         }
       }
