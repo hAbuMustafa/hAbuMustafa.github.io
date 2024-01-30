@@ -1,8 +1,8 @@
 <script lang="ts">
   import { Abbr } from "@vividus/svelte";
   import { extendQuery } from "extend-arabic-query";
-  import CodeSnippet from '$lib/components/CodeSnippet.svelte'
-  import Wrapper from '$lib/components/CodeSnippet_Wrapper.svelte'
+  import CodeSnippet from "$lib/components/CodeSnippet.svelte";
+  import Wrapper from "$lib/components/CodeSnippet_Wrapper.svelte";
 
   let testText = "عبد الجيد أحمد حماده ابو ذكري";
   let againstText = "عبدالجيد احمد حمادة أبوذكرى";
@@ -202,18 +202,27 @@
       {/if}
     </p>
   </details>
+</div>
 
-  <Wrapper>
-    <svelte:fragment slot="title">Clearer Syntax</svelte:fragment>
-    <CodeSnippet code={`const text = "${testText}";
+<Wrapper>
+  <svelte:fragment slot="title">Clearer Syntax</svelte:fragment>
+  <CodeSnippet
+    code={`const text = "${testText}";
 const text_to_compare = "${againstText}";
 
 const regex = new RegExp(extendQuery(text), 'g');
 
 const result = regex.test(text_to_compare)
-    `}/>
-  </Wrapper>
-</div>
+    `}
+  />
+</Wrapper>
+
+<p>
+  Now you should be able to use this function in any check including any Arabic
+  strings. You can even use it inside the <code>pattern</code> attribute for
+  <code>input</code>s to generate highly specific, and smart patterns.
+</p>
+<p>The sky is the limit!</p>
 
 <style lang="scss">
   .pal {
