@@ -1,6 +1,7 @@
 <script lang="ts">
   import CodeSnippet from '$lib/components/CodeSnippet.svelte';
   import CodeWrapper from '$lib/components/CodeSnippet_Wrapper.svelte';
+  import WhatIsThis from "$lib/components/WhatIsThis.svelte";
   import { Abbr } from '@vividus/svelte';
 
   let censorStyles =
@@ -23,7 +24,7 @@
       easily without the hussle of editing the captured image.
     </p>
     <p style:margin-block-end=0>
-      It is an <Abbr title="[I]mmediately [I]nvoked [F]unction [E]xpression" />, which
+      It is an <Abbr title="[I]mmediately [I]nvoked [F]unction [E]xpression" /><WhatIsThis href="/vividus#Abbr"/>, which
       means, you can customize the "censoring style" by changing the value of the
       <code>styles</code> parameter upon function invocation. The styles by default, are;
       <code contenteditable spellcheck="false" bind:innerText={censorStyles} />, and it

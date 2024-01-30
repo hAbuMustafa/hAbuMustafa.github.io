@@ -3,6 +3,7 @@
   import { extendQuery } from "extend-arabic-query";
   import CodeSnippet from "$lib/components/CodeSnippet.svelte";
   import Wrapper from "$lib/components/CodeSnippet_Wrapper.svelte";
+  import WhatIsThis from "$lib/components/WhatIsThis.svelte";
 
   let testText = "عبد الجيد أحمد حماده ابو ذكري";
   let againstText = "عبدالجيد احمد حمادة أبوذكرى";
@@ -20,7 +21,7 @@
   This npm package provides a function to convert any text written in Arabic
   letters to a <dfn id="dfn-regex"
     ><Abbr title="[Reg]ular [Ex]pression" styles="white-space: nowrap;" /></dfn
-  >
+  ><WhatIsThis href='/vividus#Abbr' />
   string that can be used as <code>test</code> or <code>match</code> method paramter
   against any other string to compare for equality.
 </p>
