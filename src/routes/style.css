@@ -25,6 +25,11 @@
   scroll-behavior: smooth;
 }
 
+::selection {
+  background-color: var(--main-color);
+  color: var(--text-color);
+}
+
 body {
   margin: 0;
   padding: 0;
