@@ -2,9 +2,9 @@
   import { Abbr } from "@vividus/svelte";
   import { extendQuery } from "extend-arabic-query";
 
-  let testText = "عبد الرحمن";
-  let againstText = "عبدالرحمن";
-  let allowedPattern = "[ء-ي]";
+  let testText = "عبدالرحمن";
+  let againstText = "عبد الرحمن";
+  let allowedPattern = "^[ء-ي ]+$";
 
   function separateWithHyphens(letters: string) {
     return letters.split("").join(" - ");
@@ -140,14 +140,14 @@
     </thead>
 
     <tbody>
-      <tr id="zee">
+      <tr id="zai">
         <td>{separateWithHyphens("زذ")}</td>
-        <td><small class="pal">zee</small> group</td>
+        <td><small class="pal">zai</small> group</td>
         <td>same, since many Arabic dialects use both interchangeably</td>
       </tr>
-      <tr id="see">
+      <tr id="seen">
         <td>{separateWithHyphens("ثس")}</td>
-        <td><small class="pal">see</small> group</td>
+        <td><small class="pal">seen</small> group</td>
         <td>same, since many Arabic dialects use both interchangeably</td>
       </tr>
     </tbody>
@@ -170,28 +170,34 @@
   RegEx string output beneath it.
 </p>
 
-<div class="center">
-  <input
-    pattern={allowedPattern}
-    type="text"
-    name="text"
-    id="text"
-    bind:value={testText}
-    title="Only Arabic letters allowed"
-  />
-  <span dir="rtl" style:text-align="center">
-    {#if testText && RegExp(allowedPattern, "g").test(testText)}
-      {extendQuery(testText)}
-    {/if}
+<div class="center" style:gap="0.5rem" style:text-align="center">
+  <code
+    >new RegExp(extendQuery("<span
+      dir="rtl"
+      contenteditable
+      id="text"
+      bind:innerText={testText}
+    />"), "g").test("<span
+      dir="rtl"
+      id="against-text"
+      contenteditable
+      bind:innerText={againstText}
+    />")
+  </code>
+
+  <span>
+    This expression evaluates to
+    <span style="text-decoration: underline; text-transform: uppercase;"
+      >{new RegExp(extendQuery(testText), "g").test(againstText)}</span
+    ></span
+  ><br />
+  <span
+    >The Underlying RegEx String: <p dir="rtl">
+      {#if testText && RegExp(allowedPattern, "g").test(testText)}
+        {extendQuery(testText)}
+      {/if}
+    </p>
   </span>
-  <input
-    pattern={allowedPattern}
-    type="text"
-    name="against-text"
-    id="against-text"
-    bind:value={againstText}
-    title="Only Arabic letters allowed"
-  />
 </div>
 
 <style lang="scss">
@@ -238,8 +244,24 @@
     }
   }
 
-  input:invalid {
-    background-color: salmon;
-    outline: 2px dashed red;
+  span[contenteditable] {
+    // undo default settings
+    margin-inline-end: 0;
+    border-radius: 0.25rem;
+
+    &::after {
+      content: "";
+    }
+
+    &:hover {
+      &::after {
+        direction: ltr;
+        content: "Edit this ↓";
+        inset-inline-start: -50%;
+        inset-block-start: -200%;
+        border: 2px dashed currentColor;
+        padding-inline: 0.5rem;
+      }
+    }
   }
 </style>
