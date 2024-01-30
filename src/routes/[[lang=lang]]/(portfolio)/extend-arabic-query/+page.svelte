@@ -285,6 +285,7 @@ const result = regex.test(text_to_compare)
         inset-block-start: -200%;
         border: 2px dashed currentColor;
         padding-inline: 0.5rem;
+        box-shadow: 1px 0.5rem 1.5rem gray;
       }
     }
   }
