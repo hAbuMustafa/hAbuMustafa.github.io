@@ -1,8 +1,9 @@
 <script lang="ts">
   export let open = false;
+  export let styles = "";
 </script>
 
-<details {open}>
+<details {open} style={styles}>
   <summary>
     <slot name="title">View Code</slot>
   </summary>
@@ -11,9 +12,9 @@
 
 <style lang="scss">
   details {
-    margin-block-start: -1rem;
     padding: 1rem;
     border-radius: 0.25rem;
+    text-align: start;
 
     summary {
       line-height: 2rem;
