@@ -1,0 +1,24 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <link href="https://hosam.website/[LANG]/feed/rss.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://hosam.website/" rel="alternate" type="text/html"/>
+    <updated>BLOG_LAST_UPDATED_DATE</updated>
+    <id>https://hosam.website/[LANG]/feed/rss.xml</id>
+    <title type="html">Hosam Hamdy [LANG] Feed</title>
+    <subtitle>BLOG_DESCRIPTION</subtitle>
+    <entry>
+        <title type="html">ARTICLE_TITLE</title>
+        <link href="ARTICLE_URL" rel="alternate" type="text/html" title="ARTICLE_TITLE"/>
+        <published>ARTICLE_PUBLISH_DATE</published>
+        <updated>ARTICLE_LAST_UPDATE_DATE</updated>
+        <id>ARTICLE_URL</id>
+        <content type="html" xml:base="ARTICLE_URL">
+            <![CDATA[ARTICLE_CONTENT_MARKUP]]>
+        </content>
+        <author>
+            <name/>
+        </author>
+        <summary type="html">
+            <![CDATA[ARTICLE_SUMMARY]]>
+        </summary>
+    </entry>
+</feed>
