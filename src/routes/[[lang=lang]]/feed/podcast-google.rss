@@ -1,4 +1,6 @@
 placeholders:
+    SVELTEKIT_VERSION
+    
     PODCAST_NAME
     PODCAST_OWNER_EMAIL <!-- for ownership verification -->
     PODCAST_OWNER_NAME
@@ -65,6 +67,7 @@ placeholders:
     xmlns:atom="http://www.w3.org/2005/Atom"
     xmlns:content="http://purl.org/rss/1.0/modules/content/"
     >
+  <generator uri="https://kit.svelte.dev/" version="SVELTEKIT_VERSION">SvelteKit</generator>
   <channel>
     <title>PODCAST_NAME</title>
     <itunes:owner>

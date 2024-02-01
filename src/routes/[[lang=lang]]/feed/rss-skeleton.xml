@@ -1,4 +1,23 @@
+placeholders:
+    SVELTEKIT_VERSION
+
+    [LANG]
+
+    BLOG_LAST_UPDATED_DATE
+    BLOG_DESCRIPTION
+
+    ARTICLE_TITLE
+    ARTICLE_URL
+    ARTICLE_TITLE
+    ARTICLE_PUBLISH_DATE
+    ARTICLE_LAST_UPDATE_DATE
+    ARTICLE_URL
+    ARTICLE_URL
+    ARTICLE_CONTENT_MARKUP
+    ARTICLE_SUMMARY
+
 <feed xmlns="http://www.w3.org/2005/Atom">
+    <generator uri="https://kit.svelte.dev/" version="SVELTEKIT_VERSION">SvelteKit</generator>
     <link href="https://hosam.website/[LANG]/feed/rss.xml" rel="self" type="application/atom+xml"/>
     <link href="https://hosam.website/" rel="alternate" type="text/html"/>
     <updated>BLOG_LAST_UPDATED_DATE</updated>
