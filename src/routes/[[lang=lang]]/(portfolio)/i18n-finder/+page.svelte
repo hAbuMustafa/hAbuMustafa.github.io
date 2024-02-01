@@ -72,14 +72,13 @@
     <a href="https://github.com/softvenue/i18n" target="_blank" rel="noopener noreferrer"
       >softvenue</a
     >.
-    <hr />
   </footer>
 </div>
 
 <style lang="scss">
   .wrapper {
     display: grid;
-    grid-template-rows: 4rem 4rem 1fr 3rem;
+    grid-template-rows: 4rem 4rem 1fr;
     justify-items: center;
     align-items: center;
 
@@ -149,18 +148,13 @@
   }
 
   footer {
-    position: absolute;
+    position: fixed;
     inset-inline: 0;
-    inset-block-end: -1rem;
+    inset-block-end: 0;
 
     text-align: center;
-    padding-block-start: 0.5rem;
+    padding: 0.5rem;
     background-color: var(--main-color);
     color: var(--text-color);
-
-    & > hr {
-      margin-block-start: 0.5rem;
-      margin-block-end: 0;
-    }
   }
 </style>

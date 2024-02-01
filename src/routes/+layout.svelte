@@ -2,7 +2,6 @@
   import { page } from '$app/stores';
   import './style.css';
   import Nav from './Nav.svelte';
-  import Footer from './Footer.svelte';
 </script>
 
 <svelte:head>
@@ -19,7 +18,6 @@
   <slot />
 </main>
 
-<Footer />
 
 <style lang="scss">
   main {
