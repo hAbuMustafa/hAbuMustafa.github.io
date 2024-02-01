@@ -1,6 +1,9 @@
 placeholders:
     SVELTEKIT_VERSION
+    SKIP_FETCHING_FEED_DURING_THIS_HOUR_n <!-- a zero-based hour in the 24 format (e.g. 23 means don't fetch the feed at 11PM)  -->
+    SKIP_FETCHING_FEED_DURING_THIS_DAY_n <!-- a Title-Case weekday (e.g. Saturday, Friday)  -->
     
+    PODCAST_LAST_BUILD_DATE
     PODCAST_NAME
     PODCAST_OWNER_EMAIL <!-- for ownership verification -->
     PODCAST_OWNER_NAME
@@ -69,6 +72,17 @@ placeholders:
     >
   <channel>
     <generator uri="https://kit.svelte.dev/" version="SVELTEKIT_VERSION">SvelteKit</generator>
+    <lastBuildDate>PODCAST_LAST_BUILD_DATE</lastBuildDate>
+    <managingEditor>PODCAST_OWNER_EMAIL</managingEditor>
+    <webMaster>PODCAST_OWNER_EMAIL</webMaster>
+    <skipHours>
+      <hour>SKIP_FETCHING_FEED_DURING_THIS_HOUR_1</hour>
+      <hour>SKIP_FETCHING_FEED_DURING_THIS_HOUR_2</hour>
+    </skipHours>
+    <skipDays>
+      <day>SKIP_FETCHING_FEED_DURING_THIS_DAY_1</day>
+      <day>SKIP_FETCHING_FEED_DURING_THIS_DAY_2</day>
+    </skipDays>
     <title>PODCAST_NAME</title>
     <itunes:owner>
         <itunes:email>PODCAST_OWNER_EMAIL</itunes:email>
