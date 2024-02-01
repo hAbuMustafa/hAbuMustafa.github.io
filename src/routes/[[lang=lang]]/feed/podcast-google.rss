@@ -1,5 +1,3 @@
-Enclose any value cotaining html (like description tag) inside <![CDATA[VALUE_GOES_HERE]]>
-
 placeholders:
     PODCAST_NAME
     PODCAST_OWNER_EMAIL <!-- for ownership verification -->
@@ -7,6 +5,7 @@ placeholders:
     PODCAST_DESCRIPTION
     PODCAST_ART
     PODCAST_LANG_ISO639_1 <!-- example: en-us  https://www.loc.gov/standards/iso639-2/php/code_list.php -->
+    PODCAST_RSS_LINK <!-- the link to the feed it self on the host -->
     PODCAST_HOMEPAGE
     PODCAST_CATEGORY <!-- Arts, Business,Comedy,Education,Games &amp; Hobbies,Government &amp; Organizations,Health,Kids &amp; Family,Music,News &amp; Politics,Religion &amp; Spirituality,Science &amp; Medicine,Society &amp; Culture,Sports &amp; Recreation,TV &amp; Film,Technology -->
     <!-- https://podcasters.apple.com/support/1691-apple-podcasts-categories -->
@@ -40,6 +39,7 @@ placeholders:
     EPISODE_SUBCATEGORY_n <!-- episode category --> <!-- https://podcasters.apple.com/support/1691-apple-podcasts-categories -->
     EPISODE_TRANSCRIPT_FILE_n 
     EPISODE_TRANSCRIPT_FILE_MIME_TYPE <!-- application/x-subrip for srt files OR text/plain OR text/html OR text/vtt OR application/json -->
+    EPISODE_SHOW_NOTES
 
   episode optional tags:
     <itunes:explicit>IS_EXPLICIT</itunes:explicit>
@@ -53,6 +53,7 @@ placeholders:
       <itunes:category text="EPISODE_SUBCATEGORY_1"/>
       <itunes:category text="EPISODE_SUBCATEGORY_2"/>
     </itunes:category>
+    <content:encoded><![CDATA[EPISODE_SHOW_NOTES]]></content:encoded>
     <itunes:episode>EPISODE_NUMBER</itunes:episode>
     <itunes:season>EPISODE_SEASON_NUMBER</itunes:season>
     <podcast:transcript url="EPISODE_TRANSCRIPT_FILE_1" type="EPISODE_TRANSCRIPT_FILE_MIME_TYPE" rel="captions" />
@@ -60,7 +61,10 @@ placeholders:
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"
     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
-    xmlns:podcast="https://podcastindex.org/namespace/1.0" >
+    xmlns:podcast="https://podcastindex.org/namespace/1.0" 
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    >
   <channel>
     <title>PODCAST_NAME</title>
     <itunes:owner>
@@ -74,6 +78,7 @@ placeholders:
       <url>PODCAST_ART</url>
     </image>
     <language>PODCAST_LANG_ISO639_1</language>
+		<atom:link href="PODCAST_RSS_LINK" rel="self" type="application/rss+xml"/>
     <link>PODCAST_HOMEPAGE</link>
     <item>
       <title>EPISODE_TITLE</title>
