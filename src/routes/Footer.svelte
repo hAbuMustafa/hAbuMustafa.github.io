@@ -1,13 +1,5 @@
 <footer>
   <p>
-    <b>Looking for inspiration?</b> Check out my
-    <a href="https://github.com/hAbuMustafa">github</a>,
-    <a href="https://www.npmjs.com/~eyecode?activeTab=packages">npm</a>. Or, for live
-    projects, browse my <a href="/bookmarklets">bookmarklets</a>
-    list, or check my
-    <a href="/i18n-finder">internationalization index</a>.
-  </p>
-  <p>
     Follow me on
     <a
       href="https://twitter.com/intent/user?user_id=96835066"
@@ -16,7 +8,7 @@
     >,
     <a href="https://bsky.app/profile/hosam.website" target="_blank">blue sky</a>, or hit
     me on
-    <a rel="me" href="https://onvo.me/Hos" target="_blank">onvo</a>.
+    <a rel="me" href="https://onvo.me/@Hos" target="_blank">onvo</a>.
   </p>
 </footer>
 
@@ -33,9 +25,5 @@
     text-align: center;
 
     padding-inline: 0.5rem;
-
-    p:first-of-type {
-      margin-block: 0;
-    }
   }
 </style>
