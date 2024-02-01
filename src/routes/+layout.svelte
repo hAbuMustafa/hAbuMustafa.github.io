@@ -18,7 +18,6 @@
   <slot />
 </main>
 
-
 <style lang="scss">
   main {
     position: relative;
