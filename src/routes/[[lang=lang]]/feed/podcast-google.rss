@@ -67,8 +67,8 @@ placeholders:
     xmlns:atom="http://www.w3.org/2005/Atom"
     xmlns:content="http://purl.org/rss/1.0/modules/content/"
     >
-  <generator uri="https://kit.svelte.dev/" version="SVELTEKIT_VERSION">SvelteKit</generator>
   <channel>
+    <generator uri="https://kit.svelte.dev/" version="SVELTEKIT_VERSION">SvelteKit</generator>
     <title>PODCAST_NAME</title>
     <itunes:owner>
         <itunes:email>PODCAST_OWNER_EMAIL</itunes:email>
