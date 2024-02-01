@@ -1,0 +1,88 @@
+Enclose any value cotaining html (like description tag) inside <![CDATA[VALUE_GOES_HERE]]>
+
+placeholders:
+    PODCAST_NAME
+    PODCAST_OWNER_EMAIL <!-- for ownership verification -->
+    PODCAST_OWNER_NAME
+    PODCAST_DESCRIPTION
+    PODCAST_ART
+    PODCAST_LANG_ISO639_1 <!-- example: en-us  https://www.loc.gov/standards/iso639-2/php/code_list.php -->
+    PODCAST_HOMEPAGE
+    PODCAST_CATEGORY <!-- Arts, Business,Comedy,Education,Games &amp; Hobbies,Government &amp; Organizations,Health,Kids &amp; Family,Music,News &amp; Politics,Religion &amp; Spirituality,Science &amp; Medicine,Society &amp; Culture,Sports &amp; Recreation,TV &amp; Film,Technology -->
+    <!-- https://podcasters.apple.com/support/1691-apple-podcasts-categories -->
+    PODCAST_NEW_URL <!-- if you plan to change the url of the feed, make 301 redirect on the old url, then add this tag on the new rss file at the new location -->
+    IS_EXPLICIT <!-- "yes" OR "no" to mark the show as "contains explicit language"-->
+    PODCAST_COPYRIGTH
+    PODCAST_TYPE <!--either: serial (episodes are intended to be consumed in sequential order) OR episodic (episodes are intended to be consumed without any specific order, but divided into seasons and episodes) -->
+
+  channel optional tags:
+    <itunes:explicit>IS_EXPLICIT</itunes:explicit>
+    <itunes:block>REMOVE_FROM_PODCAST_PLATFORMS</itunes:block>
+    <description>PODCAST_DESCRIPTION</description> <!-- OR: <itunes:summary> PODCAST_DESCRIPTION </itunes:summary> -->
+    <itunes:category text="PODCAST_CATEGORY"/>
+    <itunes:new-feed-url>PODCAST_NEW_URL</itunes:new-feed-url>
+    <copyright>PODCAST_COPYRIGTH</copyright> <!-- itunes only --> 
+    <itunes:type>PODCAST_TYPE</itunes:type> <!-- itunes only --> <!-- itunes only -->
+    <itunes:complete>PODCAST_OVER</itunes:complete> <!-- If "yes", this says that you will never publish another episode to your show, use this tag. -->
+
+    EPISODE_TITLE
+    EPISODE_DESCRIPTION
+    EPISODE_PUBLISH_DATE <!-- format: "DDD, DD MMM YYYY HH:MM:SS Z" (this is RFC 822 (section 5.1) format) -->
+    EPISODE_MEDIA_FILE_LINK
+    EPISODE_MIME_TYPE <!-- example: audio/mpeg for mp3 files OR audio/x-m4a for m4a OR audio/x-m4v for m4v OR video/mp4 for video mp4-->
+    EPISODE_LENGTH_IN_BYTES <!-- file size in bytes -->
+    EPISODE_DURATION <!-- format: hh:mm:ss OR mm:ss OR ssss -->
+    EPISODE_UNIQUE_ID <!-- example: D03EEC9B-B1B4-475B-92C8-54F853FA2A22 helps maintain updates on episodes to the same object inside podcast aggregators -->
+    IS_EXPLICIT <!-- "yes" OR "no" to mark the episode as "contains explicit language". ON ITUNES "true" or "false"-->
+    REMOVE_FROM_PODCAST_PLATFORMS <!-- if "yes" the episode will be removed from the platform. DO NOT use the tag if you intend to it to be "no" -->
+    EPISODE_TYPE <!--full OR trailer (If no season or episode number: episode trailer. If season number and no episode number: a season trailer) OR bonus -->
+    EPISODE_MAIN_CATEGORY <!-- episode category --> <!-- https://podcasters.apple.com/support/1691-apple-podcasts-categories -->
+    EPISODE_SUBCATEGORY_n <!-- episode category --> <!-- https://podcasters.apple.com/support/1691-apple-podcasts-categories -->
+    EPISODE_TRANSCRIPT_FILE_n 
+    EPISODE_TRANSCRIPT_FILE_MIME_TYPE <!-- application/x-subrip for srt files OR text/plain OR text/html OR text/vtt OR application/json -->
+
+  episode optional tags:
+    <itunes:explicit>IS_EXPLICIT</itunes:explicit>
+    <itunes:block>REMOVE_FROM_PODCAST_PLATFORMS</itunes:block>
+    <guid>EPISODE_UNIQUE_ID</guid>
+    <description>EPISODE_DESCRIPTION</description> <!-- OR: <itunes:summary> EPISODE_DESCRIPTION </itunes:summary> -->
+    <itunes:duration>EPISODE_DURATION</itunes:duration>
+    <pubDate>EPISODE_PUBLISH_DATE</pubDate>
+    <itunes:episodeType>EPISODE_TYPE</itunes:episodeType> <!-- itunes only -->
+    <itunes:category text="EPISODE_CATEGORY">
+      <itunes:category text="EPISODE_SUBCATEGORY_1"/>
+      <itunes:category text="EPISODE_SUBCATEGORY_2"/>
+    </itunes:category>
+    <itunes:episode>EPISODE_NUMBER</itunes:episode>
+    <itunes:season>EPISODE_SEASON_NUMBER</itunes:season>
+    <podcast:transcript url="EPISODE_TRANSCRIPT_FILE_1" type="EPISODE_TRANSCRIPT_FILE_MIME_TYPE" rel="captions" />
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+    xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+    xmlns:podcast="https://podcastindex.org/namespace/1.0" >
+  <channel>
+    <title>PODCAST_NAME</title>
+    <itunes:owner>
+        <itunes:email>PODCAST_OWNER_EMAIL</itunes:email>
+    </itunes:owner>
+    <itunes:author>PODCAST_OWNER_NAME</itunes:author>
+    <description>PODCAST_DESCRIPTION</description> <!-- OR: <itunes:summary> PODCAST_DESCRIPTION </itunes:summary> -->
+    <image> <!-- OR: <itunes:image href="PODCAST_ART"/> -->
+      <link>PODCAST_HOMEPAGE</link>
+      <title>PODCAST_NAME</title>
+      <url>PODCAST_ART</url>
+    </image>
+    <language>PODCAST_LANG_ISO639_1</language>
+    <link>PODCAST_HOMEPAGE</link>
+    <item>
+      <title>EPISODE_TITLE</title>
+      <description>EPISODE_DESCRIPTION</description> <!-- OR: <itunes:summary> EPISODE_DESCRIPTION </itunes:summary> -->
+      <pubDate>EPISODE_PUBLISH_DATE</pubDate>
+      <enclosure url="EPISODE_MEDIA_FILE_LINK"
+                 type="EPISODE_MIME_TYPE" length="EPISODE_LENGTH_IN_BYTES"/>
+      <itunes:duration>EPISODE_DURATION</itunes:duration>
+      <guid isPermaLink="false">EPISODE_UNIQUE_ID</guid>
+    </item>
+  </channel>
+</rss>
