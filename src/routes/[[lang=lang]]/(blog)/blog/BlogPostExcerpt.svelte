@@ -17,14 +17,14 @@
 
 <section>
   <h2>
-    <a href="/blog/{post.slug}">{post.title}</a><small
-      ><i>{formattedBlogPostDate}</i></small
-    >
+    <a href="{$page.params.lang ? `/${$page.params.lang}` : ''}/blog/{post.slug}"
+      >{post.title}</a
+    ><small><i>{formattedBlogPostDate}</i></small>
   </h2>
   <p>{post.description}</p>
   <footer>
     {#each post.tags as tag}
-      <a href="/blog?tags={tag}">
+      <a href="{$page.params.lang ? `/${$page.params.lang}` : ''}/blog?tags={tag}">
         {tag}
       </a>
     {/each}
