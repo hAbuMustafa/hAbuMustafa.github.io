@@ -51,7 +51,10 @@ export function load({ params, url }) {
     : postsForLang;
 
   return {
-    posts,
+    posts: posts?.map((post) => ({
+      ...post,
+      slug: post.slug.replace(/\.[a-z]{2}$/, ''),
+    })),
     // title: translations.title[(params.lang as keyof typeof translations.title) || 'en'],
     translations: Object.fromEntries(
       Object.entries(translations).map(([key, obj]) => [
