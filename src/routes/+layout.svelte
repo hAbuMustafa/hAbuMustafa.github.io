@@ -14,6 +14,11 @@
       ? `${$page.data.pageTitle} - Hosam Hamdy`
       : "Hosam Hamdy's hideout"}
   </title>
+  {#if process.env.NODE_ENV === 'development'}
+    <link rel="icon" href="/favicon_dev.png" />
+  {:else}
+    <link rel="icon" href="/favicon.png" />
+  {/if}
 </svelte:head>
 
 <svelte:body use:direction />
