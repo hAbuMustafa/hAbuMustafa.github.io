@@ -1,7 +1,8 @@
 ---
 title: "Hello World"
-date: 2020-05-26T13:58:51+02:00
+author: "Hosam Hamdy"
 description: "My first blog post"
+date: 2020-05-26T13:58:51+02:00
 tags: ["hello", "world"]
 ---
 
