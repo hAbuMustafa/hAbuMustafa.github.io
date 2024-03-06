@@ -1,15 +1,6 @@
+import type { Frontmatter, BlogPost } from '$lib/types/blog-posts';
 import { listFiles, getFile } from '@mongez/fs';
 import matter from 'gray-matter';
-
-interface Frontmatter {
-  title: string;
-  description: string;
-  publishedOn: string;
-}
-
-interface BlogPost extends Frontmatter {
-  slug: string;
-}
 
 const articlesFolder = './src/lib/blog-articles';
 
