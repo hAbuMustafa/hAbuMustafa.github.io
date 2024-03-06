@@ -2,6 +2,10 @@
   import { page } from '$app/stores';
   import './style.css';
   import Nav from './Nav.svelte';
+
+  function direction(node: HTMLBodyElement) {
+    node.dir = $page.params.lang === 'ar' ? 'rtl' : 'ltr';
+  }
 </script>
 
 <svelte:head>
@@ -11,6 +15,8 @@
       : "Hosam Hamdy's hideout"}
   </title>
 </svelte:head>
+
+<svelte:body use:direction />
 
 <Nav />
 
