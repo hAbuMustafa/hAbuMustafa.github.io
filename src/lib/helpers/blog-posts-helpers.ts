@@ -20,7 +20,7 @@ export function getBlogPostList() {
     });
   }
 
-  return blogPosts.sort((p1, p2) => (p1.publishedOn < p2.publishedOn ? 1 : -1));
+  return blogPosts.sort((p1, p2) => (p1.date < p2.date ? 1 : -1));
 }
 
 export function loadBlogPost(slug: string) {

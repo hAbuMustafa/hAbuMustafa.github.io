@@ -1,7 +1,8 @@
 export interface Frontmatter {
   title: string;
   description: string;
-  publishedOn: string;
+  date: string;
+  updated?: string;
 }
 
 export interface BlogPost extends Frontmatter {
