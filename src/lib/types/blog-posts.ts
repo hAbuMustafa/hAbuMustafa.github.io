@@ -1,8 +1,9 @@
 export interface Frontmatter {
   title: string;
+  author: string;
   description: string;
   date: string;
-  author: string;
+  tags: string[];
   updated?: string;
 }
 
