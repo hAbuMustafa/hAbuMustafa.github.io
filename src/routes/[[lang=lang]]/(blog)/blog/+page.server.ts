@@ -2,7 +2,8 @@ import { getBlogPostList } from '$lib/helpers/blog-posts-helpers';
 
 export function load({ params }) {
   const blogPostList = getBlogPostList().filter((post) =>
-    params.lang === 'ar' ? post.slug.endsWith(`.ar`) : !post.slug.includes('.')
+    // if the user navigated to a specified language url, only show posts in that language. Otherwise, default to english posts.
+    !params.lang ? !post.slug.includes('.') : post.slug.endsWith(`.${params.lang}`)
   );
 
   return { blogPostList };
