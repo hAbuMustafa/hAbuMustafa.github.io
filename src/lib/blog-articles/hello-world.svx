@@ -3,7 +3,10 @@ title: "Hello World"
 author: "Hosam Hamdy"
 description: "My first blog post"
 date: 2020-05-26T13:58:51+02:00
-tags: ["hello", "world"]
+tags: 
+  - "hello"
+  - "world"
+published: true
 ---
 
 # {title}

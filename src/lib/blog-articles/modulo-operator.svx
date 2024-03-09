@@ -3,7 +3,13 @@ title: "The Modulo Operator"
 author: "Hosam Hamdy"
 description: "A short interactive intro to the modulo operator in JavaScript."
 date: 2021-04-07T19:20:51+02:00
-tags: ["javascript", "introduction","programming","modulo operator"]
+tags: 
+  - "javascript"
+  - "introduction"
+  - "programming"
+  - "modulo operator"
+published: true
+lang: 'ar'
 ---
 
 # {title}
