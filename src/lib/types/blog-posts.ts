@@ -4,6 +4,8 @@ export interface Frontmatter {
   description: string;
   date: string;
   tags: string[];
+  lang?: string;
+  published?: true;
   updated?: string;
 }
 
