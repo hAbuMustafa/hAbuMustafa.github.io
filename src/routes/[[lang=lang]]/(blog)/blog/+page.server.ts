@@ -1,4 +1,5 @@
 import { getBlogPostList } from '$lib/helpers/blog-posts-helpers';
+import type { BlogPost } from '$lib/types/blog-posts.js';
 
 const translations = {
   title: {
@@ -31,8 +32,10 @@ const translations = {
   },
 };
 
-export function load({ params, url }) {
-  const postsForLang = getBlogPostList().filter((post) =>
+export async function load({ params, url, fetch }) {
+  const response = await fetch('api/posts');
+  const postsJSON: BlogPost[] = await response.json();
+  const postsForLang = postsJSON.filter((post) =>
     // if the user navigated to a specified language url, only show posts in that language. Otherwise, default to english posts.
     !params.lang
       ? !post.slug.includes('.')
