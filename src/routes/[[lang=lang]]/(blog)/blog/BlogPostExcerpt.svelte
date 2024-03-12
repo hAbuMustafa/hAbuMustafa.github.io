@@ -25,7 +25,7 @@
   <footer>
     {#each post.tags as tag}
       <a href="{$page.params.lang ? `/${$page.params.lang}` : ''}/blog?tags={tag}">
-        {tag}
+        &num;{tag}
       </a>
     {/each}
   </footer>
