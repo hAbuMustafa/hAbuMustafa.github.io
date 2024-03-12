@@ -41,6 +41,8 @@
 
     &:hover {
       scale: 1.02;
+      box-shadow: 0 0 4rem var(--darker-main-color);
+      z-index: 1;
     }
   }
 
