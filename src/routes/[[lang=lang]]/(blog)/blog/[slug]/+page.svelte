@@ -32,6 +32,7 @@
     margin-block-start: 3rem;
 
     & > h1 {
+      font-size: 2.5rem;
       margin-block-end: 0;
     }
 
