@@ -20,4 +20,6 @@
       Published at {formatDate($page.params.lang, data.meta.date)}
     </p>
   </hgroup>
+
+  <svelte:component this={data.content} />
 </article>
