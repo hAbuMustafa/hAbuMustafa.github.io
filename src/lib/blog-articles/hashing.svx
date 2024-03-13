@@ -11,4 +11,4 @@ tags:
 published: true
 ---
 
-My  first blog on {hashing} algos.
+My  first blog on {title} algos.
