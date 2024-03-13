@@ -33,7 +33,7 @@ const translations = {
 };
 
 export async function load({ params, url, fetch }) {
-  const response = await fetch('api/posts');
+  const response = await fetch('/api/posts');
   const postsJSON: BlogPost[] = await response.json();
   const postsForLang = postsJSON.filter((post) =>
     // if the user navigated to a specified language url, only show posts in that language. Otherwise, default to english posts.
