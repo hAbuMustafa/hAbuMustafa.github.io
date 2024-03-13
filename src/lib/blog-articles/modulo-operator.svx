@@ -12,5 +12,4 @@ published: true
 lang: 'ar'
 ---
 
-# {title}
-First blog post on modulo operator in JavaScript.
+First blog post on {title} in JavaScript.
