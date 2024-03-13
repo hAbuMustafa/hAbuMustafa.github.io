@@ -1,18 +1,11 @@
 <script lang="ts">
   import { page } from '$app/stores';
+  import { formatDate } from '$lib/helpers/utils';
   import type { BlogPost } from '$lib/types/blog-posts';
 
   export let post: BlogPost;
 
-  const formattedBlogPostDate = new Date(post.date).toLocaleDateString(
-    $page.params.lang,
-    {
-      month: 'short',
-      day: '2-digit',
-      year: 'numeric',
-      timeZoneName: 'short',
-    }
-  );
+  const formattedBlogPostDate = formatDate($page.params.lang, post.date);
 </script>
 
 <section>

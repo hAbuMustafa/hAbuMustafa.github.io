@@ -1,12 +1,9 @@
 <script lang="ts">
   import { page } from '$app/stores';
+  import { formatDate } from '$lib/helpers/utils';
 
   export let data;
 </script>
-
-<pre>
-  {JSON.stringify(data.meta, null, 2)}
-</pre>
 
 <svelte:head>
   <title>{data.meta.title}</title>
@@ -20,12 +17,7 @@
       {data.meta.title}
     </h1>
     <p>
-      Published at {new Date(data.meta.date).toLocaleDateString($page.params.lang, {
-        month: 'short',
-        day: '2-digit',
-        year: 'numeric',
-        timeZoneName: 'short',
-      })}
+      Published at {formatDate($page.params.lang, data.meta.date)}
     </p>
   </hgroup>
 </article>
