@@ -22,7 +22,9 @@
     </p>
   </hgroup>
 
-  <svelte:component this={data.content} />
+  <div class="blog-post-content">
+    <svelte:component this={data.content} />
+  </div>
 </article>
 
 <style lang="scss">
