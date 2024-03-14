@@ -121,7 +121,7 @@ div:has(> pre > .highlighted-snippet):hover {
   }
 }
 
-.wrapper code.highlighted-snippet {
+code.highlighted-snippet {
   display: block;
   position: relative;
   background-color: var(--lighter-main-color-bg);
