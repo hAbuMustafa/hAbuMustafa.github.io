@@ -13,7 +13,7 @@ published: true
 
 My  first blog on {title} algos.
 
-```javascript
+```typescript
 type TYPESS = string | number | boolean;
 
 function name(params:TYPESS) {

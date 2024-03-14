@@ -105,7 +105,7 @@ footer a {
   transform: skewX(-6deg);
 }
 
-code:not(.highlighted-snippet) {
+code:not(.highlighted-snippet):not([class*='language-']) {
   line-height: 1.3rem;
   color: #a00;
   font-family: monospace;
@@ -115,13 +115,15 @@ code:not(.highlighted-snippet) {
   border-radius: 0.25rem;
 }
 
-div:has(> pre > .highlighted-snippet):hover {
-  code.highlighted-snippet {
+div:has(> pre > :is(.highlighted-snippet, code[class*='language-'])):hover {
+  code.highlighted-snippet,
+  code[class*='language-'] {
     border: 1px solid var(--main-color);
   }
 }
 
-code.highlighted-snippet {
+code.highlighted-snippet,
+code[class*='language-'] {
   display: block;
   position: relative;
   background-color: var(--lighter-main-color-bg);
@@ -138,7 +140,8 @@ code.highlighted-snippet {
     color: purple;
   }
 
-  .hljs-keyword {
+  .hljs-keyword,
+  .token.keyword {
     color: darksalmon;
     -webkit-filter: brightness(70%);
     filter: brightness(70%);
@@ -148,15 +151,18 @@ code.highlighted-snippet {
     color: darkgoldenrod;
   }
 
-  .hljs-variable.language_ {
+  .hljs-variable.language_,
+  .token.constant {
     color: hsl(225, 73%, 50%);
   }
 
-  .hljs-title.function_ {
+  .hljs-title.function_,
+  .token.function {
     color: purple;
   }
 
-  .hljs-string {
+  .hljs-string,
+  .token.builtin {
     color: green;
   }
 
