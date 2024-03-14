@@ -1,6 +1,9 @@
 import adapter from '@sveltejs/adapter-auto';
 import { mdsvex } from 'mdsvex';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import remarkUnwrapImages from 'remark-unwrap-images';
+import remarkTableOfContents from 'remark-toc';
+import rehypeSlug from 'rehype-slug';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,6 +14,16 @@ const config = {
     vitePreprocess(),
     mdsvex({
       extensions: ['.md', '.svx'],
+      remarkPlugins: [
+        remarkUnwrapImages,
+        [
+          remarkTableOfContents,
+          {
+            tight: true,
+          },
+        ],
+      ],
+      rehypePlugins: [rehypeSlug],
     }),
   ],
   vitePlugin: {
