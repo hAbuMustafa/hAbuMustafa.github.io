@@ -105,7 +105,7 @@ footer a {
   transform: skewX(-6deg);
 }
 
-code:not([class*='language-']) {
+code:not(.highlighted-snippet) {
   line-height: 1.3rem;
   color: #a00;
   font-family: monospace;
