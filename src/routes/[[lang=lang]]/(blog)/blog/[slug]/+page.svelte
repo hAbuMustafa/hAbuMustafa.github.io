@@ -9,7 +9,7 @@
   <title>{data.meta.title}</title>
   <meta property="og:type" content="article" />
   <meta property="og:title" content={data.meta.title} />
-  // todo: implement other og meta tags
+  <!-- todo: implement other og meta tags -->
 </svelte:head>
 
 <article>
