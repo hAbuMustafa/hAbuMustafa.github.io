@@ -14,6 +14,10 @@ const config = {
     vitePreprocess(),
     mdsvex({
       extensions: ['.md', '.svx'],
+      layout: {
+        _: './src/mdsvex_blog_layout.svelte',
+        project: './src/mdsvex_project_layout.svelte',
+      },
       remarkPlugins: [
         remarkUnwrapImages,
         [
