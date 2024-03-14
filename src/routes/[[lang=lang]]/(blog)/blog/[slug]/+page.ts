@@ -12,6 +12,6 @@ export async function load({ params }) {
       meta: post.metadata,
     };
   } catch (err) {
-    throw error(404, `Couldn't find post with slug ${params.slug}`);
+    throw error(404, `Couldn't find post with the slug "${params.slug}"`);
   }
 }
