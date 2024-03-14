@@ -115,6 +115,60 @@ code:not(.highlighted-snippet) {
   border-radius: 0.25rem;
 }
 
+div:has(> pre > .highlighted-snippet):hover {
+  code.highlighted-snippet {
+    border: 1px solid var(--main-color);
+  }
+}
+
+.wrapper code.highlighted-snippet {
+  display: block;
+  position: relative;
+  background-color: var(--lighter-main-color-bg);
+  color: var(--darkest-main-color);
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  max-width: 100%;
+  text-wrap: wrap;
+  overflow-x: auto;
+  line-height: initial;
+
+  .hljs-attr {
+    color: purple;
+  }
+
+  .hljs-keyword {
+    color: darksalmon;
+    -webkit-filter: brightness(70%);
+    filter: brightness(70%);
+  }
+
+  .hljs-params {
+    color: darkgoldenrod;
+  }
+
+  .hljs-variable.language_ {
+    color: hsl(225, 73%, 50%);
+  }
+
+  .hljs-title.function_ {
+    color: purple;
+  }
+
+  .hljs-string {
+    color: green;
+  }
+
+  .hljs-property {
+    color: var(--main-color);
+  }
+
+  .hljs-number {
+    color: hsl(225, 73%, 50%);
+  }
+}
+
 [contenteditable] {
   position: relative;
   -webkit-margin-end: 1rem;

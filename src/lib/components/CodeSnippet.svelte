@@ -4,11 +4,11 @@
   import hljs from 'highlight.js';
   import CopyIcon from 'svelte-material-icons/ContentCopy.svelte';
 
-  // todo: Since the whole blog is going to be Based On MDSVEX, Use <slot />, and move :global() styles to the main style.css sheet, and embed code through normal slot <CodeSnippet>HERE</CodeSnippet> inside mdsvex files.
+  // todo: Since the whole blog is going to be Based On MDSVEX, Use <slot />, and embed code through normal slot <CodeSnippet>HERE</CodeSnippet> inside mdsvex files.
 
   const marked = new Marked(
     markedHighlight({
-      langPrefix: '',
+      langPrefix: 'highlighted-snippet ',
       highlight(code, lang, info) {
         const language = hljs.getLanguage(lang) ? lang : 'plaintext';
         return hljs.highlight(code, { language }).value;
@@ -43,59 +43,6 @@ ${code}\n
   .wrapper {
     position: relative;
     max-width: 85vw;
-
-    &:hover {
-      & :global(code.javascript) {
-        border: 1px solid var(--main-color);
-      }
-    }
-
-    & :global(code.javascript) {
-      display: block;
-      position: relative;
-      background-color: var(--lighter-main-color-bg);
-      color: var(--darkest-main-color);
-      border: 1px solid transparent;
-      border-radius: 0.5rem;
-      padding: 1rem;
-      max-width: 100%;
-      text-wrap: wrap;
-      overflow-x: auto;
-      line-height: initial;
-
-      & :global(.hljs-attr) {
-        color: purple;
-      }
-
-      & :global(.hljs-keyword) {
-        color: darksalmon;
-        filter: brightness(70%);
-      }
-
-      & :global(.hljs-params) {
-        color: darkgoldenrod;
-      }
-
-      & :global(.hljs-variable.language_) {
-        color: hsl(225, 73%, 50%);
-      }
-
-      & :global(.hljs-title.function_) {
-        color: purple;
-      }
-
-      & :global(.hljs-string) {
-        color: green;
-      }
-
-      & :global(.hljs-property) {
-        color: var(--main-color);
-      }
-
-      & :global(.hljs-number) {
-        color: hsl(225, 73%, 50%);
-      }
-    }
 
     & .tags {
       position: absolute;
