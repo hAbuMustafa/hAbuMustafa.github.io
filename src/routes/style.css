@@ -31,7 +31,12 @@
   color: var(--text-color);
 }
 
-::selection {
+:root::-moz-selection {
+  background-color: var(--main-color);
+  color: var(--text-color);
+}
+
+:root::selection {
   background-color: var(--main-color);
   color: var(--text-color);
 }
