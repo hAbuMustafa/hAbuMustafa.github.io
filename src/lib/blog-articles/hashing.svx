@@ -12,3 +12,11 @@ published: true
 ---
 
 My  first blog on {title} algos.
+
+```javascript
+type TYPESS = string | number | boolean;
+
+function name(params:TYPESS) {
+  return params.length;
+}
+```
