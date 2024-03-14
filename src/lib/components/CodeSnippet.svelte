@@ -4,6 +4,8 @@
   import hljs from 'highlight.js';
   import CopyIcon from 'svelte-material-icons/ContentCopy.svelte';
 
+  // todo: Since the whole blog is going to be Based On MDSVEX, Use <slot />, and move :global() styles to the main style.css sheet, and embed code through normal slot <CodeSnippet>HERE</CodeSnippet> inside mdsvex files.
+
   const marked = new Marked(
     markedHighlight({
       langPrefix: '',
