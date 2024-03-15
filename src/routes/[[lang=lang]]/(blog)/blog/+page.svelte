@@ -10,14 +10,14 @@
   {#if data.posts.length === 0}
     <p>
       {data.translations.no_results_found}.
-      {#if data.searchParams.length > 0}
+      <!-- {#if data.searchParams.length > 0}
         {data.translations.try}
         <a href="{$page.params.lang ? `/${$page.params.lang}` : ''}/blog"
           >{data.translations.clearing}</a
         >
         {data.translations.search_params}{data.translations.q} ({data.translations
           .currently}: {data.searchParams.join(', ')})
-      {/if}
+      {/if} -->
     </p>
   {:else}
     {#each data.posts as post}

@@ -44,17 +44,17 @@ export async function load({ params, url, fetch }) {
       : post.slug.endsWith(`.${params.lang}`)
   );
 
-  const queryTags = url.searchParams.get('tags');
-  const queryTagsArray = queryTags?.split(',') || [];
+  // const queryTags = url.searchParams.get('tags');
+  // const queryTagsArray = queryTags?.split(',') || [];
 
-  const posts = queryTags
-    ? postsForLang.filter((post) =>
-        post.tags.some((postTag) => queryTagsArray.includes(postTag))
-      )
-    : postsForLang;
+  // const posts = queryTags
+  //   ? postsForLang.filter((post) =>
+  //       post.tags.some((postTag) => queryTagsArray.includes(postTag))
+  //     )
+  //   : postsForLang;
 
   return {
-    posts: posts?.map((post) => ({
+    posts: postsForLang?.map((post) => ({
       ...post,
       slug: post.slug.replace(/\.[a-z]{2}$/, ''),
     })),
@@ -65,6 +65,6 @@ export async function load({ params, url, fetch }) {
         obj[(params.lang as keyof typeof translations.title) || 'en'],
       ])
     ),
-    searchParams: queryTagsArray,
+    // searchParams: queryTagsArray,
   };
 }
