@@ -1,5 +1,7 @@
 /* refer to "../feed/rss-skeleton.xml" for more info */
 
+// todo: make dynamic rss feed, by "lang" `param`, and by "tags" `searchParam`
+
 import info from '$lib/info';
 import type { BlogPost } from '$lib/types/blog-posts.ts';
 
