@@ -1,5 +1,6 @@
-import type { ParamMatcher } from "@sveltejs/kit";
+import type { ParamMatcher } from '@sveltejs/kit';
 
 export const match: ParamMatcher = (param) => {
-  return param === "en" || param === "ar";
+  const supportedLanguages = ['en', 'ar'];
+  return supportedLanguages.includes(param);
 };
