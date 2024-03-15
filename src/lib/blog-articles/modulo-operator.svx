@@ -9,7 +9,6 @@ tags:
   - "programming"
   - "modulo operator"
 published: true
-lang: 'ar'
 ---
 
 First blog post on {title} in JavaScript.
