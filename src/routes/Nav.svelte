@@ -1,4 +1,6 @@
 <script lang="ts">
+  import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+
   interface SitemapT {
     text: string;
     href: string;
@@ -15,7 +17,7 @@
     {
       label: 'Portfolio',
       list: [
-        { text: 'Voice-Over', href: '/voice-over', separate:true },
+        { text: 'Voice-Over', href: '/voice-over', separate: true },
         { text: 'I18n Assistant', href: '/i18n-finder' },
         { text: 'Bookmarklets', href: '/bookmarklets' },
         { text: 'Vividus', href: '/vividus' },
@@ -44,19 +46,24 @@
   </li>
   {#each sitemap as item}
     {#if isSitemapItem(item)}
-      <li><a href={item.href}>{item.text}</a></li>{#if item.separate}<hr />{/if}
+      <li><a href={item.href}>{item.text}</a></li>
+      {#if item.separate}<hr />{/if}
     {:else}
       <li>
         <!-- svelte-ignore a11y-invalid-attribute -->
         <a href="">{item.label}</a>
         <ul>
           {#each item.list as subItem}
-            <li><a href={subItem.href}>{subItem.text}</a></li>{#if subItem.separate}<hr />{/if}
+            <li><a href={subItem.href}>{subItem.text}</a></li>
+            {#if subItem.separate}<hr />{/if}
           {/each}
         </ul>
       </li>
     {/if}
   {/each}
+  <li class="theme-toggle">
+    <ThemeToggle />
+  </li>
 </nav>
 
 <style lang="scss">
@@ -163,6 +170,11 @@
       #hosam-avatar {
         outline: 2px solid var(--text-color);
       }
+    }
+
+    .theme-toggle {
+      position: absolute;
+      inset-inline-end: 1rem;
     }
   }
 </style>
