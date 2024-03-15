@@ -9,6 +9,13 @@
   <title>{data.meta.title}</title>
   <meta property="og:type" content="article" />
   <meta property="og:title" content={data.meta.title} />
+  <meta name="description" content={data.meta.description} />
+  <meta property="og:description" content={data.meta.description} />
+  <meta property="og:locale" content={$page.params.lang} />
+  <!-- <meta property="og:image" content="https://"> -->
+  <!-- <meta property="og:type" content="article"> -->
+  <!-- <meta name="twitter:card" content="summary_large_image"> -->
+  <!-- <meta property="og:url" content="https://"> -->
   <!-- todo: implement other og meta tags -->
 </svelte:head>
 
