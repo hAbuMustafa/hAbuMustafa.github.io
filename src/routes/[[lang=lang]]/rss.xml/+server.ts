@@ -1,3 +1,5 @@
+/* refer to "../feed/rss-skeleton.xml" for more info */
+
 import info from '$lib/info';
 import type { BlogPost } from '$lib/types/blog-posts.ts';
 
