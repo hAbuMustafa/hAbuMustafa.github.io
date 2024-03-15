@@ -2,10 +2,13 @@
   import { page } from '$app/stores';
   import './style.css';
   import Nav from './Nav.svelte';
+  import PageTranstition from './PageTranstition.svelte';
 
   function direction(node: HTMLBodyElement) {
     node.dir = $page.params.lang === 'ar' ? 'rtl' : 'ltr';
   }
+
+  export let data;
 </script>
 
 <svelte:head>
@@ -26,7 +29,9 @@
 <Nav />
 
 <main>
-  <slot />
+  <PageTranstition url={data.url}>
+    <slot />
+  </PageTranstition>
 </main>
 
 <style lang="scss">
