@@ -6,12 +6,7 @@
 
 {#key $theme}
   <button on:click={toggleTheme} in:fly={{ y: 10 }}>
-    {#if $theme === 'dark'}
-      <Moon />
-    {:else}
-      <Sun />
-    {/if}
-    <!-- <svelte:component this={$theme === 'dark' ? Sun : Moon} /> -->
+    <svelte:component this={$theme === 'dark' ? Sun : Moon} />
     <span style:text-transform="capitalize">{$theme}</span>
   </button>
 {/key}
