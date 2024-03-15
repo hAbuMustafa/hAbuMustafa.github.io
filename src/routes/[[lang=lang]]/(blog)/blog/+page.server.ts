@@ -1,4 +1,3 @@
-import { getBlogPostList } from '$lib/helpers/blog-posts-helpers';
 import type { BlogPost } from '$lib/types/blog-posts.js';
 
 const translations = {
