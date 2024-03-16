@@ -13,7 +13,13 @@
   }
 
   const sitemap: (SitemapT | SitemapSublistT)[] = [
-    { text: 'Blog', href: '/blog' },
+    {
+      label: 'Blog',
+      list: [
+        { text: 'Posts', href: '/blog/posts', separate: true },
+        { text: 'Tags', href: '/blog/tags' },
+      ],
+    },
     {
       label: 'Portfolio',
       list: [
@@ -109,7 +115,7 @@
 
         position: absolute;
         inset-block-start: 40%;
-        inset-inline-end: 0;
+        inset-inline-start: -50%;
         border: 1px solid var(--lighter-main-color);
         border-radius: 0.25rem;
 
