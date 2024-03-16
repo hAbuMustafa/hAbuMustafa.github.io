@@ -120,6 +120,14 @@ footer a,
   transform: skewX(-6deg);
 }
 
+.tag::before {
+  content: '#';
+}
+
+.rtl {
+  direction: rtl;
+}
+
 code:not(.highlighted-snippet):not([class*='language-']) {
   line-height: 1.3rem;
   color: #a00;
