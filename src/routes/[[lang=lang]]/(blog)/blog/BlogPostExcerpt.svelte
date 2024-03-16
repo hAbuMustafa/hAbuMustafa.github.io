@@ -8,7 +8,7 @@
   const formattedBlogPostDate = formatDate($page.params.lang, post.date);
 </script>
 
-<section>
+<section class:rtl={post.lang === 'ar'}>
   <h2>
     <a href="{$page.params.lang ? `/${$page.params.lang}` : ''}/blog/{post.slug}"
       >{post.title}</a
