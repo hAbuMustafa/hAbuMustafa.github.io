@@ -42,8 +42,8 @@ export async function GET({ fetch, params }) {
 		<feed xmlns="http://www.w3.org/2005/Atom">
     <generator uri="https://kit.svelte.dev/" version="2.4.3">SvelteKit</generator>
     <lastBuildDate>${new Date()}</lastBuildDate>
-    <managingEditor>hosam5553@gmail.com</managingEditor>
-    <webMaster>hosam5553@gmail.com</webMaster>
+    <managingEditor>${info.email}</managingEditor>
+    <webMaster>${info.email}</webMaster>
     <skipHours>
       <hour>1</hour>
       <hour>2</hour>

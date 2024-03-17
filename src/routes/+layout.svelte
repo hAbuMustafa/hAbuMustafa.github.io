@@ -3,6 +3,7 @@
   import './style.css';
   import Nav from './Nav.svelte';
   import PageTranstition from './PageTranstition.svelte';
+  import info from '$lib/info';
 
   function direction(node: HTMLBodyElement) {
     node.dir = $page.params.lang === 'ar' ? 'rtl' : 'ltr';
@@ -13,9 +14,7 @@
 
 <svelte:head>
   <title>
-    {$page.data.pageTitle
-      ? `${$page.data.pageTitle} - Hosam Hamdy`
-      : "Hosam Hamdy's hideout"}
+    {$page.data.pageTitle ? `${$page.data.pageTitle} - ${info.author}` : info.title}
   </title>
   {#if process.env.NODE_ENV === 'development'}
     <link rel="icon" href="/favicon_dev.png" />
