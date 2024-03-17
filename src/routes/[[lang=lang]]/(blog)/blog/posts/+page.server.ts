@@ -1,7 +1,5 @@
 import type { BlogPost } from '$lib/types/blog-posts.js';
 
-export const prerender = false;
-
 export async function load({ url }) {
   const tags = url.searchParams.get('tags');
   const method = url.searchParams.get('method') || 'some';

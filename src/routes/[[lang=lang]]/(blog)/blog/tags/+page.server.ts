@@ -1,7 +1,5 @@
 import type { BlogPost } from '$lib/types/blog-posts';
 
-export const prerender = false;
-
 export async function load({ fetch }) {
   const response = await fetch('/api/posts');
   const postsJSON: BlogPost[] = await response.json();
