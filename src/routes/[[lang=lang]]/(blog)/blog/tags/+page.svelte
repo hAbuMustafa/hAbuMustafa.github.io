@@ -17,7 +17,7 @@
     class="search-tags"
     transition:slide
   >
-    <fieldset class="wrapper">
+    <fieldset class="tags-wrapper">
       <legend>selected search tags</legend>
       {#each searchTags as tag}
         <button
@@ -58,7 +58,8 @@
           class="tag"
           on:click={() => {
             if (!searchTags.includes(tag)) searchTags = [...searchTags, tag];
-          }}>{tag}</button
+          }}
+          disabled={searchTags.includes(tag)}>{tag}</button
         >
       {/each}
     </div>
@@ -75,7 +76,7 @@
   }
 
   h2 {
-    text-decoration: underline;
+    border-block-end: 2px solid var(--darker-main-color);
   }
 
   .tags-wrapper button {
@@ -125,5 +126,32 @@
 
   legend {
     text-transform: capitalize;
+  }
+
+  section .tag {
+    padding: 4px 8px;
+    border: 1px solid var(--lighter-main-color-bg);
+  }
+
+  section .tag:not(:disabled):is(:hover, :focus) {
+    background-color: var(--lighter-main-color-bg);
+    border: 1px solid var(--main-color);
+  }
+
+  section .tag:disabled {
+    filter: opacity(0.5);
+  }
+
+  button[type='submit'] {
+    border: none;
+    border-radius: 4px;
+    padding-block: 0.25rem;
+    background-color: var(--darker-main-color);
+    color: var(--lighter-main-color-bg);
+  }
+
+  button[type='submit']:is(:hover, :focus) {
+    background-color: var(--main-color);
+    color: white;
   }
 </style>
