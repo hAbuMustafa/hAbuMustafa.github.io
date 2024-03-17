@@ -3,11 +3,14 @@
 // todo: make dynamic rss feed, by "lang" `param`, and by "tags" `searchParam`
 
 import info from '$lib/info';
-import type { BlogPost } from '$lib/types/blog-posts.ts';
+import type { BlogPost } from '$lib/types/blog-posts';
 
 export async function GET({ fetch, params }) {
   const response = await fetch('/api/posts');
   const posts: BlogPost[] = await response.json();
+
+  const urlWithLang = `${info.url}/${params.lang ?? 'en'}`;
+  const blogUrl = `${urlWithLang}/blog`;
 
   const headers = { 'Content-Type': 'application/xml' };
 
@@ -17,15 +20,15 @@ export async function GET({ fetch, params }) {
 		<title>${info.title}</title>
 		<description>${info.description}</description>
 		<link>${info.url}</link>
-		<atom:link href="${info.url}/rss.xml" rel="self" type="application/rss+xml"/>
+		<atom:link href="${blogUrl}/rss.xml" rel="self" type="application/rss+xml"/>
 		${posts
       .map(
         (post) => `
 				<item>
 					<title>${post.title}</title>
 					<description>${post.description}</description>
-					<link>${info.url}/${post.slug}</link>
-					<guid isPermaLink="true">${info.url}/${post.slug}</guid>
+					<link>${blogUrl}/${post.slug}</link>
+					<guid isPermaLink="true">${blogUrl}/${post.slug}</guid>
 					<pubDate>${new Date(post.date).toUTCString()}</pubDate>
 				</item>
 			`
@@ -61,25 +64,23 @@ export async function GET({ fetch, params }) {
       <day>Wednesday</day>
       <day>Thursday</day>
     </skipDays>
-    <link href="${info.url}/${
-    params.lang ?? 'en'
-  }/rss.xml" rel="self" type="application/atom+xml"/>
-    <link href="${info.url}/" rel="alternate" type="text/html"/>
+    <link href="${blogUrl}/rss.xml" rel="self" type="application/atom+xml"/>
+    <link href="${blogUrl}/" rel="alternate" type="text/html"/>
     <updated>${new Date()}</updated>
-    <id>${info.url}/${params.lang ?? 'en'}/rss.xml</id>
-    <title type="html">Hosam Hamdy ${params.lang ?? ''} Feed</title>
+    <id>${blogUrl}/rss.xml</id>
+    <title type="html">Hosam Hamdy Blog Feed</title>
     <subtitle>${info.description}</subtitle>
 		${posts.map(
       (post) =>
         `<entry>
 					<title type="html">${post.title}</title>
-					<link href="${info.url}/${post.lang ?? 'en'}/blog/${
-          post.slug
-        }" rel="alternate" type="text/html" title="${post.title}"/>
+					<link href="${blogUrl}/${post.slug}" rel="alternate" type="text/html" title="${
+          post.title
+        }"/>
 					<published>${post.date}</published>
 					<updated>${post.updated ?? post.date}</updated>
-					<id>${info.url}/${post.lang ?? 'en'}/blog/${post.slug}</id>
-					<content type="html" xml:base="${info.url}/${post.lang ?? 'en'}/blog/${post.slug}">
+					<id>${blogUrl}/${post.slug}</id>
+					<content type="html" xml:base="${blogUrl}/${post.slug}">
 							<![CDATA[${post.description}]]>
 					</content>
 					<author>
