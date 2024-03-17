@@ -6,7 +6,7 @@ import info from '$lib/info';
 import type { BlogPost } from '$lib/types/blog-posts.ts';
 
 export async function GET({ fetch, params }) {
-  const response = await fetch('api/posts');
+  const response = await fetch('/api/posts');
   const posts: BlogPost[] = await response.json();
 
   const headers = { 'Content-Type': 'application/xml' };
