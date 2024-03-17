@@ -12,11 +12,15 @@ export function formatDate(locale: string, date: string) {
 export function filterPosts(
   posts: BlogPost[],
   property: keyof (typeof posts)[0],
-  criteria: string,
-  method?: 'every' | 'some'
+  criteria: string | string[],
+  method: 'every' | 'some' = 'some'
 ) {
-  if (method) {
-    return posts.filter((post) => post.tags[method]((tag: string) => tag === criteria));
+  if (Array.isArray(posts[0][property])) {
+    return posts.filter((post) =>
+      (criteria as string[])[method]((criteriaArrItem) =>
+        (post[property] as string[]).includes(criteriaArrItem)
+      )
+    );
   } else {
     return posts.filter((post) => post[property] === criteria);
   }
