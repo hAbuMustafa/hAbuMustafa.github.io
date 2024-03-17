@@ -16,7 +16,7 @@ async function getPosts() {
 
     if (file && slug && typeof file === 'object' && 'metadata' in file) {
       const metadata = file.metadata as Frontmatter;
-      const post = { ...metadata, slug } satisfies BlogPost;
+      const post = { ...metadata, slug, lang: metadata.lang ?? 'en' } satisfies BlogPost;
       post.published && posts.push(post);
     }
   }
