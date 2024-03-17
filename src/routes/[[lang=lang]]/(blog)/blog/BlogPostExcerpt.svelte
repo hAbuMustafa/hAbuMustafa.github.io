@@ -16,7 +16,7 @@
   <p>{post.description}</p>
   <footer>
     {#each post.tags as tag}
-      <a href="{post.lang ? `/${post.lang}` : ''}/blog?tags={tag}">
+      <a href="{post.lang ? `/${post.lang}` : ''}/blog/posts?tags={tag}">
         &num;{tag}
       </a>
     {/each}
