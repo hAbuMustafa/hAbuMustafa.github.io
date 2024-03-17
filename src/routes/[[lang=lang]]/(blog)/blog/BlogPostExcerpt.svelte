@@ -1,23 +1,22 @@
 <script lang="ts">
-  import { page } from '$app/stores';
   import { formatDate } from '$lib/helpers/utils';
   import type { BlogPost } from '$lib/types/blog-posts';
 
   export let post: BlogPost;
 
-  const formattedBlogPostDate = formatDate($page.params.lang, post.date);
+  const formattedBlogPostDate = formatDate(post.lang ?? 'en', post.date);
 </script>
 
 <section class:rtl={post.lang === 'ar'}>
   <h2>
-    <a href="{$page.params.lang ? `/${$page.params.lang}` : ''}/blog/{post.slug}"
-      >{post.title}</a
-    ><small><i>{formattedBlogPostDate}</i></small>
+    <a href="{post.lang ? `/${post.lang}` : ''}/blog/{post.slug}">{post.title}</a><small
+      ><i>{formattedBlogPostDate}</i></small
+    >
   </h2>
   <p>{post.description}</p>
   <footer>
     {#each post.tags as tag}
-      <a href="{$page.params.lang ? `/${$page.params.lang}` : ''}/blog?tags={tag}">
+      <a href="{post.lang ? `/${post.lang}` : ''}/blog?tags={tag}">
         &num;{tag}
       </a>
     {/each}
