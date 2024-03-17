@@ -17,7 +17,10 @@
       label: 'Blog',
       list: [
         { text: 'Posts', href: '/blog/posts', separate: true },
-        { text: 'Tags', href: '/blog/tags' },
+        {
+          text: 'Tags\n<small style="font-size: 0.75rem; display: block;">and dynamic RSS!</small>',
+          href: '/blog/tags',
+        },
       ],
     },
     {
@@ -52,7 +55,7 @@
   </li>
   {#each sitemap as item}
     {#if isSitemapItem(item)}
-      <li><a href={item.href}>{item.text}</a></li>
+      <li><a href={item.href}>{@html item.text}</a></li>
       {#if item.separate}<hr />{/if}
     {:else}
       <li>
@@ -60,7 +63,7 @@
         <a href="">{item.label}</a>
         <ul>
           {#each item.list as subItem}
-            <li><a href={subItem.href}>{subItem.text}</a></li>
+            <li><a href={subItem.href}>{@html subItem.text}</a></li>
             {#if subItem.separate}<hr />{/if}
           {/each}
         </ul>
