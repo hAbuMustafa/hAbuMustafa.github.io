@@ -31,29 +31,12 @@ const translations = {
   },
 };
 
-export async function load({ params, url, fetch }) {
-  const response = await fetch('/api/posts');
+export async function load({ params, fetch }) {
+  const response = await fetch(`/api/posts?lang=${params.lang ?? 'en'}`);
   const postsJSON: BlogPost[] = await response.json();
-  const postsForLang = postsJSON.filter((post) =>
-    // if the user navigated to a specified language url, only show posts in that language. Otherwise, default to english posts.
-    !params.lang
-      ? !post.slug.includes('.')
-      : params.lang === 'en'
-      ? !post.slug.match(/\.[a-z]{2}$/)
-      : post.slug.endsWith(`.${params.lang}`)
-  );
-
-  // const queryTags = url.searchParams.get('tags');
-  // const queryTagsArray = queryTags?.split(',') || [];
-
-  // const posts = queryTags
-  //   ? postsForLang.filter((post) =>
-  //       post.tags.some((postTag) => queryTagsArray.includes(postTag))
-  //     )
-  //   : postsForLang;
 
   return {
-    posts: postsForLang,
+    posts: postsJSON,
     // title: translations.title[(params.lang as keyof typeof translations.title) || 'en'],
     translations: Object.fromEntries(
       Object.entries(translations).map(([key, obj]) => [
@@ -61,6 +44,5 @@ export async function load({ params, url, fetch }) {
         obj[(params.lang as keyof typeof translations.title) || 'en'],
       ])
     ),
-    // searchParams: queryTagsArray,
   };
 }

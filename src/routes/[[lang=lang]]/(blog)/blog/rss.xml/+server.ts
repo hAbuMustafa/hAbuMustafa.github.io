@@ -5,8 +5,15 @@
 import info from '$lib/info';
 import type { BlogPost } from '$lib/types/blog-posts';
 
-export async function GET({ fetch, params }) {
-  const response = await fetch('/api/posts');
+export async function GET({ fetch, params, url }) {
+  const tags = url.searchParams.get('tags');
+  const method = url.searchParams.get('method');
+
+  const response = await fetch(
+    `/api/posts?lang=${params.lang ?? 'en'}${tags ? `&tags=${tags}` : ''}${
+      method ? `&method=${method}` : ''
+    }`
+  );
   const posts: BlogPost[] = await response.json();
 
   const urlWithLang = `${info.url}/${params.lang ?? 'en'}`;
