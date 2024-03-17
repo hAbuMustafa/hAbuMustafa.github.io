@@ -1,5 +1,7 @@
 import type { BlogPost } from '$lib/types/blog-posts.js';
 
+// bug: tags filtering is not working, it is not returning the corresponding posts wth specified tags if the language is different
+
 export async function load({ url, params, fetch }) {
   const tags = url.searchParams.get('tags');
   const method = url.searchParams.get('method') || 'some';
