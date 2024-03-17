@@ -61,12 +61,12 @@ export async function GET({ fetch, params }) {
       <day>Wednesday</day>
       <day>Thursday</day>
     </skipDays>
-    <link href="https://hosam.website/${
-      params.lang ?? 'en'
-    }/rss.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://hosam.website/" rel="alternate" type="text/html"/>
+    <link href="${info.url}/${
+    params.lang ?? 'en'
+  }/rss.xml" rel="self" type="application/atom+xml"/>
+    <link href="${info.url}/" rel="alternate" type="text/html"/>
     <updated>${new Date()}</updated>
-    <id>https://hosam.website/${params.lang ?? 'en'}/rss.xml</id>
+    <id>${info.url}/${params.lang ?? 'en'}/rss.xml</id>
     <title type="html">Hosam Hamdy ${params.lang ?? ''} Feed</title>
     <subtitle>${info.description}</subtitle>
 		${posts.map(
