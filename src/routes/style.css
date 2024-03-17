@@ -247,6 +247,12 @@ code[contenteditable] {
   scroll-margin-block-start: 4rem;
 }
 
+pre,
+code {
+  /* since rtl layout for Arabic pages forces an rtl direction on the whole page */
+  direction: ltr;
+}
+
 @-webkit-keyframes hover {
   0% {
     transform: translateY(0rem);
