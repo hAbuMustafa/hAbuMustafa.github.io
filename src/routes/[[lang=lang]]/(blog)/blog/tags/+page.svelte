@@ -52,7 +52,7 @@
 {#each Object.keys(data).filter((key) => /Tags$/.test(key)) as langTag}
   <section>
     <h2>tags under "{langTag.replace(/Tags$/, '')}" language</h2>
-    <div class="wrapper" class:rtl={langTag.substring(0, 2) === 'ar'}>
+    <div class="tags-wrapper" class:rtl={langTag.substring(0, 2) === 'ar'}>
       {#each data[langTag] as tag}
         <button
           class="tag"
@@ -66,9 +66,10 @@
 {/each}
 
 <style>
-  .wrapper {
+  .tags-wrapper {
     display: flex;
     gap: 0.5rem;
+    flex-wrap: wrap;
     justify-content: center;
     padding-block: 1rem;
   }
@@ -77,7 +78,7 @@
     text-decoration: underline;
   }
 
-  .wrapper button {
+  .tags-wrapper button {
     border: none;
     color: unset;
     font-weight: 700;
