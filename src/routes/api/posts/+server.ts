@@ -8,7 +8,11 @@ async function getPosts() {
 
   for (const path in paths) {
     const file = paths[path];
-    const slug = path.split('/').at(-1)?.replace('.svx', '');
+    const slug = path
+      .split('/')
+      .at(-1)
+      ?.replace('.svx', '')
+      .replace(/\.[a-z]{2}$/, '');
 
     if (file && slug && typeof file === 'object' && 'metadata' in file) {
       const metadata = file.metadata as Frontmatter;

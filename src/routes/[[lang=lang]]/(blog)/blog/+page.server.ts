@@ -53,10 +53,7 @@ export async function load({ params, url, fetch }) {
   //   : postsForLang;
 
   return {
-    posts: postsForLang?.map((post) => ({
-      ...post,
-      slug: post.slug.replace(/\.[a-z]{2}$/, ''),
-    })),
+    posts: postsForLang,
     // title: translations.title[(params.lang as keyof typeof translations.title) || 'en'],
     translations: Object.fromEntries(
       Object.entries(translations).map(([key, obj]) => [

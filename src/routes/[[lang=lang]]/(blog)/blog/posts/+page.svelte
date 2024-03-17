@@ -19,7 +19,7 @@
 
 <main>
   {#if data.posts.length}
-    {#each data.posts as post (post.slug)}
+    {#each data.posts as post (`${post.slug}.${post.lang ?? 'en'}`)}
       <BlogPostExcerpt {post} />
     {/each}
   {:else}
