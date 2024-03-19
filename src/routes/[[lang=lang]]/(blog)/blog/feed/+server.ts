@@ -12,7 +12,7 @@ export async function GET({ fetch, params, url }) {
 
   const response = await fetch(
     `/api/posts${
-      // if the `lang` is specified in the url, use it. If not specified, clear the `lang` searchParam, unless no tags provided, then use the `en` lang to filter for english posts by default.
+      // if the `lang` is specified in url queries, use it. If not specified, check if there are no `tags` as well, if so, use the `lang` from the params if it exists. If it doesn't, use `en` as the default to serve the basic feed. This assures that the user will get the feed with the tags he is following despite the language of the page he is redirected from. And if he supplied no tags, he will get the feed in the language of the page he is redirected from. Otherwise, English version of the feed is served as the default.
       lang ? `?lang=${lang}` : !lang && !tags ? `?lang=${params.lang ?? 'en'}` : ''
     }${lang || (!lang && !tags) ? '&' : '?'}${tags ? `tags=${tags}` : ''}${
       method ? `&method=${method}` : ''
