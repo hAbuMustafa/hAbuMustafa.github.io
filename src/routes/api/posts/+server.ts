@@ -2,11 +2,7 @@ import { filterPosts } from '$lib/helpers/utils.js';
 import type { BlogPost, Frontmatter } from '$lib/types/blog-posts';
 import { json } from '@sveltejs/kit';
 
-async function getPosts(
-  lang: string | null,
-  tags?: string[],
-  method: 'some' | 'every' = 'some'
-) {
+async function getPosts() {
   let posts: BlogPost[] = [];
 
   const paths = import.meta.glob('/src/lib/blog-articles/*.svx', { eager: true });
@@ -26,28 +22,13 @@ async function getPosts(
     }
   }
 
-  if (lang) {
-    posts = filterPosts(posts, 'lang', lang);
-  } else if (!lang && !tags?.length) {
-    posts = filterPosts(posts, 'lang', 'en');
-  }
-
-  if (tags) {
-    posts = filterPosts(posts, 'tags', tags, method);
-  }
-
   posts = posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return posts;
 }
 
 export async function GET({ url }) {
-  const posts = await getPosts(
-    url.searchParams.get('lang'),
-    url.searchParams.get('tags')?.split(','),
-    (url.searchParams.get('method') as 'some' | 'every') ?? 'some'
-  );
+  const posts = await getPosts();
 
-  console.log(url.searchParams.get('lang'));
   return json(posts);
 }

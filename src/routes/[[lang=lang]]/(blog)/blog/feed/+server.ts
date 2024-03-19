@@ -2,23 +2,31 @@
 
 export const trailingSlash = 'ignore';
 
+import { filterPosts } from '$lib/helpers/utils';
 import info from '$lib/info';
 import type { BlogPost } from '$lib/types/blog-posts';
 
 export async function GET({ fetch, params, url }) {
   const lang = url.searchParams.get('lang');
   const tags = url.searchParams.get('tags');
-  const method = url.searchParams.get('method');
+  const method = (url.searchParams.get('method') as 'some' | 'every') ?? 'some';
 
-  const response = await fetch(
-    `/api/posts${
-      // if the `lang` is specified in url queries, use it. If not specified, check if there are no `tags` as well, if so, use the `lang` from the params if it exists. If it doesn't, use `en` as the default to serve the basic feed. This assures that the user will get the feed with the tags he is following despite the language of the page he is redirected from. And if he supplied no tags, he will get the feed in the language of the page he is redirected from. Otherwise, English version of the feed is served as the default.
-      lang ? `?lang=${lang}` : !lang && !tags ? `?lang=${params.lang ?? 'en'}` : ''
-    }${lang || (!lang && !tags) ? '&' : '?'}${tags ? `tags=${tags}` : ''}${
-      method ? `&method=${method}` : ''
-    }`
-  );
-  const posts: BlogPost[] = await response.json();
+  const response = await fetch(`/api/posts`);
+  let posts: BlogPost[] = await response.json();
+
+  if (lang) {
+    posts = filterPosts(posts, 'lang', lang);
+  } else if (!lang && !tags?.length && params.lang) {
+    posts = filterPosts(posts, 'lang', params.lang);
+  } else if (!lang && tags?.length) {
+    posts = posts;
+  } else {
+    posts = filterPosts(posts, 'lang', 'en');
+  }
+
+  if (tags) {
+    posts = filterPosts(posts, 'tags', tags.split(','), method);
+  }
 
   const urlWithLang = `${info.url}/${params.lang ?? 'en'}`;
   const blogUrl = `${urlWithLang}/blog`;
