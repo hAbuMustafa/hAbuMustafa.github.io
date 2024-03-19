@@ -1,25 +1,23 @@
+import { filterPosts } from '$lib/helpers/utils';
 import type { BlogPost } from '$lib/types/blog-posts.js';
 
-// bug: tags filtering is not working, it is not returning the corresponding posts wth specified tags if the language is different
-
 export async function load({ url, params, fetch }) {
+  const lang = params.lang;
   const tags = url.searchParams.get('tags');
-  const method = url.searchParams.get('method') || 'some';
+  const method = (url.searchParams.get('method') as 'some' | 'every') ?? 'some';
 
-  const response = await fetch(
-    `/api/posts?lang=${params.lang ?? 'en'}${tags ? `&tags=${tags}` : ''}${
-      method ? `&method=${method}` : ''
-    }`
-  );
-  const postsJSON = await response.json();
+  const response = await fetch(`/api/posts`);
+  let posts = await response.json();
 
-  if (!tags) return { posts: postsJSON };
+  if (lang) {
+    posts = filterPosts(posts, 'lang', lang);
+  } else if (!lang && !tags?.length) {
+    posts = filterPosts(posts, 'lang', 'en');
+  }
 
-  const tagsArray = tags.split(',');
-  const posts = postsJSON.filter((post: BlogPost) => {
-    if (method === 'some' || method === 'every')
-      return tagsArray[method]((tag) => post.tags.includes(tag));
-  });
+  if (tags) {
+    posts = filterPosts(posts, 'tags', tags.split(','), method);
+  }
 
-  return { posts, searchParams: tagsArray };
+  return { posts, searchParams: tags?.split(',') };
 }
