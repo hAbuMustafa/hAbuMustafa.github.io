@@ -22,7 +22,6 @@ export async function GET({ fetch, params, url }) {
   const headers = { 'Content-Type': 'application/xml' };
 
   const xml = `
-		
 		<feed xmlns="http://www.w3.org/2005/Atom">
     <generator uri="https://kit.svelte.dev/" version="2.4.3">SvelteKit</generator>
     <lastBuildDate>${new Date()}</lastBuildDate>
