@@ -28,6 +28,8 @@ async function getPosts(
 
   if (lang) {
     posts = filterPosts(posts, 'lang', lang);
+  } else if (!lang && !tags?.length) {
+    posts = filterPosts(posts, 'lang', 'en');
   }
 
   if (tags) {
@@ -46,5 +48,6 @@ export async function GET({ url }) {
     (url.searchParams.get('method') as 'some' | 'every') ?? 'some'
   );
 
+  console.log(url.searchParams.get('lang'));
   return json(posts);
 }
