@@ -26,10 +26,12 @@
   <!-- not using `lang` param in the link since the user migh pick tags from different languages -->
   <a
     class="subscribe"
-    href={`/blog/feed/${tags ? `?tags=${tags}` : ''}${method && tags ? `&method=${method}` : ''}`}
+    href={`${$page.url.pathname.replace(/\/posts$/, '/feed')}${tags ? `?tags=${tags}` : ''}${method && tags ? `&method=${method}` : ''}`}
     data-sveltekit-reload
   >
-    <span>Subscribe to this <em>custom feed</em>!</span>
+    <span
+      >Subscribe to this {#if tags}<em>custom</em>{/if} feed!</span
+    >
     <RSS color="orange" size="1.5em" /></a
   >
 </hgroup>
