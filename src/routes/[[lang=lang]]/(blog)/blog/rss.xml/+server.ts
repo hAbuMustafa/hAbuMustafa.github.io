@@ -21,29 +21,6 @@ export async function GET({ fetch, params, url }) {
 
   const headers = { 'Content-Type': 'application/xml' };
 
-  //   const originalTemplate = `
-  // 	<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-  // 	<channel>
-  // 		<title>${info.title}</title>
-  // 		<description>${info.description}</description>
-  // 		<link>${info.url}</link>
-  // 		<atom:link href="${blogUrl}/rss.xml" rel="self" type="application/rss+xml"/>
-  // 		${posts
-  //       .map(
-  //         (post) => `
-  // 				<item>
-  // 					<title>${post.title}</title>
-  // 					<description>${post.description}</description>
-  // 					<link>${blogUrl}/${post.slug}</link>
-  // 					<guid isPermaLink="true">${blogUrl}/${post.slug}</guid>
-  // 					<pubDate>${new Date(post.date).toUTCString()}</pubDate>
-  // 				</item>
-  // 			`
-  //       )
-  //       .join('')}
-  // 	</channel>
-  // </rss>`;
-
   const xml = `
 		
 		<feed xmlns="http://www.w3.org/2005/Atom">
@@ -103,3 +80,26 @@ export async function GET({ fetch, params, url }) {
 
   return new Response(xml, { headers });
 }
+
+//   const xml = `
+// 	<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+// 	<channel>
+// 		<title>${info.title}</title>
+// 		<description>${info.description}</description>
+// 		<link>${info.url}</link>
+// 		<atom:link href="${blogUrl}/rss.xml" rel="self" type="application/rss+xml"/>
+// 		${posts
+//       .map(
+//         (post) => `
+// 				<item>
+// 					<title>${post.title}</title>
+// 					<description>${post.description}</description>
+// 					<link>${blogUrl}/${post.slug}</link>
+// 					<guid isPermaLink="true">${blogUrl}/${post.slug}</guid>
+// 					<pubDate>${new Date(post.date).toUTCString()}</pubDate>
+// 				</item>
+// 			`
+//       )
+//       .join('')}
+// 	</channel>
+// </rss>`;
