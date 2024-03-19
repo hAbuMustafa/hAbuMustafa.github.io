@@ -82,7 +82,7 @@
     inset-block-start: 0;
     z-index: 1;
 
-    padding-inline: 5vw;
+    padding-inline-start: 5vw;
 
     @media (max-width: 450px) {
       padding-inline: 10vw 0;
@@ -184,6 +184,7 @@
     .theme-toggle {
       position: absolute;
       inset-inline-end: 1rem;
+      inset-block-start: -0.25rem;
     }
   }
 </style>
