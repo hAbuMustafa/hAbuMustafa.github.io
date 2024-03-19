@@ -7,7 +7,7 @@ export async function load({ url, params, fetch }) {
   const method = (url.searchParams.get('method') as 'some' | 'every') ?? 'some';
 
   const response = await fetch(`/api/posts`);
-  let posts = await response.json();
+  let posts = (await response.json()) as BlogPost[];
 
   if (lang) {
     posts = filterPosts(posts, 'lang', lang);
