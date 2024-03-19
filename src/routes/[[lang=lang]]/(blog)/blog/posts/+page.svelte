@@ -11,7 +11,7 @@
     <small>
       ↳ found for the tags
       {#each data.searchParams as tag (tag)}
-        <span class="tag">{tag}</span>
+        <span class="tag" class:rtl={/[\u0600-\u06FF]/.test(tag)}>{tag}</span>
       {/each}
     </small>
   {/if}
