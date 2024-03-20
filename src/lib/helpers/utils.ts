@@ -26,7 +26,14 @@ export function filterPosts(
   }
 }
 
-export const languages = {
+export const languages: Record<
+  string,
+  {
+    native: string;
+    name: string;
+    native_pronunciation: string;
+  }
+> = {
   af: {
     native: 'Afrikaans',
     name: 'Afrikaans',
