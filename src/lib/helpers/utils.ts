@@ -305,3 +305,5 @@ export const languages: Record<
     native_pronunciation: 'zhong-wen',
   },
 };
+
+export const usedLanguages: (keyof typeof languages)[] = ['ar', 'en'];
