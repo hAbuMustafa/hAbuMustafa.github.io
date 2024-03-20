@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { formatDate } from '$lib/helpers/utils';
+  import { formatDate, rtlLanguages } from '$lib/helpers/utils';
   import type { BlogPost } from '$lib/types/blog-posts';
 
   export let post: BlogPost;
@@ -7,7 +7,7 @@
   const formattedBlogPostDate = formatDate(post.lang ?? 'en', post.date);
 </script>
 
-<section class:rtl={post.lang === 'ar'}>
+<section class:rtl={rtlLanguages.includes(post.lang ?? 'en')}>
   <h2>
     <a href="{post.lang ? `/${post.lang}` : ''}/blog/{post.slug}">{post.title}</a><small
       ><i>{formattedBlogPostDate}</i></small

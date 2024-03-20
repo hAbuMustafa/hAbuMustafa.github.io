@@ -306,4 +306,6 @@ export const languages: Record<
   },
 };
 
+export const rtlLanguages = ['ar', 'fa', 'he', 'ur'];
+
 export const usedLanguages: (keyof typeof languages)[] = ['ar', 'en'];

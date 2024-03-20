@@ -4,9 +4,10 @@
   import Nav from './Nav.svelte';
   import PageTranstition from './PageTranstition.svelte';
   import info from '$lib/info';
+  import { rtlLanguages } from '$lib/helpers/utils';
 
   function direction(node: HTMLBodyElement) {
-    node.dir = $page.params.lang === 'ar' ? 'rtl' : 'ltr';
+    node.dir = rtlLanguages.includes($page.params.lang) ? 'rtl' : 'ltr';
   }
 
   export let data;
