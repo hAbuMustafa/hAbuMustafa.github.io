@@ -1,5 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import { languages } from '$lib/helpers/utils.js';
   import { slide } from 'svelte/transition';
 
   export let data;
@@ -49,9 +50,9 @@
   <hr />
 {/if}
 
-{#each Object.keys(data).filter((key) => /Tags$/.test(key)) as langTag}
+{#each Object.keys(data).filter((key) => /^[a-z]{2}$/.test(key)) as langTag}
   <section>
-    <h2>tags under "{langTag.replace(/Tags$/, '')}" language</h2>
+    <h2>tags in {languages[langTag].name} <small>{data[langTag].length}</small></h2>
     <div class="tags-wrapper" class:rtl={langTag.substring(0, 2) === 'ar'}>
       {#each data[langTag] as tag}
         <button
@@ -77,6 +78,20 @@
 
   h2 {
     border-block-end: 2px solid var(--darker-main-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  h2 small {
+    font-size: 1rem;
+    line-height: 1.25;
+    padding-inline: 0.375rem;
+
+    background-color: var(--darker-main-color);
+    color: var(--lighter-main-color);
+
+    border-radius: 50%;
   }
 
   .tags-wrapper button {
