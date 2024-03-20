@@ -1,11 +1,10 @@
 import { error } from '@sveltejs/kit';
 
-// bug: lang filtering is causing posts fetch to fail if not on the corresponding language route
 export async function load({ params }) {
   try {
     const post = await import(
       `../../../../../lib/blog-articles/${params.slug}${
-        params.lang ? `.${params.lang}` : ''
+        params.lang && params.lang !== 'en' ? `.${params.lang}` : ''
       }.svx`
     );
     return {
