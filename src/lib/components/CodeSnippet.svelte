@@ -39,7 +39,7 @@ ${code}\n
   </div>
 </div>
 
-<style lang="scss">
+<style>
   .wrapper {
     position: relative;
     max-width: 85vw;

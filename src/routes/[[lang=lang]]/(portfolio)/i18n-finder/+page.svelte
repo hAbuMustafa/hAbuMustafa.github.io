@@ -75,7 +75,7 @@
   </footer>
 </div>
 
-<style lang="scss">
+<style>
   .wrapper {
     display: grid;
     grid-template-rows: 4rem 4rem 1fr;

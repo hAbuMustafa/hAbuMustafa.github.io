@@ -77,7 +77,7 @@
   </li>
 </nav>
 
-<style lang="scss">
+<style>
   nav {
     background-color: var(--main-color);
     position: sticky;

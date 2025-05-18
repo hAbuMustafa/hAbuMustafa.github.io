@@ -19,7 +19,7 @@
   </p>
 </footer>
 
-<style lang="scss">
+<style>
   footer {
     min-height: 8rem;
     color: var(--text-color);

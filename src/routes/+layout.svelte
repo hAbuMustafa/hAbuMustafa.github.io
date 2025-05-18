@@ -34,7 +34,7 @@
   </PageTranstition>
 </main>
 
-<style lang="scss">
+<style>
   main {
     position: relative;
     min-height: 85lvh;

@@ -34,7 +34,7 @@
   </div>
 </article>
 
-<style lang="scss">
+<style>
   hgroup {
     margin-block-start: 3rem;
 

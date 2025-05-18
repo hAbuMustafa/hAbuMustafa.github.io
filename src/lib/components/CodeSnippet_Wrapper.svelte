@@ -1,6 +1,6 @@
 <script lang="ts">
   export let open = false;
-  export let styles = "";
+  export let styles = '';
 </script>
 
 <details {open} style={styles}>
@@ -10,7 +10,7 @@
   <slot />
 </details>
 
-<style lang="scss">
+<style>
   details {
     padding: 1rem;
     border-radius: 0.25rem;
