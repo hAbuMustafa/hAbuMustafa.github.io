@@ -8,7 +8,7 @@
   function handleLanguageChange() {
     const nextPath = page.params.lang
       ? page.url.pathname.replace(`/${page.params.lang}`, `/${lang}`)
-      : `/${lang}/${page.url.pathname}`;
+      : `/${lang}${page.url.pathname}`;
 
     // todo: trigger page reload
     goto(nextPath);

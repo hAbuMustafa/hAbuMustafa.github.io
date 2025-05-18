@@ -1,5 +1,4 @@
 <script lang="ts">
-  import LanguageSelect from '$lib/components/LanguageSelect.svelte';
   import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 
   interface SitemapT {
@@ -73,7 +72,6 @@
   {/each}
   <li class="toggles">
     <ThemeToggle />
-    <LanguageSelect />
   </li>
 </nav>
 
