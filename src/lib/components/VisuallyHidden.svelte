@@ -2,8 +2,14 @@
   // inspired from Josh W. Comeau "https://www.joshwcomeau.com/snippets/react-components/visually-hidden/"
 
   import { onMount } from 'svelte';
+  interface Props {
+    children?: import('svelte').Snippet;
+    [key: string]: any
+  }
 
-  let forceShow = false;
+  let { ...props }: Props = $props();
+
+  let forceShow = $state(false);
 
   onMount(() => {
     if (process.env.NODE_ENV !== 'production') {
@@ -30,10 +36,10 @@
 </script>
 
 {#if forceShow}
-  <slot />
+  {@render props.children?.()}
 {:else}
-  <span {...$$props}>
-    <slot />
+  <span {...props}>
+    {@render props.children?.()}
   </span>
 {/if}
 

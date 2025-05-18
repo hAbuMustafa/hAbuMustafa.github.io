@@ -1,12 +1,12 @@
 <script lang="ts">
   import { Abbr } from '@vividus/svelte';
-  import { extendQuery } from 'extend-arabic-query';
+  import { compare, getRegexString } from 'extend-arabic-query';
   import CodeSnippet from '$lib/components/CodeSnippet.svelte';
   import Wrapper from '$lib/components/CodeSnippet_Wrapper.svelte';
   import WhatIsThis from '$lib/components/WhatIsThis.svelte';
 
-  let testText = 'عبد الجيد أحمد حماده ابو ذكري';
-  let againstText = 'عبدالجيد احمد حمادة أبوذكرى';
+  let testText = $state('عبد الجيد أحمد حماده ابو ذكري');
+  let againstText = $state('عبدالجيد احمد حمادة أبوذكرى');
   let allowedPattern = '^[ء-ي ]+$';
 
   function separateWithHyphens(letters: string) {
@@ -169,23 +169,19 @@
 
 <div class="center" style:gap="0.5rem" style:text-align="center">
   <code
-    >new RegExp(extendQuery("<span
-      dir="rtl"
-      contenteditable
-      id="text"
-      bind:innerText={testText}
-    />"), "g").test("<span
+    >compare("<span dir="rtl" contenteditable id="text" bind:innerText={testText}
+    ></span>", "<span
       dir="rtl"
       id="against-text"
       contenteditable
       bind:innerText={againstText}
-    />")
+    ></span>")
   </code>
 
   <span>
     This expression evaluates to
     <span style="text-decoration: underline; text-transform: uppercase;"
-      >{new RegExp(extendQuery(testText), 'g').test(againstText)}</span
+      >{compare(testText, againstText)}</span
     ></span
   >
 
@@ -193,21 +189,21 @@
     <summary>The Underlying RegEx String: </summary>
     <p dir="rtl">
       {#if testText && RegExp(allowedPattern, 'g').test(testText)}
-        {extendQuery(testText)}
+        {getRegexString(testText)}
       {/if}
     </p>
   </details>
 </div>
 
 <Wrapper>
-  <svelte:fragment slot="title">Clearer Syntax</svelte:fragment>
+  {#snippet title()}
+    A More Clear Syntax
+  {/snippet}
   <CodeSnippet
     code={`const text = "${testText}";
 const text_to_compare = "${againstText}";
 
-const regex = new RegExp(extendQuery(text), 'g');
-
-const result = regex.test(text_to_compare)
+const result = compare(text, text_to_compare);
     `}
   />
 </Wrapper>
@@ -226,7 +222,7 @@ const result = regex.test(text_to_compare)
   }
 
   .unicode::before {
-    content: "U+0";
+    content: 'U+0';
   }
 
   .center {
@@ -253,8 +249,8 @@ const result = regex.test(text_to_compare)
       border: none;
     }
 
-    a[href*="footnote"],
-    a[href*="dfn"] {
+    a[href*='footnote'],
+    a[href*='dfn'] {
       text-decoration: none;
 
       &:hover {
@@ -284,18 +280,18 @@ const result = regex.test(text_to_compare)
   }
 
   span[contenteditable] {
-    // undo default settings
+    /* undo default settings */
     margin-inline-end: 0;
     border-radius: 0.25rem;
 
     &::after {
-      content: "";
+      content: '';
     }
 
     &:hover {
       &::after {
         direction: ltr;
-        content: "Edit this ↓";
+        content: 'Edit this ↓';
         inset-inline-start: -50%;
         inset-block-start: -200%;
         border: 2px dashed currentColor;

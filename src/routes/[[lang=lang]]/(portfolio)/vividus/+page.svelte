@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Abbr } from '@vividus/svelte';
 
-  let abbrExample = '<abbr title="World Health Organization">WHO</abbr>';
+  let abbrExample = $state('<abbr title="World Health Organization">WHO</abbr>');
 </script>
 
 <div class="wrapper">

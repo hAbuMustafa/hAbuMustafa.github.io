@@ -4,11 +4,13 @@
   import Moon from 'svelte-material-icons/WeatherNight.svelte';
   import Sun from 'svelte-material-icons/WhiteBalanceSunny.svelte';
   import VisuallyHidden from '$lib/components/VisuallyHidden.svelte';
+
+  const SvelteComponent = $derived($theme === 'dark' ? Moon : Sun);
 </script>
 
 {#key $theme}
-  <button type="button" on:click={toggleTheme} in:fly={{ y: 10 }}>
-    <svelte:component this={$theme === 'dark' ? Moon : Sun} size={'1.5rem'} />
+  <button type="button" onclick={toggleTheme} in:fly={{ y: 10 }}>
+    <SvelteComponent size={'1.5rem'} />
     <VisuallyHidden>
       {$theme}
     </VisuallyHidden>

@@ -3,16 +3,21 @@
   import { languages, rtlLanguages } from '$lib/helpers/utils.js';
   import { slide } from 'svelte/transition';
 
-  export let data;
-  let searchTags: string[] = [];
-  let matchMethod = 'some';
+  interface Props {
+    data: any;
+  }
+
+  let { data }: Props = $props();
+  let searchTags: string[] = $state([]);
+  let matchMethod = $state('some');
 </script>
 
 <h1>blog post categories by language</h1>
 
 {#if searchTags.length}
   <form
-    on:submit|preventDefault={() => {
+    onsubmit={(e) => {
+      e.preventDefault();
       goto(`/blog/posts?tags=${searchTags.join(',')}&method=${matchMethod}`);
     }}
     class="search-tags"
@@ -25,7 +30,7 @@
           type="button"
           class="tag"
           class:rtl={/[\u0600-\u06FF]/.test(tag)}
-          on:click={() => {
+          onclick={() => {
             if (searchTags.includes(tag))
               searchTags = searchTags.filter((t) => t !== tag);
           }}
@@ -57,7 +62,7 @@
       {#each data[langTag] as tag}
         <button
           class="tag"
-          on:click={() => {
+          onclick={() => {
             if (!searchTags.includes(tag)) searchTags = [...searchTags, tag];
           }}
           disabled={searchTags.includes(tag)}>{tag}</button

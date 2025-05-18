@@ -3,7 +3,7 @@
   import { page } from '$app/stores';
   import { languages, usedLanguages } from '$lib/helpers/utils';
 
-  let lang = $page.params.lang ?? 'en';
+  let lang = $state($page.params.lang ?? 'en');
 
   function handleLanguageChange() {
     const nextPath = $page.params.lang
@@ -19,7 +19,7 @@
   name="lang"
   aria-label="language select"
   bind:value={lang}
-  on:change={handleLanguageChange}
+  onchange={handleLanguageChange}
 >
   {#each usedLanguages as lang (lang)}
     <option value={lang}>{languages[lang].native}</option>

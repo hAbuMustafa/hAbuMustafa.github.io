@@ -1,7 +1,11 @@
-<script lang="ts" context="module">
+<script lang="ts" module>
   import { img } from '$lib/components/custom';
 
   export { img };
 </script>
 
-<slot />
+<script lang="ts">
+  let { children } = $props();
+</script>
+
+{@render children?.()}

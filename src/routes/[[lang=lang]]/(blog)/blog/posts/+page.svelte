@@ -6,7 +6,11 @@
   const tags = $page.url.searchParams.get('tags');
   const method = $page.url.searchParams.get('method');
 
-  export let data;
+  interface Props {
+    data: any;
+  }
+
+  let { data }: Props = $props();
 </script>
 
 <hgroup>

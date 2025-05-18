@@ -5,7 +5,7 @@
   import { Abbr } from '@vividus/svelte';
 
   let censorStyles =
-    'display: inline-block; background-color: currentColor; transform: skewX(-6deg);';
+    $state('display: inline-block; background-color: currentColor; transform: skewX(-6deg);');
 </script>
 
 <div class="wrapper">
@@ -29,7 +29,7 @@
       />, which means, you can customize the "censoring style" by changing the value of
       the
       <code>styles</code> parameter upon function invocation. The styles by default, are;
-      <code contenteditable spellcheck="false" bind:innerText={censorStyles} />, and it
+      <code contenteditable spellcheck="false" bind:innerText={censorStyles}></code>, and it
       looks like
       <span style={censorStyles}> this</span>.
     </p>

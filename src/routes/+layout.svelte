@@ -10,7 +10,12 @@
     node.dir = rtlLanguages.includes($page.params.lang) ? 'rtl' : 'ltr';
   }
 
-  export let data;
+  interface Props {
+    data: any;
+    children?: import('svelte').Snippet;
+  }
+
+  let { data, children }: Props = $props();
 </script>
 
 <svelte:head>
@@ -30,7 +35,7 @@
 
 <main>
   <PageTranstition url={data.url}>
-    <slot />
+    {@render children?.()}
   </PageTranstition>
 </main>
 

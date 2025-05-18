@@ -16,8 +16,12 @@
     })
   );
 
-  export let language = 'javascript';
-  export let code: string;
+  interface Props {
+    language?: string;
+    code: string;
+  }
+
+  let { language = 'javascript', code }: Props = $props();
 
   function copySnippetToClipboard(e: MouseEvent) {
     navigator.clipboard.writeText(code.trim());
@@ -33,7 +37,7 @@ ${code}\n
   <div class="tags">
     <span class="language">{language}</span>
 
-    <button class="copy-button" on:click={copySnippetToClipboard}>
+    <button class="copy-button" onclick={copySnippetToClipboard}>
       <CopyIcon size="1rem" />
     </button>
   </div>

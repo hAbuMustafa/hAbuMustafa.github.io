@@ -2,7 +2,11 @@
   import { page } from '$app/stores';
   import { formatDate } from '$lib/helpers/utils';
 
-  export let data;
+  interface Props {
+    data: any;
+  }
+
+  let { data }: Props = $props();
 </script>
 
 <svelte:head>
@@ -30,7 +34,7 @@
   </hgroup>
 
   <div class="blog-post-content">
-    <svelte:component this={data.content} />
+    <data.content />
   </div>
 </article>
 
