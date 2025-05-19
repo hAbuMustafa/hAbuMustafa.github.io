@@ -2,7 +2,7 @@
   import { page } from '$app/state';
   import './style.css';
   import Nav from '$lib/components/Nav.svelte';
-  import PageTranstition from '$lib/components/PageTranstition.svelte';
+  import PageTransition from '$lib/components/PageTransition.svelte';
   import info from '$lib/info';
   import { rtlLanguages } from '$lib/helpers/utils';
 
@@ -34,9 +34,9 @@
 <Nav />
 
 <main>
-  <PageTranstition url={data.url}>
+  <PageTransition url={data.url}>
     {@render children?.()}
-  </PageTranstition>
+  </PageTransition>
 </main>
 
 <style>
