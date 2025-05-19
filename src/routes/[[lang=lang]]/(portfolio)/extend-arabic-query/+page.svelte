@@ -15,7 +15,9 @@
 </script>
 
 <h1><code>extend-arabic-query</code></h1>
-<small>Check the package on <a href="npm.im/extend-arabic-query">npm</a>.</small>
+<small
+  >Check the package on <a href="https://www.npm.im/extend-arabic-query">npm</a>.</small
+>
 <p>
   This npm package provides a function to convert any text written in Arabic letters to a <dfn
     id="dfn-regex"
