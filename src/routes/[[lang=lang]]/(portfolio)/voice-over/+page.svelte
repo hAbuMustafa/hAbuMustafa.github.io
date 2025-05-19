@@ -20,25 +20,27 @@
   <li>
     Husien, the main character in the novel series <a
       href="https://ws.audiohatdar.com/app-sharing?bookid=65d1b3534d64960af2e8bc"
-      >Arzaq (Blessings)</a
+      target="_blank">Arzaq (Blessings)</a
     > by the famous Dr. Nabeel Farouq (Arabic)
   </li>
   <li>
     Sunray, a recurring main character in the novel series <a
       href="https://ws.audiohatdar.com/app-sharing?bookid=651b2738079be40013a20048"
-      >Fusion</a
+      target="_blank">Fusion</a
     > by Hamza Fahad Zayed (Arabic)
   </li>
 </ul>
 <p>
   Among many other evil roles in projects like <a
     href="https://ws.audiohatdar.com/app-sharing?bookid=6581e384d2676a0013f4b972"
-    >Felonies</a
+    target="_blank">Felonies</a
   >,
-  <a href="https://ws.audiohatdar.com/app-sharing?bookid=6669971d62bb5fcde494802d"
-    >The Murder of Farouq El-Sharkawy</a
+  <a
+    href="https://ws.audiohatdar.com/app-sharing?bookid=6669971d62bb5fcde494802d"
+    target="_blank">The Murder of Farouq El-Sharkawy</a
   >,
-  <a href="https://ws.audiohatdar.com/app-sharing?bookid=669d60130154291c98ef922b"
-    >A Crime in a New-Cairo Villa</a
+  <a
+    href="https://ws.audiohatdar.com/app-sharing?bookid=669d60130154291c98ef922b"
+    target="_blank">A Crime in a New-Cairo Villa</a
   >, and many more minor roles.
 </p>
