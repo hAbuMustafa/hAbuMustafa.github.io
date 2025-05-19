@@ -181,12 +181,12 @@
         outline: 2px solid var(--text-color);
       }
     }
-
+    /* 
     .toggles {
       position: absolute;
       inset-inline-end: 1rem;
       inset-block-start: -0.25rem;
       display: flex;
-    }
+    } */
   }
 </style>
