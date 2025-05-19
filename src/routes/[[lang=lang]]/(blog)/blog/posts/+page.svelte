@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import BlogPostExcerpt from '../BlogPostExcerpt.svelte';
   import RSS from 'svelte-material-icons/RssBox.svelte';
 
-  const tags = $page.url.searchParams.get('tags');
-  const method = $page.url.searchParams.get('method');
+  const tags = page.url.searchParams.get('tags');
+  const method = page.url.searchParams.get('method');
 
   interface Props {
     data: any;
@@ -30,7 +30,7 @@
   <!-- not using `lang` param in the link since the user migh pick tags from different languages -->
   <a
     class="subscribe"
-    href={`${$page.url.pathname.replace(/\/posts$/, '/feed')}${tags ? `?tags=${tags}` : ''}${method && tags ? `&method=${method}` : ''}`}
+    href={`${page.url.pathname.replace(/\/posts$/, '/feed')}${tags ? `?tags=${tags}` : ''}${method && tags ? `&method=${method}` : ''}`}
     data-sveltekit-reload
   >
     <span
@@ -53,7 +53,7 @@
         <a href="/blog/posts"> clearing search paramters </a>
         (currently: {#each data.searchParams ?? [] as tag (tag)}
           <span class="tag" class:rtl={/[\u0600-\u06FF]/.test(tag)}>{tag}</span>
-        {/each}){#if $page.url.searchParams.get('method') === 'every'}
+        {/each}){#if page.url.searchParams.get('method') === 'every'}
           , or <a href="/blog/posts?tags={data.searchParams?.join(',')}&method=some"
             >changing the search method to <b>any</b></a
           > to include posts that contain at least one of the specified tags.
