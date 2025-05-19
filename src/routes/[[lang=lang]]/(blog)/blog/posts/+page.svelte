@@ -3,8 +3,8 @@
   import BlogPostExcerpt from '$lib/components/BlogPostExcerpt.svelte';
   import RSS from 'svelte-material-icons/RssBox.svelte';
 
-  const tags = page.url.searchParams.get('tags');
-  const method = page.url.searchParams.get('method');
+  // const tags = page.url.searchParams.get('tags');
+  // const method = page.url.searchParams.get('method');
 
   interface Props {
     data: any;
@@ -28,14 +28,17 @@
   </h1>
   <!-- using `data-sveltekit-reload` since without it it gives a "Slug 'feed' not found" error -->
   <!-- not using `lang` param in the link since the user migh pick tags from different languages -->
-  <a
+  <!--    <a
     class="subscribe"
     href={`${page.url.pathname.replace(/\/posts$/, '/feed')}${tags ? `?tags=${tags}` : ''}${method && tags ? `&method=${method}` : ''}`}
     data-sveltekit-reload
+  > -->
+  <a
+    class="subscribe"
+    href={`${page.url.pathname.replace(/\/posts$/, '/feed')}`}
+    data-sveltekit-reload
   >
-    <span
-      >Subscribe to this {#if tags}<em>custom</em>{/if} feed!</span
-    >
+    <span>Subscribe to this<!--  {#if tags}<em>custom</em>{/if} --> feed!</span>
     <RSS color="orange" size="1.5em" /></a
   >
 </hgroup>
@@ -53,11 +56,11 @@
         <a href="/blog/posts"> clearing search paramters </a>
         (currently: {#each data.searchParams ?? [] as tag (tag)}
           <span class="tag" class:rtl={/[\u0600-\u06FF]/.test(tag)}>{tag}</span>
-        {/each}){#if page.url.searchParams.get('method') === 'every'}
+        {/each})<!-- {#if page.url.searchParams.get('method') === 'every'}
           , or <a href="/blog/posts?tags={data.searchParams?.join(',')}&method=some"
             >changing the search method to <b>any</b></a
           > to include posts that contain at least one of the specified tags.
-        {/if}.
+        {/if} -->.
       </p>
     </div>
   {/if}
