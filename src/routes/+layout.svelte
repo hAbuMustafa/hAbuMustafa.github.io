@@ -1,8 +1,8 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import './style.css';
-  import Nav from './Nav.svelte';
-  import PageTranstition from './PageTranstition.svelte';
+  import Nav from '$lib/components/Nav.svelte';
+  import PageTranstition from '$lib/components/PageTranstition.svelte';
   import info from '$lib/info';
   import { rtlLanguages } from '$lib/helpers/utils';
 
