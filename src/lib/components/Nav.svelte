@@ -71,9 +71,9 @@
       </li>
     {/if}
   {/each}
-  <li class="toggles">
+  <!--   <li class="toggles">
     <ThemeToggle />
-  </li>
+  </li> -->
 </nav>
 
 <style>
