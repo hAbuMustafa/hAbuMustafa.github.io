@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import './style.css';
   import Nav from '$lib/components/Nav.svelte';
   import PageTranstition from '$lib/components/PageTranstition.svelte';
@@ -7,7 +7,7 @@
   import { rtlLanguages } from '$lib/helpers/utils';
 
   function direction(node: HTMLBodyElement) {
-    node.dir = rtlLanguages.includes($page.params.lang) ? 'rtl' : 'ltr';
+    node.dir = rtlLanguages.includes(page.params.lang) ? 'rtl' : 'ltr';
   }
 
   interface Props {
@@ -20,7 +20,7 @@
 
 <svelte:head>
   <title>
-    {$page.data.pageTitle ? `${$page.data.pageTitle} - ${info.author}` : info.title}
+    {page.data.pageTitle ? `${page.data.pageTitle} - ${info.author}` : info.title}
   </title>
   {#if process.env.NODE_ENV === 'development'}
     <link rel="icon" href="/favicon_dev.png" />
