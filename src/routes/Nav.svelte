@@ -13,16 +13,16 @@
   }
 
   const sitemap: (SitemapT | SitemapSublistT)[] = [
-    {
+    /* {
       label: 'Blog',
       list: [
-        { text: 'Posts', href: '/blog/posts', separate: true },
+        { text: 'Posts', href: '/blog/posts' } ,
         {
           text: 'Tags\n<small style="font-size: 0.75rem; display: block;">and dynamic RSS!</small>',
           href: '/blog/tags',
         },
       ],
-    },
+    }, */
     {
       label: 'Portfolio',
       list: [
@@ -53,6 +53,7 @@
       />
     </a>
   </li>
+  <li><a href="/blog/posts">Blog</a></li>
   {#each sitemap as item}
     {#if isSitemapItem(item)}
       <li><a href={item.href}>{@html item.text}</a></li>
