@@ -26,11 +26,11 @@
     {
       label: 'Portfolio',
       list: [
-        { text: 'Voice-Over', href: '/voice-over', separate: true },
         { text: 'I18n Assistant', href: '/i18n-finder' },
         { text: 'Bookmarklets', href: '/bookmarklets' },
         { text: 'Vividus', href: '/vividus' },
-        { text: 'Extend Arabic Query', href: '/extend-arabic-query' },
+        { text: 'Extend Arabic Query', href: '/extend-arabic-query', separate: true },
+        { text: 'Voice-Over', href: '/voice-over' },
       ],
     },
   ];
