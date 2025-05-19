@@ -1,7 +1,7 @@
 ---
 title: "Hello World"
 author: "Hosam Hamdy"
-description: "My first blog post"
+description: "This is who I am. This is what to expect from me."
 date: 2025-05-20:00:00+02:00
 tags: 
   - "hello"
