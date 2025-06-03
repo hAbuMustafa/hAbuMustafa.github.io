@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cagliostro&display=swap');
+
 :root {
   --main-color: teal;
   --darker-main-color: hsl(180, 100%, 19%);
@@ -42,6 +44,7 @@
 }
 
 body {
+  font-family: 'Cagliostro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
