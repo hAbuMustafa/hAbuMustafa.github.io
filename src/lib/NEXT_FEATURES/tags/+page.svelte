@@ -1,6 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
-  import { languages, rtlLanguages } from '$lib/helpers/utils.js';
+  import { languages, rtlLanguages } from '$lib/helpers/utils';
   import { slide } from 'svelte/transition';
 
   interface Props {

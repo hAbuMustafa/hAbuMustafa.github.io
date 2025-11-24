@@ -1,7 +1,9 @@
-placeholders:
+<!-- 
+    placeholders:
     SVELTEKIT_VERSION
-    SKIP_FETCHING_FEED_DURING_THIS_HOUR_n <!-- a zero-based hour in the 24 format (e.g. 23 means don't fetch the feed at 11PM)  -->
-    SKIP_FETCHING_FEED_DURING_THIS_DAY_n <!-- a Title-Case weekday (e.g. Saturday, Friday)  -->
+    SKIP_FETCHING_FEED_DURING_THIS_HOUR_n &lt; a zero-based hour in the 24 format (e.g. 23 means don't
+fetch the feed at 11PM)  
+    SKIP_FETCHING_FEED_DURING_THIS_DAY_n &lt; a Title-Case weekday (e.g. Saturday, Friday)  
     
     FEED_LAST_BUILD_DATE
     FEED_OWNER_EMAIL
@@ -19,7 +21,9 @@ placeholders:
     ARTICLE_URL
     ARTICLE_URL
     ARTICLE_CONTENT_MARKUP
-    ARTICLE_SUMMARY
+    ARTICLE_SUMMARY 
+-->
+
 
 <feed xmlns="http://www.w3.org/2005/Atom">
     <generator uri="https://kit.svelte.dev/" version="SVELTEKIT_VERSION">SvelteKit</generator>
@@ -27,22 +31,22 @@ placeholders:
     <managingEditor>FEED_OWNER_EMAIL</managingEditor>
     <webMaster>FEED_OWNER_EMAIL</webMaster>
     <skipHours>
-      <hour>SKIP_FETCHING_FEED_DURING_THIS_HOUR_1</hour>
-      <hour>SKIP_FETCHING_FEED_DURING_THIS_HOUR_2</hour>
+        <hour>SKIP_FETCHING_FEED_DURING_THIS_HOUR_1</hour>
+        <hour>SKIP_FETCHING_FEED_DURING_THIS_HOUR_2</hour>
     </skipHours>
     <skipDays>
-      <day>SKIP_FETCHING_FEED_DURING_THIS_DAY_1</day>
-      <day>SKIP_FETCHING_FEED_DURING_THIS_DAY_2</day>
+        <day>SKIP_FETCHING_FEED_DURING_THIS_DAY_1</day>
+        <day>SKIP_FETCHING_FEED_DURING_THIS_DAY_2</day>
     </skipDays>
-    <link href="https://hosam.website/[LANG]/feed/rss.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://hosam.website/" rel="alternate" type="text/html"/>
+    <link href="https://hosam.website/[LANG]/feed/rss.xml" rel="self" type="application/atom+xml" />
+    <link href="https://hosam.website/" rel="alternate" type="text/html" />
     <updated>BLOG_LAST_UPDATED_DATE</updated>
     <id>https://hosam.website/[LANG]/feed/rss.xml</id>
     <title type="html">Hosam Hamdy [LANG] Feed</title>
     <subtitle>BLOG_DESCRIPTION</subtitle>
     <entry>
         <title type="html">ARTICLE_TITLE</title>
-        <link href="ARTICLE_URL" rel="alternate" type="text/html" title="ARTICLE_TITLE"/>
+        <link href="ARTICLE_URL" rel="alternate" type="text/html" title="ARTICLE_TITLE" />
         <published>ARTICLE_PUBLISH_DATE</published>
         <updated>ARTICLE_LAST_UPDATE_DATE</updated>
         <id>ARTICLE_URL</id>
@@ -50,7 +54,7 @@ placeholders:
             <![CDATA[ARTICLE_CONTENT_MARKUP]]>
         </content>
         <author>
-            <name/>
+            <name />
         </author>
         <summary type="html">
             <![CDATA[ARTICLE_SUMMARY]]>

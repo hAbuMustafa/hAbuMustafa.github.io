@@ -7,7 +7,8 @@
   import { rtlLanguages } from '$lib/helpers/utils';
 
   function direction(node: HTMLBodyElement) {
-    node.dir = rtlLanguages.includes(page.params.lang) ? 'rtl' : 'ltr';
+    node.dir =
+      page.params.lang && rtlLanguages.includes(page.params.lang) ? 'rtl' : 'ltr';
   }
 
   interface Props {
