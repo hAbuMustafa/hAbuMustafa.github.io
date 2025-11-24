@@ -76,7 +76,7 @@ export async function GET({ fetch, params, url }) {
         }"/>
 					<published>${post.date}</published>
 					<updated>${post.updated ?? post.date}</updated>
-					<id>${blogUrl}/${post.slug}</id>
+					<id>hAbuMustafa/${post.slug}</id>
 					<content type="html" xml:base="${blogUrl}/${post.slug}">
 							<![CDATA[${post.description}]]>
 					</content>
