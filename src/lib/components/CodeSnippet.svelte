@@ -1,20 +1,5 @@
 <script lang="ts">
-  import { Marked } from 'marked';
-  import { markedHighlight } from 'marked-highlight';
-  import hljs from 'highlight.js';
   import CopyIcon from 'svelte-material-icons/ContentCopy.svelte';
-
-  // todo: Since the whole blog is going to be Based On MDSVEX, Use <slot />, and embed code through normal slot <CodeSnippet>HERE</CodeSnippet> inside mdsvex files.
-
-  const marked = new Marked(
-    markedHighlight({
-      langPrefix: 'highlighted-snippet ',
-      highlight(code, lang, info) {
-        const language = hljs.getLanguage(lang) ? lang : 'plaintext';
-        return hljs.highlight(code, { language }).value;
-      },
-    })
-  );
 
   interface Props {
     language?: string;
@@ -29,11 +14,7 @@
 </script>
 
 <div class="wrapper">
-  {@html marked.parse(`
-\`\`\`${language}
-${code}\n
-\`\`\`
-`)}
+  {code}
   <div class="tags">
     <span class="language">{language}</span>
 

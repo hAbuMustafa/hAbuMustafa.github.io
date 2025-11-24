@@ -1,0 +1,5 @@
+Hello, Everyone! Welcome to my blog. This is going to be where I talk a little bit without
+any borders. I might get a bit political, I might get a bit personal, but I'm going to try
+to keep it all civil. I mean, hey! it's my blog, I can say whatever I want. I'll also try
+to keep it on the technical side of things. There will be a lot of technical articles as
+well. So, stay tuned!

@@ -1,9 +1,10 @@
 <script lang="ts">
   import { page } from '$app/state';
   import { formatDate } from '$lib/helpers/utils';
+  import type { BlogPost } from '$lib/types/blog-posts';
 
   interface Props {
-    data: any;
+    data: { content: any; meta: BlogPost };
   }
 
   let { data }: Props = $props();
@@ -29,7 +30,7 @@
       {data.meta.title}
     </h1>
     <p>
-      {formatDate(page.params.lang, data.meta.date)}
+      {formatDate(page.params.lang ?? 'en', data.meta.date)}
     </p>
   </hgroup>
 
