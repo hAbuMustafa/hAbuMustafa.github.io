@@ -11,17 +11,16 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^6.1.1",
-    "@sveltejs/kit": "^2.49.0",
-    "@sveltejs/vite-plugin-svelte": "^4.0.4",
-    "svelte": "^5.43.14",
-    "svelte-material-icons": "^3.0.5",
+    "@sveltejs/adapter-auto": "^7.0.0",
+    "@sveltejs/kit": "^2.50.1",
+    "@sveltejs/vite-plugin-svelte": "^6.2.4",
+    "svelte": "^5.48.5",
     "typescript": "^5.9.3",
-    "vite": "^5.4.21"
+    "vite": "^7.3.1"
   },
   "type": "module",
   "dependencies": {
-    "@vividus/svelte": "^1.0.4",
-    "extend-arabic-query": "^0.2.20"
+    "@vividus/svelte": "^1.0.6",
+    "extend-arabic-query": "^0.3.2"
   }
 }
