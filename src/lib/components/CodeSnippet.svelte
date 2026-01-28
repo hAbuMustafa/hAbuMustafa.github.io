@@ -1,5 +1,5 @@
 <script lang="ts">
-  import CopyIcon from 'svelte-material-icons/ContentCopy.svelte';
+  import { CopyIcon } from '@lucide/svelte';
 
   interface Props {
     language?: string;

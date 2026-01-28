@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from '$app/state';
   import BlogPostExcerpt from '$lib/components/BlogPostExcerpt.svelte';
-  import RSS from 'svelte-material-icons/RssBox.svelte';
+  import { Rss } from '@lucide/svelte';
 
   // const tags = page.url.searchParams.get('tags');
   // const method = page.url.searchParams.get('method');
@@ -39,7 +39,7 @@
     data-sveltekit-reload
   >
     <span>Subscribe to this<!--  {#if tags}<em>custom</em>{/if} --> feed!</span>
-    <RSS color="orange" size="1.5em" /></a
+    <Rss color="orange" size="1.5em" /></a
   >
 </hgroup>
 

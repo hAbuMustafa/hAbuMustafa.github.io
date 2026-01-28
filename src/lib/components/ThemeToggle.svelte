@@ -1,8 +1,8 @@
 <script lang="ts">
   import { fly } from 'svelte/transition';
   import { theme, toggleTheme } from '$lib/stores/theme';
-  import Moon from 'svelte-material-icons/WeatherNight.svelte';
-  import Sun from 'svelte-material-icons/WhiteBalanceSunny.svelte';
+  import { Moon } from '@lucide/svelte';
+  import { Sun } from '@lucide/svelte';
   import VisuallyHidden from '$lib/components/VisuallyHidden.svelte';
 
   const SvelteComponent = $derived($theme === 'dark' ? Moon : Sun);
