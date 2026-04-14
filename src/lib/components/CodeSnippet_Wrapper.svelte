@@ -10,7 +10,7 @@
   <slot />
 </details>
 
-<style lang="scss">
+<style>
   details {
     padding: 1rem;
     border-radius: 0.25rem;
@@ -22,19 +22,19 @@
     }
 
     &[open] > summary::marker {
-      content: '📖 ';
+      content: "📖 ";
     }
 
     &:not([open]) > summary::marker {
-      content: '📘 ';
+      content: "📘 ";
     }
 
     summary::before {
-      content: '{ ';
+      content: "{ ";
     }
 
     summary::after {
-      content: ' }';
+      content: " }";
     }
 
     &:has(summary:hover) {

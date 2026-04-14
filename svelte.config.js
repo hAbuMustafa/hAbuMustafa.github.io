@@ -1,35 +1,12 @@
-import adapter from '@sveltejs/adapter-vercel';
-import { mdsvex } from 'mdsvex';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import remarkUnwrapImages from 'remark-unwrap-images';
-import remarkTableOfContents from 'remark-toc';
-import rehypeSlug from 'rehype-slug';
+import adapter from "@sveltejs/adapter-static";
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  extensions: ['.svelte', '.md', '.svx'],
+  extensions: [".svelte"],
   // Consult https://kit.svelte.dev/docs/integrations#preprocessors
   // for more information about preprocessors
-  preprocess: [
-    vitePreprocess(),
-    mdsvex({
-      extensions: ['.md', '.svx'],
-      layout: {
-        _: './src/mdsvex_blog_layout.svelte',
-        project: './src/mdsvex_project_layout.svelte',
-      },
-      remarkPlugins: [
-        remarkUnwrapImages,
-        [
-          remarkTableOfContents,
-          {
-            tight: true,
-          },
-        ],
-      ],
-      rehypePlugins: [rehypeSlug],
-    }),
-  ],
+  preprocess: [vitePreprocess()],
   vitePlugin: {
     inspector: true,
   },

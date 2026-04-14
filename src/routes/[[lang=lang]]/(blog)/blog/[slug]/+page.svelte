@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  import { formatDate } from '$lib/helpers/utils';
+  import { page } from "$app/state";
+  import { formatDate } from "$lib/helpers/utils";
 
   export let data;
 </script>
@@ -11,7 +11,7 @@
   <meta property="og:title" content={data.meta.title} />
   <meta name="description" content={data.meta.description} />
   <meta property="og:description" content={data.meta.description} />
-  <meta property="og:locale" content={$page.params.lang} />
+  <meta property="og:locale" content={page.params.lang} />
   <!-- <meta property="og:image" content="https://"> -->
   <!-- <meta property="og:type" content="article"> -->
   <!-- <meta name="twitter:card" content="summary_large_image"> -->
@@ -25,7 +25,7 @@
       {data.meta.title}
     </h1>
     <p>
-      {formatDate($page.params.lang, data.meta.date)}
+      {formatDate(page.params.lang || "en", data.meta.date)}
     </p>
   </hgroup>
 
@@ -34,7 +34,7 @@
   </div>
 </article>
 
-<style lang="scss">
+<style>
   hgroup {
     margin-block-start: 3rem;
 

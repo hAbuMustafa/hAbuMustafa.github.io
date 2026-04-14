@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  import './style.css';
-  import Nav from './Nav.svelte';
-  import PageTranstition from './PageTranstition.svelte';
-  import info from '$lib/info';
-  import { rtlLanguages } from '$lib/helpers/utils';
+  import { page } from "$app/stores";
+  import "./style.css";
+  import Nav from "./Nav.svelte";
+  import PageTranstition from "./PageTranstition.svelte";
+  import info from "$lib/info";
+  import { rtlLanguages } from "$lib/helpers/utils";
 
   function direction(node: HTMLBodyElement) {
-    node.dir = rtlLanguages.includes($page.params.lang) ? 'rtl' : 'ltr';
+    node.dir = rtlLanguages.includes($page.params.lang) ? "rtl" : "ltr";
   }
 
   export let data;
@@ -15,9 +15,11 @@
 
 <svelte:head>
   <title>
-    {$page.data.pageTitle ? `${$page.data.pageTitle} - ${info.author}` : info.title}
+    {$page.data.pageTitle
+      ? `${$page.data.pageTitle} - ${info.author}`
+      : info.title}
   </title>
-  {#if process.env.NODE_ENV === 'development'}
+  {#if process.env.NODE_ENV === "development"}
     <link rel="icon" href="/favicon_dev.png" />
   {:else}
     <link rel="icon" href="/favicon.png" />
@@ -34,7 +36,7 @@
   </PageTranstition>
 </main>
 
-<style lang="scss">
+<style>
   main {
     position: relative;
     min-height: 85lvh;

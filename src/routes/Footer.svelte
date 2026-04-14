@@ -1,5 +1,5 @@
 <script>
-  import info from '$lib/info';
+  import info from "$lib/info";
 </script>
 
 <footer>
@@ -12,14 +12,15 @@
     >
       twitter
     </a>,
-    <a href="https://bsky.app/profile/{info.url.replace('https://', '')}" target="_blank"
-      >blue sky</a
+    <a
+      href="https://bsky.app/profile/{info.url.replace('https://', '')}"
+      target="_blank">blue sky</a
     >, or hit me on
     <a rel="me" href="https://onvo.me/@Hos" target="_blank">onvo</a>.
   </p>
 </footer>
 
-<style lang="scss">
+<style>
   footer {
     min-height: 8rem;
     color: var(--text-color);

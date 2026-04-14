@@ -1,6 +1,6 @@
 <script lang="ts">
-  import LanguageSelect from '$lib/components/LanguageSelect.svelte';
-  import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+  import LanguageSelect from "$lib/components/LanguageSelect.svelte";
+  import ThemeToggle from "$lib/components/ThemeToggle.svelte";
 
   interface SitemapT {
     text: string;
@@ -15,29 +15,29 @@
 
   const sitemap: (SitemapT | SitemapSublistT)[] = [
     {
-      label: 'Blog',
+      label: "Blog",
       list: [
-        { text: 'Posts', href: '/blog/posts', separate: true },
+        { text: "Posts", href: "/blog/posts", separate: true },
         {
           text: 'Tags\n<small style="font-size: 0.75rem; display: block;">and dynamic RSS!</small>',
-          href: '/blog/tags',
+          href: "/blog/tags",
         },
       ],
     },
     {
-      label: 'Portfolio',
+      label: "Portfolio",
       list: [
-        { text: 'Voice-Over', href: '/voice-over', separate: true },
-        { text: 'I18n Assistant', href: '/i18n-finder' },
-        { text: 'Bookmarklets', href: '/bookmarklets' },
-        { text: 'Vividus', href: '/vividus' },
-        { text: 'Extend Arabic Query', href: '/extend-arabic-query' },
+        { text: "Voice-Over", href: "/voice-over", separate: true },
+        { text: "I18n Assistant", href: "/i18n-finder" },
+        { text: "Bookmarklets", href: "/bookmarklets" },
+        { text: "Vividus", href: "/vividus" },
+        { text: "Extend Arabic Query", href: "/extend-arabic-query" },
       ],
     },
   ];
 
   function isSitemapItem(item: SitemapT | SitemapSublistT): item is SitemapT {
-    return item.hasOwnProperty('href');
+    return item.hasOwnProperty("href");
   }
 </script>
 
@@ -77,7 +77,7 @@
   </li>
 </nav>
 
-<style lang="scss">
+<style>
   nav {
     background-color: var(--main-color);
     position: sticky;

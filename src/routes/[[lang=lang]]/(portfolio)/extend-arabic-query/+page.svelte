@@ -21,7 +21,7 @@
   This npm package provides a function to convert any text written in Arabic
   letters to a <dfn id="dfn-regex"
     ><Abbr title="[Reg]ular [Ex]pression" styles="white-space: nowrap;" /></dfn
-  ><WhatIsThis href='/vividus#Abbr' />
+  ><WhatIsThis href="/vividus#Abbr" />
   string that can be used as <code>test</code> or <code>match</code> method paramter
   against any other string to compare for equality.
 </p>
@@ -36,12 +36,11 @@
   and without "<small class="pal"> hamzah</small>") are different characters
   since they have different unicode codes (namely,
   <code class="unicode">{"أ".charCodeAt(0).toString(16)}</code>
-  for "أ", and <code class="unicode">{"ا".charCodeAt(0).toString(16)}</code> for
-  "ا").
+  for "أ", and <code class="unicode">{"ا".charCodeAt(0).toString(16)}</code> for "ا").
 </p>
 <p>
-  Also, all the other forms of the letter <small class="pal">alef</small> should
-  map to any of the other forms, since they usually get mistakenly swapped for eachother.
+  Also, all the other forms of the letter <small class="pal">alef</small> should map
+  to any of the other forms, since they usually get mistakenly swapped for eachother.
   Say the same for many other letters.
 </p>
 <p>
@@ -113,8 +112,8 @@
         <td colspan="10" id="footnote-note">
           <a href="#footnote-mark">*</a> "same" means a
           <a href="#dfn-regex">RegEx</a>
-          list of all the characters, i.e. if any of either "ه" or "ة" was found
-          in the string, it will be replaced with
+          list of all the characters, i.e. if any of either "ه" or "ة" was found in
+          the string, it will be replaced with
           <code>[ةه]</code> in the <a href="#dfn-regex">RegEx</a> string.
         </td>
       </tr>
@@ -180,12 +179,12 @@
       contenteditable
       id="text"
       bind:innerText={testText}
-    />"), "g").test("<span
+    ></span>"), "g").test("<span
       dir="rtl"
       id="against-text"
       contenteditable
       bind:innerText={againstText}
-    />")
+    ></span>")
   </code>
 
   <span>
@@ -225,7 +224,7 @@ const result = regex.test(text_to_compare)
 </p>
 <p>The sky is the limit!</p>
 
-<style lang="scss">
+<style>
   .pal {
     /* short for: Pronounced Arabic Letter*/
     text-transform: uppercase;
@@ -290,7 +289,6 @@ const result = regex.test(text_to_compare)
   }
 
   span[contenteditable] {
-    // undo default settings
     margin-inline-end: 0;
     border-radius: 0.25rem;
 
