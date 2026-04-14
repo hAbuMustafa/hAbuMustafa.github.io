@@ -1,6 +1,10 @@
 <script lang="ts">
+<<<<<<< HEAD:src/routes/Nav.svelte
   import LanguageSelect from "$lib/components/LanguageSelect.svelte";
   import ThemeToggle from "$lib/components/ThemeToggle.svelte";
+=======
+  import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+>>>>>>> d9da57c112d07472d56ed0fb1c8b5cc9894fd1c5:src/lib/components/Nav.svelte
 
   interface SitemapT {
     text: string;
@@ -14,24 +18,39 @@
   }
 
   const sitemap: (SitemapT | SitemapSublistT)[] = [
+<<<<<<< HEAD:src/routes/Nav.svelte
     {
       label: "Blog",
       list: [
         { text: "Posts", href: "/blog/posts", separate: true },
+=======
+    /* {
+      label: 'Blog',
+      list: [
+        { text: 'Posts', href: '/blog/posts' } ,
+>>>>>>> d9da57c112d07472d56ed0fb1c8b5cc9894fd1c5:src/lib/components/Nav.svelte
         {
           text: 'Tags\n<small style="font-size: 0.75rem; display: block;">and dynamic RSS!</small>',
           href: "/blog/tags",
         },
       ],
-    },
+    }, */
     {
       label: "Portfolio",
       list: [
+<<<<<<< HEAD:src/routes/Nav.svelte
         { text: "Voice-Over", href: "/voice-over", separate: true },
         { text: "I18n Assistant", href: "/i18n-finder" },
         { text: "Bookmarklets", href: "/bookmarklets" },
         { text: "Vividus", href: "/vividus" },
         { text: "Extend Arabic Query", href: "/extend-arabic-query" },
+=======
+        { text: 'I18n Assistant', href: '/i18n-finder' },
+        { text: 'Bookmarklets', href: '/bookmarklets' },
+        { text: 'Vividus', href: '/vividus' },
+        { text: 'Extend Arabic Query', href: '/extend-arabic-query', separate: true },
+        { text: 'Voice-Over', href: '/voice-over' },
+>>>>>>> d9da57c112d07472d56ed0fb1c8b5cc9894fd1c5:src/lib/components/Nav.svelte
       ],
     },
   ];
@@ -54,13 +73,14 @@
       />
     </a>
   </li>
+  <li><a href="/blog/posts">Blog</a></li>
   {#each sitemap as item}
     {#if isSitemapItem(item)}
       <li><a href={item.href}>{@html item.text}</a></li>
       {#if item.separate}<hr />{/if}
     {:else}
       <li>
-        <!-- svelte-ignore a11y-invalid-attribute -->
+        <!-- svelte-ignore a11y_invalid_attribute -->
         <a href="">{item.label}</a>
         <ul>
           {#each item.list as subItem}
@@ -71,10 +91,9 @@
       </li>
     {/if}
   {/each}
-  <li class="toggles">
+  <!--   <li class="toggles">
     <ThemeToggle />
-    <LanguageSelect />
-  </li>
+  </li> -->
 </nav>
 
 <style>
@@ -182,12 +201,12 @@
         outline: 2px solid var(--text-color);
       }
     }
-
+    /* 
     .toggles {
       position: absolute;
       inset-inline-end: 1rem;
       inset-block-start: -0.25rem;
       display: flex;
-    }
+    } */
   }
 </style>

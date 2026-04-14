@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 import adapter from "@sveltejs/adapter-static";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   extensions: [".svelte"],
+=======
+import adapter from '@sveltejs/adapter-auto';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+  extensions: ['.svelte', '.md'],
+>>>>>>> d9da57c112d07472d56ed0fb1c8b5cc9894fd1c5
   // Consult https://kit.svelte.dev/docs/integrations#preprocessors
   // for more information about preprocessors
   preprocess: [vitePreprocess()],
@@ -14,7 +23,10 @@ const config = {
     // adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
     // If your environment is not supported or you settled on a specific environment, switch out the adapter.
     // See https://kit.svelte.dev/docs/adapters for more information about adapters.
-    adapter: adapter(),
+    adapter: adapter({
+      edge: false,
+      split: false,
+    }),
   },
 };
 

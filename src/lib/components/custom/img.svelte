@@ -1,2 +1,5 @@
-<!-- svelte-ignore a11y-missing-attribute -->
-<img {...$$props} loading="lazy" />
+<script lang="ts">
+  let { ...props } = $props();
+</script>
+
+<img {...props} loading="lazy" />

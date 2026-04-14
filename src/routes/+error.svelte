@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
 </script>
 
 <hgroup class="error">
   <h1>
-    <span>{$page.status}:</span>
-    {$page.error?.message}
+    <span>{page.status}:</span>
+    {page.error?.message}
   </h1>
 </hgroup>
 

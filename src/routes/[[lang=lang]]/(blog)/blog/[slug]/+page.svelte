@@ -1,8 +1,18 @@
 <script lang="ts">
+<<<<<<< HEAD
   import { page } from "$app/state";
   import { formatDate } from "$lib/helpers/utils";
+=======
+  import { page } from '$app/state';
+  import { formatDate } from '$lib/helpers/utils';
+  import type { BlogPost } from '$lib/types/blog-posts';
+>>>>>>> d9da57c112d07472d56ed0fb1c8b5cc9894fd1c5
 
-  export let data;
+  interface Props {
+    data: { content: any; meta: BlogPost };
+  }
+
+  let { data }: Props = $props();
 </script>
 
 <svelte:head>
@@ -25,12 +35,16 @@
       {data.meta.title}
     </h1>
     <p>
+<<<<<<< HEAD
       {formatDate(page.params.lang || "en", data.meta.date)}
+=======
+      {formatDate(page.params.lang ?? 'en', data.meta.date)}
+>>>>>>> d9da57c112d07472d56ed0fb1c8b5cc9894fd1c5
     </p>
   </hgroup>
 
   <div class="blog-post-content">
-    <svelte:component this={data.content} />
+    <data.content />
   </div>
 </article>
 

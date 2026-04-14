@@ -2,7 +2,11 @@
   import { formatDate, rtlLanguages } from '$lib/helpers/utils';
   import type { BlogPost } from '$lib/types/blog-posts';
 
-  export let post: BlogPost;
+  interface Props {
+    post: BlogPost;
+  }
+
+  let { post }: Props = $props();
 
   const formattedBlogPostDate = formatDate(post.lang ?? 'en', post.date);
 </script>

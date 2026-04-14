@@ -1,13 +1,24 @@
 <script lang="ts">
-  export let open = false;
-  export let styles = "";
+  interface Props {
+    open?: boolean;
+    styles?: string;
+    title?: import('svelte').Snippet;
+    children?: import('svelte').Snippet;
+  }
+
+  let {
+    open = false,
+    styles = '',
+    title,
+    children
+  }: Props = $props();
 </script>
 
 <details {open} style={styles}>
   <summary>
-    <slot name="title">View Code</slot>
+    {#if title}{@render title()}{:else}View Code{/if}
   </summary>
-  <slot />
+  {@render children?.()}
 </details>
 
 <style>

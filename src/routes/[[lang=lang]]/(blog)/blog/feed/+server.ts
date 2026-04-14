@@ -7,26 +7,26 @@ import info from '$lib/info';
 import type { BlogPost } from '$lib/types/blog-posts';
 
 export async function GET({ fetch, params, url }) {
-  const lang = url.searchParams.get('lang');
-  const tags = url.searchParams.get('tags');
-  const method = (url.searchParams.get('method') as 'some' | 'every') ?? 'some';
+  // const lang = url.searchParams.get('lang');
+  // const tags = url.searchParams.get('tags');
+  // const method = (url.searchParams.get('method') as 'some' | 'every') ?? 'some';
 
   const response = await fetch(`/api/posts`);
   let posts: BlogPost[] = await response.json();
 
-  if (lang) {
-    posts = filterPosts(posts, 'lang', lang);
-  } else if (!lang && !tags?.length && params.lang) {
-    posts = filterPosts(posts, 'lang', params.lang);
-  } else if (!lang && tags?.length) {
-    posts = posts;
-  } else {
-    posts = filterPosts(posts, 'lang', 'en');
-  }
+  // if (lang) {
+  //   posts = filterPosts(posts, 'lang', lang);
+  // } else if (!lang && !tags?.length && params.lang) {
+  //   posts = filterPosts(posts, 'lang', params.lang);
+  // } else if (!lang && tags?.length) {
+  //   posts = posts;
+  // } else {
+  posts = filterPosts(posts, 'lang', 'en');
+  // }
 
-  if (tags) {
+  /*   if (tags) {
     posts = filterPosts(posts, 'tags', tags.split(','), method);
-  }
+  } */
 
   const urlWithLang = `${info.url}/${params.lang ?? 'en'}`;
   const blogUrl = `${urlWithLang}/blog`;
@@ -59,14 +59,12 @@ export async function GET({ fetch, params, url }) {
       <day>Wednesday</day>
       <day>Thursday</day>
     </skipDays>
-    <link href="${info.url}${url.pathname}${tags ? `?tags=${tags}` : ''}${
-    method ? `&amp;method=${method}` : ''
-  }" rel="self" type="application/atom+xml"/>
+    <link href="${info.url}${
+    url.pathname
+  }?tags=tags&amp;method=method" rel="self" type="application/atom+xml"/>
     <link href="${blogUrl}/" rel="alternate" type="text/html"/>
     <updated>${posts[0]?.updated ?? posts[0]?.date}</updated>
-    <id>${info.url}${url.pathname}${tags ? `?tags=${tags}` : ''}${
-    method ? `&amp;method=${method}` : ''
-  }</id>
+    <id>${info.url}${url.pathname}?tags=tags&amp;method=method</id>
     <title type="html">Hosam Hamdy Blog Feed</title>
     <subtitle>${info.description}</subtitle>
 		${posts.map(
@@ -78,7 +76,7 @@ export async function GET({ fetch, params, url }) {
         }"/>
 					<published>${post.date}</published>
 					<updated>${post.updated ?? post.date}</updated>
-					<id>${blogUrl}/${post.slug}</id>
+					<id>hAbuMustafa/${post.slug}</id>
 					<content type="html" xml:base="${blogUrl}/${post.slug}">
 							<![CDATA[${post.description}]]>
 					</content>

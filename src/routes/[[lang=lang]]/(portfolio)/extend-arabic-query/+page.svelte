@@ -1,37 +1,43 @@
 <script lang="ts">
-  import { Abbr } from "@vividus/svelte";
-  import { extendQuery } from "extend-arabic-query";
-  import CodeSnippet from "$lib/components/CodeSnippet.svelte";
-  import Wrapper from "$lib/components/CodeSnippet_Wrapper.svelte";
-  import WhatIsThis from "$lib/components/WhatIsThis.svelte";
+  import { Abbr } from '@vividus/svelte';
+  import { compare, getRegexString } from 'extend-arabic-query';
+  import CodeSnippet from '$lib/components/CodeSnippet.svelte';
+  import Wrapper from '$lib/components/CodeSnippet_Wrapper.svelte';
+  import WhatIsThis from '$lib/components/WhatIsThis.svelte';
 
-  let testText = "عبد الجيد أحمد حماده ابو ذكري";
-  let againstText = "عبدالجيد احمد حمادة أبوذكرى";
-  let allowedPattern = "^[ء-ي ]+$";
+  let testText = $state('عبد الجيد أحمد حماده ابو ذكري');
+  let againstText = $state('عبدالجيد احمد حمادة أبوذكرى');
+  let allowedPattern = '^[ء-ي ]+$';
 
   function separateWithHyphens(letters: string) {
-    return letters.split("").join(" - ");
+    return letters.split('').join(' - ');
   }
 </script>
 
 <h1><code>extend-arabic-query</code></h1>
-<small>Check the package on <a href="npm.im/extend-arabic-query">npm</a>.</small
+<small
+  >Check the package on <a href="https://www.npm.im/extend-arabic-query">npm</a>.</small
 >
 <p>
-  This npm package provides a function to convert any text written in Arabic
-  letters to a <dfn id="dfn-regex"
+  This npm package provides a function to convert any text written in Arabic letters to a <dfn
+    id="dfn-regex"
     ><Abbr title="[Reg]ular [Ex]pression" styles="white-space: nowrap;" /></dfn
   ><WhatIsThis href="/vividus#Abbr" />
+<<<<<<< HEAD
   string that can be used as <code>test</code> or <code>match</code> method paramter
   against any other string to compare for equality.
+=======
+  string that can be used as <code>test</code> or <code>match</code> method paramter against
+  any other string to compare for equality.
+>>>>>>> d9da57c112d07472d56ed0fb1c8b5cc9894fd1c5
 </p>
 <p>
-  Normally, comparing words that contain letters that can have multiple forms
-  like the letter "أ" can give false results. For example, comparing the two
-  forms of writing the name "Ahmad" ("أحمد" and "احمد") against each other,
-  should be <code>true</code>, but it doesn't, even if you tried the strict or
-  abstract equality signs [
+  Normally, comparing words that contain letters that can have multiple forms like the
+  letter "أ" can give false results. For example, comparing the two forms of writing the
+  name "Ahmad" ("أحمد" and "احمد") against each other, should be <code>true</code>, but it
+  doesn't, even if you tried the strict or abstract equality signs [
   <code>"أحمد" == "احمد"</code>
+<<<<<<< HEAD
   ], since the two forms of the letter "<small class="pal"> alef</small>" (with
   and without "<small class="pal"> hamzah</small>") are different characters
   since they have different unicode codes (namely,
@@ -42,10 +48,22 @@
   Also, all the other forms of the letter <small class="pal">alef</small> should map
   to any of the other forms, since they usually get mistakenly swapped for eachother.
   Say the same for many other letters.
+=======
+  ], since the two forms of the letter "<small class="pal"> alef</small>" (with and
+  without "<small class="pal"> hamzah</small>") are different characters since they have
+  different unicode codes (namely,
+  <code class="unicode">{'أ'.charCodeAt(0).toString(16)}</code>
+  for "أ", and <code class="unicode">{'ا'.charCodeAt(0).toString(16)}</code> for "ا").
 </p>
 <p>
-  The current version of the package maps the following letters to their
-  corresponding forms or alternatives:
+  Also, all the other forms of the letter <small class="pal">alef</small> should map to any
+  of the other forms, since they usually get mistakenly swapped for eachother. Say the same
+  for many other letters.
+>>>>>>> d9da57c112d07472d56ed0fb1c8b5cc9894fd1c5
+</p>
+<p>
+  The current version of the package maps the following letters to their corresponding
+  forms or alternatives:
 </p>
 
 <div class="center">
@@ -66,24 +84,23 @@
 
     <tbody>
       <tr id="haa">
-        <td>{separateWithHyphens("ةه")}</td>
+        <td>{separateWithHyphens('ةه')}</td>
         <td><small class="pal">haa</small> group</td>
         <td>same<a href="#footnote-note" id="footnote-mark">*</a></td>
       </tr>
       <tr id="alef">
-        <td>{separateWithHyphens("اأإآء")}</td>
+        <td>{separateWithHyphens('اأإآء')}</td>
         <td><small class="pal">alef</small> group</td>
         <td
           >same, plus, all other forms of <small class="pal">hamza</small>
-          ({separateWithHyphens("ئؤ")})</td
+          ({separateWithHyphens('ئؤ')})</td
         >
       </tr>
       <tr id="hamza-on-yaa">
         <td>ئ</td>
         <td><small class="pal">hamza on yaa</small> group</td>
         <td
-          >same as for <small class="pal alef">alef</small>, plus all other
-          forms of
+          >same as for <small class="pal alef">alef</small>, plus all other forms of
           <small class="pal yaa">yaa</small>
         </td>
       </tr>
@@ -91,18 +108,17 @@
         <td>ؤ</td>
         <td><small class="pal">hamza on waw</small> group</td>
         <td
-          >same as for <small class="pal alef">alef</small>, plus all other
-          forms of
+          >same as for <small class="pal alef">alef</small>, plus all other forms of
           <small class="pal yaa">yaa</small>
         </td>
       </tr>
       <tr id="waw">
         <td>و</td>
         <td><small class="pal">waw</small> group</td>
-        <td> {separateWithHyphens("وؤ")}</td>
+        <td> {separateWithHyphens('وؤ')}</td>
       </tr>
       <tr id="yaa">
-        <td>{separateWithHyphens("يى")}</td>
+        <td>{separateWithHyphens('يى')}</td>
         <td><small class="pal">yaa</small> group</td>
         <td>same, plus "ئ"</td>
       </tr>
@@ -112,8 +128,13 @@
         <td colspan="10" id="footnote-note">
           <a href="#footnote-mark">*</a> "same" means a
           <a href="#dfn-regex">RegEx</a>
+<<<<<<< HEAD
           list of all the characters, i.e. if any of either "ه" or "ة" was found in
           the string, it will be replaced with
+=======
+          list of all the characters, i.e. if any of either "ه" or "ة" was found in the string,
+          it will be replaced with
+>>>>>>> d9da57c112d07472d56ed0fb1c8b5cc9894fd1c5
           <code>[ةه]</code> in the <a href="#dfn-regex">RegEx</a> string.
         </td>
       </tr>
@@ -121,8 +142,8 @@
   </table>
 </div>
 <p>
-  The library also takes account for possible mis-spellings due to local
-  pronounciation. Currently, the following groups are considered:
+  The library also takes account for possible mis-spellings due to local pronounciation.
+  Currently, the following groups are considered:
 </p>
 
 <div class="center">
@@ -143,12 +164,12 @@
 
     <tbody>
       <tr id="zai">
-        <td>{separateWithHyphens("زذ")}</td>
+        <td>{separateWithHyphens('زذ')}</td>
         <td><small class="pal">zai</small> group</td>
         <td>same, since many Arabic dialects use both interchangeably</td>
       </tr>
       <tr id="seen">
-        <td>{separateWithHyphens("ثس")}</td>
+        <td>{separateWithHyphens('ثس')}</td>
         <td><small class="pal">seen</small> group</td>
         <td>same, since many Arabic dialects use both interchangeably</td>
       </tr>
@@ -157,29 +178,33 @@
 </div>
 
 <p>
-  Also, since many would write the words "أبو" and "عبد" with a trailing space
-  or without it. It's been taken into consideration as well!
+  Also, since many would write the words "أبو" and "عبد" with a trailing space or without
+  it. It's been taken into consideration as well!
 </p>
 <p>
-  Also, not to forget irregularly spelled names, like "داوود" and "يحيى" as some
-  may write them with different amount of vowels. This, too, has been taken into
-  consideration!
+  Also, not to forget irregularly spelled names, like "داوود" and "يحيى" as some may write
+  them with different amount of vowels. This, too, has been taken into consideration!
 </p>
 
 <h2>Try IT!</h2>
 <p>
-  Write whatever you want in this input, and it will immediately show you the
-  RegEx string output beneath it.
+  Write whatever you want in this input, and it will immediately show you the RegEx string
+  output beneath it.
 </p>
 
 <div class="center" style:gap="0.5rem" style:text-align="center">
   <code
+<<<<<<< HEAD
     >new RegExp(extendQuery("<span
       dir="rtl"
       contenteditable
       id="text"
       bind:innerText={testText}
     ></span>"), "g").test("<span
+=======
+    >compare("<span dir="rtl" contenteditable id="text" bind:innerText={testText}
+    ></span>", "<span
+>>>>>>> d9da57c112d07472d56ed0fb1c8b5cc9894fd1c5
       dir="rtl"
       id="against-text"
       contenteditable
@@ -190,36 +215,36 @@
   <span>
     This expression evaluates to
     <span style="text-decoration: underline; text-transform: uppercase;"
-      >{new RegExp(extendQuery(testText), "g").test(againstText)}</span
+      >{compare(testText, againstText)}</span
     ></span
   >
 
   <details>
     <summary>The Underlying RegEx String: </summary>
     <p dir="rtl">
-      {#if testText && RegExp(allowedPattern, "g").test(testText)}
-        {extendQuery(testText)}
+      {#if testText && RegExp(allowedPattern, 'g').test(testText)}
+        {getRegexString(testText)}
       {/if}
     </p>
   </details>
 </div>
 
 <Wrapper>
-  <svelte:fragment slot="title">Clearer Syntax</svelte:fragment>
+  {#snippet title()}
+    A More Clear Syntax
+  {/snippet}
   <CodeSnippet
     code={`const text = "${testText}";
 const text_to_compare = "${againstText}";
 
-const regex = new RegExp(extendQuery(text), 'g');
-
-const result = regex.test(text_to_compare)
+const result = compare(text, text_to_compare);
     `}
   />
 </Wrapper>
 
 <p>
-  Now you should be able to use this function in any check including any Arabic
-  strings. You can even use it inside the <code>pattern</code> attribute for
+  Now you should be able to use this function in any check including any Arabic strings.
+  You can even use it inside the <code>pattern</code> attribute for
   <code>input</code>s to generate highly specific, and smart patterns.
 </p>
 <p>The sky is the limit!</p>
@@ -231,7 +256,7 @@ const result = regex.test(text_to_compare)
   }
 
   .unicode::before {
-    content: "U+0";
+    content: 'U+0';
   }
 
   .center {
@@ -258,8 +283,8 @@ const result = regex.test(text_to_compare)
       border: none;
     }
 
-    a[href*="footnote"],
-    a[href*="dfn"] {
+    a[href*='footnote'],
+    a[href*='dfn'] {
       text-decoration: none;
 
       &:hover {
@@ -289,17 +314,21 @@ const result = regex.test(text_to_compare)
   }
 
   span[contenteditable] {
+<<<<<<< HEAD
+=======
+    /* undo default settings */
+>>>>>>> d9da57c112d07472d56ed0fb1c8b5cc9894fd1c5
     margin-inline-end: 0;
     border-radius: 0.25rem;
 
     &::after {
-      content: "";
+      content: '';
     }
 
     &:hover {
       &::after {
         direction: ltr;
-        content: "Edit this ↓";
+        content: 'Edit this ↓';
         inset-inline-start: -50%;
         inset-block-start: -200%;
         border: 2px dashed currentColor;

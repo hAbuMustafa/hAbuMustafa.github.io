@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Abbr } from "@vividus/svelte";
 
-  let abbrExample = '<abbr title="World Health Organization">WHO</abbr>';
+  let abbrExample = $state('<abbr title="World Health Organization">WHO</abbr>');
 </script>
 
 <div class="wrapper">
@@ -79,11 +79,19 @@
 
   <h3>RadialFlickMenu</h3>
   An advanced
+<<<<<<< HEAD
   <code>select</code> element that allows you to navigate through a radial
   (circular) list. It should look pretty much like Counter-Strike's in-game
   <a href="https://imgur.com/y7X9mvR">action menu</a>, where you select the item
   by moving your pointer/cursor away from the center of the tap/click [also, the
   center of the circle].
+=======
+  <code>select</code> element that allows you to navigate through a radial (circular)
+  list. It should look pretty much like Counter-Strike's in-game
+  <a href="https://imgur.com/y7X9mvR">action menu</a>, where you select the item by moving
+  your pointer/cursor away from the center of the tap/click [also, the center of the
+  circle].
+>>>>>>> d9da57c112d07472d56ed0fb1c8b5cc9894fd1c5
 </div>
 
 <style>

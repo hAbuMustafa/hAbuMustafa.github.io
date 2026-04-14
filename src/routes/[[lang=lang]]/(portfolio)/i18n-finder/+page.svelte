@@ -1,25 +1,45 @@
 <script lang="ts">
-  export let data;
+  import type { Term } from './+page';
 
+<<<<<<< HEAD
   let text = "";
 
   $: filteredResults = data.terms.filter((item) =>
     item.term.toLowerCase().includes(text.toLowerCase()),
+=======
+  interface Props {
+    data: any;
+  }
+
+  let { data }: Props = $props();
+
+  let text = $state('');
+
+  let filteredResults = $derived(
+    data.terms.filter((item: Term) =>
+      item.term.toLowerCase().includes(text.toLowerCase())
+    )
+>>>>>>> d9da57c112d07472d56ed0fb1c8b5cc9894fd1c5
   );
 
-  let termInput: HTMLInputElement;
+  let termInput: HTMLInputElement | undefined = $state();
 
   function lockFocus() {
-    termInput.focus();
-    termInput.select();
+    termInput?.focus();
+    termInput?.select();
   }
 </script>
 
 <svelte:document
+<<<<<<< HEAD
   on:visibilitychange={() => {
     if (document.visibilityState === "visible") lockFocus();
+=======
+  onvisibilitychange={() => {
+    if (document.visibilityState === 'visible') lockFocus();
+>>>>>>> d9da57c112d07472d56ed0fb1c8b5cc9894fd1c5
   }}
-  on:click={lockFocus}
+  onclick={lockFocus}
 />
 
 <div class="wrapper">

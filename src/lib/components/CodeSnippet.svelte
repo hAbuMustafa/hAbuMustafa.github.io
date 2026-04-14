@@ -1,11 +1,19 @@
 <script lang="ts">
+<<<<<<< HEAD
   import { Marked } from "marked";
   import { markedHighlight } from "marked-highlight";
   import hljs from "highlight.js";
   import CopyIcon from "svelte-material-icons/ContentCopy.svelte";
+=======
+  import CopyIcon from 'svelte-material-icons/ContentCopy.svelte';
+>>>>>>> d9da57c112d07472d56ed0fb1c8b5cc9894fd1c5
 
-  // todo: Since the whole blog is going to be Based On MDSVEX, Use <slot />, and embed code through normal slot <CodeSnippet>HERE</CodeSnippet> inside mdsvex files.
+  interface Props {
+    language?: string;
+    code: string;
+  }
 
+<<<<<<< HEAD
   const marked = new Marked(
     markedHighlight({
       langPrefix: "highlighted-snippet ",
@@ -18,6 +26,9 @@
 
   export let language = "javascript";
   export let code: string;
+=======
+  let { language = 'javascript', code }: Props = $props();
+>>>>>>> d9da57c112d07472d56ed0fb1c8b5cc9894fd1c5
 
   function copySnippetToClipboard(e: MouseEvent) {
     navigator.clipboard.writeText(code.trim());
@@ -25,15 +36,11 @@
 </script>
 
 <div class="wrapper">
-  {@html marked.parse(`
-\`\`\`${language}
-${code}\n
-\`\`\`
-`)}
+  {code}
   <div class="tags">
     <span class="language">{language}</span>
 
-    <button class="copy-button" on:click={copySnippetToClipboard}>
+    <button class="copy-button" onclick={copySnippetToClipboard}>
       <CopyIcon size="1rem" />
     </button>
   </div>
