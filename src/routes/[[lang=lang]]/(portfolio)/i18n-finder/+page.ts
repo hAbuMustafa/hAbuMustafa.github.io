@@ -1,4 +1,4 @@
-export interface Term {
+interface Term {
   term: string;
   wAR: string;
   wEN: string;
@@ -6,9 +6,9 @@ export interface Term {
 
 export async function load({ fetch }) {
   return {
-    pageTitle: "I18n Assistant",
+    pageTitle: 'I18n Assistant',
     terms: (await fetch(
-      "https://raw.githubusercontent.com/softvenue/i18n/master/i18n.json"
+      'https://raw.githubusercontent.com/softvenue/i18n/master/i18n.json',
     ).then((response) => response.json())) as Term[],
   };
 }

@@ -1,18 +1,10 @@
 <script lang="ts">
-  import type { Term } from './+page';
-
-  interface Props {
-    data: any;
-  }
-
-  let { data }: Props = $props();
+  let { data } = $props();
 
   let text = $state('');
 
   let filteredResults = $derived(
-    data.terms.filter((item: Term) =>
-      item.term.toLowerCase().includes(text.toLowerCase())
-    )
+    data.terms.filter((item) => item.term.toLowerCase().includes(text.toLowerCase())),
   );
 
   let termInput: HTMLInputElement | undefined = $state();
@@ -53,7 +45,7 @@
           <h4 dir="ltr">
             🔤 {@html item.term.replace(
               new RegExp(text, 'gi'),
-              `<mark>${text.toUpperCase()}</mark>`
+              `<mark>${text.toUpperCase()}</mark>`,
             )}
           </h4>
           <ul>
