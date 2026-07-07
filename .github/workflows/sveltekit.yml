@@ -56,14 +56,29 @@ jobs:
 
       - name: Build with SvelteKit
         run: pnpm build
+        env:
+          NODE_OPTIONS: '--max-old-space-size=4096'
+          DEBUG: 'vite:*'
 
       - name: Upload artifact
+        if: success()
         uses: actions/upload-pages-artifact@v5
         with:
           path: build
 
       - name: Add .nojekyll file
+        if: success()
         run: touch build/.nojekyll
+
+      - name: Debug build output
+        if: failure()
+        run: |
+          echo "=== Current directory contents ==="
+          ls -la
+          echo "=== Check if build folder exists ==="
+          ls -la build || echo "build folder does not exist"
+          echo "=== Check package.json ==="
+          cat package.json | grep -A 5 '"scripts"'
 
   # Deployment job
   deploy:
@@ -72,6 +87,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    if: success()
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
