@@ -1,4 +1,4 @@
-import { posts } from '$lib/blog-articles/';
+import { posts } from '#lib/blog-articles//index.ts';
 import { error } from '@sveltejs/kit';
 
 export async function load({ params }) {

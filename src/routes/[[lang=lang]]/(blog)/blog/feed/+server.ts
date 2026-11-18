@@ -2,9 +2,9 @@
 
 export const trailingSlash = 'ignore';
 
-import { filterPosts } from '$lib/helpers/utils';
-import info from '$lib/info';
-import type { BlogPost } from '$lib/types/blog-posts';
+import { filterPosts } from '#lib/helpers/utils.ts';
+import info from '#lib/info.ts';
+import type { BlogPost } from '#lib/types/blog-posts.ts';
 
 export async function GET({ fetch, params, url }) {
   // const lang = url.searchParams.get('lang');

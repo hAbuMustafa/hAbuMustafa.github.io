@@ -1,7 +1,7 @@
 <script lang="ts">
-  import CodeSnippet from '$lib/components/CodeSnippet.svelte';
-  import CodeWrapper from '$lib/components/CodeSnippet_Wrapper.svelte';
-  import WhatIsThis from '$lib/components/WhatIsThis.svelte';
+  import CodeSnippet from '#lib/components/CodeSnippet.svelte';
+  import CodeWrapper from '#lib/components/CodeSnippet_Wrapper.svelte';
+  import WhatIsThis from '#lib/components/WhatIsThis.svelte';
   import { Abbr } from '@vividus/svelte';
 
   let censorStyles =

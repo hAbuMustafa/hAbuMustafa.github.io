@@ -1,9 +1,9 @@
 <script lang="ts">
   import { fly } from 'svelte/transition';
-  import { theme, toggleTheme } from '$lib/stores/theme';
+  import { theme, toggleTheme } from '#lib/stores/theme.ts';
   import { Moon } from '@lucide/svelte';
   import { Sun } from '@lucide/svelte';
-  import VisuallyHidden from '$lib/components/VisuallyHidden.svelte';
+  import VisuallyHidden from '#lib/components/VisuallyHidden.svelte';
 
   const SvelteComponent = $derived($theme === 'dark' ? Moon : Sun);
 </script>

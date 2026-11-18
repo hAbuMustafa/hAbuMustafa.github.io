@@ -1,9 +1,8 @@
-import { posts } from '$lib/blog-articles/';
-import { json } from '@sveltejs/kit';
+import { posts } from '#lib/blog-articles//index.ts';
 
 async function getPosts() {
   let sortedPosts = posts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
 
   return sortedPosts;
@@ -12,5 +11,5 @@ async function getPosts() {
 export async function GET() {
   const posts = await getPosts();
 
-  return json(posts);
+  return Response.json(posts);
 }

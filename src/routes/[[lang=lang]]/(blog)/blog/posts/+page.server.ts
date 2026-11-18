@@ -1,5 +1,5 @@
-import { filterPosts } from '$lib/helpers/utils';
-import type { BlogPost } from '$lib/types/blog-posts';
+import { filterPosts } from '#lib/helpers/utils.ts';
+import type { BlogPost } from '#lib/types/blog-posts.ts';
 
 export async function load({ url, params, fetch }) {
   const lang = params.lang;

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+  import ThemeToggle from '#lib/components/ThemeToggle.svelte';
 
   interface SitemapT {
     text: string;

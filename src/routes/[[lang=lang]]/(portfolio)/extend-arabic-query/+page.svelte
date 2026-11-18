@@ -1,9 +1,9 @@
 <script lang="ts">
   import { Abbr } from '@vividus/svelte';
   import { compare, getRegexString } from 'extend-arabic-query';
-  import CodeSnippet from '$lib/components/CodeSnippet.svelte';
-  import Wrapper from '$lib/components/CodeSnippet_Wrapper.svelte';
-  import WhatIsThis from '$lib/components/WhatIsThis.svelte';
+  import CodeSnippet from '#lib/components/CodeSnippet.svelte';
+  import Wrapper from '#lib/components/CodeSnippet_Wrapper.svelte';
+  import WhatIsThis from '#lib/components/WhatIsThis.svelte';
 
   let testText = $state('عبد الجيد أحمد حماده ابو ذكري');
   let againstText = $state('عبدالجيد احمد حمادة أبوذكرى');

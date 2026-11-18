@@ -1,9 +1,9 @@
-import { browser } from '$app/environment';
+import { browser } from '$app/env';
 import { writable } from 'svelte/store';
 
 type Theme = 'light' | 'dark';
 
-const userTheme = browser && (localStorage.getItem('color-scheme') as Theme);
+const userTheme = browser && localStorage.getItem('color-scheme') as Theme;
 
 export const theme = writable(userTheme ?? 'dark');
 

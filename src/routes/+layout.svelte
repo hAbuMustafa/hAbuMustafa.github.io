@@ -1,10 +1,10 @@
 <script lang="ts">
   import { page } from '$app/state';
   import './style.css';
-  import Nav from '$lib/components/Nav.svelte';
-  import PageTransition from '$lib/components/PageTransition.svelte';
-  import info from '$lib/info';
-  import { rtlLanguages } from '$lib/helpers/utils';
+  import Nav from '#lib/components/Nav.svelte';
+  import PageTransition from '#lib/components/PageTransition.svelte';
+  import info from '#lib/info.ts';
+  import { rtlLanguages } from '#lib/helpers/utils.ts';
 
   function direction(node: HTMLBodyElement) {
     node.dir =

@@ -1,5 +1,5 @@
 <script>
-  import info from '$lib/info';
+  import info from '#lib/info.ts';
 </script>
 
 <h2>Hey, There!</h2>

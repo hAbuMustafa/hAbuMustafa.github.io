@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from '$app/state';
-  import BlogPostExcerpt from '$lib/components/BlogPostExcerpt.svelte';
+  import BlogPostExcerpt from '#lib/components/BlogPostExcerpt.svelte';
   import { Rss } from '@lucide/svelte';
 
   // const tags = page.url.searchParams.get('tags');

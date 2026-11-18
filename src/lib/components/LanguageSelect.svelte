@@ -1,7 +1,7 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
-  import { languages, usedLanguages } from '$lib/helpers/utils';
+  import { languages, usedLanguages } from '#lib/helpers/utils.ts';
 
   let lang = $state(page.params.lang ?? 'en');
 

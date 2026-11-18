@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { formatDate, rtlLanguages } from '$lib/helpers/utils';
-  import type { BlogPost } from '$lib/types/blog-posts';
+  import { formatDate, rtlLanguages } from '#lib/helpers/utils.ts';
+  import type { BlogPost } from '#lib/types/blog-posts.ts';
 
   interface Props {
     post: BlogPost;

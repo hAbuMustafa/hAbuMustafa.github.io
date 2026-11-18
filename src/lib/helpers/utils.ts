@@ -1,4 +1,4 @@
-import type { BlogPost } from '$lib/types/blog-posts';
+import type { BlogPost } from '#lib/types/blog-posts.ts';
 
 export function formatDate(locale: string, date: string) {
   return new Date(date).toLocaleDateString(locale, {
