@@ -1,22 +1,24 @@
 export const posts = [
   {
-    title: 'أهلا بالعالم',
+    title: 'عظمة الـ RegEx',
     author: 'Hosam Hamdy',
-    description: 'تدوينتي الأولى',
-    date: '2020-05-26T13:58:51+02:00',
-    tags: ['أهلا', 'مقدمة'],
+    description:
+      'كتير جدا من مشاكل الـ validation ممكن تتحل بتقنية موجودة بقالها سنين اسمها "الصيغة التعبيرية" أو RegEx. مع رشّة صغيرة من خوارزميات الفحص لضمان 100% كفاءة في التحقق.',
+    date: '2026-11-17T01:18:51+02:00',
+    tags: ['الرقم القومي', 'RegEx', 'الفحص', 'التحقق', 'validation', 'checksum'],
     published: true,
     lang: 'ar',
-    slug: 'hello-world',
+    slug: 'beauty-of-regex',
   },
   {
-    title: 'Hello World',
+    title: 'The Beauty of RegEx',
     author: 'Hosam Hamdy',
-    description: 'This is who I am. This is what to expect from me.',
-    date: '2025-05-20T20:00:00+02:00',
-    tags: ['hello', 'world'],
+    description:
+      'Many validation problems can be solved or prevented with the use of a sophisticated technology that has been there since the dawn of computing, Regular Expressions. And with a pinch of check algorithms.',
+    date: '2026-11-17T01:18:51+02:00',
+    tags: ['Egyptian National ID Number', 'RegEx', 'check', 'validation', 'checksum'],
     published: true,
     lang: 'en',
-    slug: 'hello-world',
+    slug: 'beauty-of-regex',
   },
 ];
